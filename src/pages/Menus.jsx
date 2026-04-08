@@ -1,96 +1,374 @@
 import { Helmet } from 'react-helmet-async'
-import { useState } from 'react'
-import { menus, menuCategories } from '../data/menus'
-import DishCard from '../components/shared/DishCard'
+import { useState, useEffect } from 'react'
+import { Download } from 'lucide-react'
+import menuSections from '../data/menuSections'
 import QuoteButton from '../components/shared/QuoteButton'
 
 export default function Menus() {
-  const [activeTab, setActiveTab] = useState(menuCategories[0])
+  const [activeId, setActiveId] = useState(menuSections[0].id)
+
+  // Scroll-spy: highlight the section currently in view
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.innerHeight * 0.35
+      let current = menuSections[0].id
+      for (const section of menuSections) {
+        const el = document.getElementById(section.id)
+        if (el && el.getBoundingClientRect().top - offset < 0) {
+          current = section.id
+        }
+      }
+      setActiveId(current)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      // 80px navbar + 60px sticky tab strip
+      const top = el.getBoundingClientRect().top + window.scrollY - 140
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
       <Helmet>
-        <title>Catering Menus | Vegetarian, Non-Veg, Jain | The Catering Inc. Gurgaon</title>
-        <meta name="description" content="Explore The Catering Inc.'s curated catering menus — vegetarian, non-vegetarian, Jain, vegan and beverages. Freshly prepared for every occasion in Gurgaon." />
+        <title>Catering Menus | The Catering Inc. Gurgaon</title>
+        <meta
+          name="description"
+          content="Explore The Catering Inc.'s curated catering menus — pass-around appetizers, live counters, chaat, salads, global cuisine, mains, breads, desserts and beverages — for every occasion in Gurgaon."
+        />
       </Helmet>
 
-      {/* Hero */}
-      <section className="py-20 bg-canvas text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <p className="text-gold text-xs font-bold tracking-widest uppercase mb-4" style={{ fontFamily: 'var(--font-body)' }}>What We Serve</p>
-          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', fontWeight: 600, color: '#FDF8EE', lineHeight: 1.1 }}>
-            Our Menus
-          </h1>
-          <p className="mt-6 text-stone-sand text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
-            Freshly sourced. Lovingly prepared. Every dish a reflection of Chef Gautam's two decades in India's finest kitchens.
+      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden" style={{ background: '#0A0A0A' }}>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-25"
+          style={{ backgroundImage: 'url(/images/boufet.jpg)' }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(160deg, rgba(10,10,10,0.92) 0%, rgba(26,18,0,0.78) 50%, rgba(10,10,10,0.94) 100%)',
+          }}
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 text-center">
+          <p
+            className="text-xs font-bold uppercase mb-5"
+            style={{ fontFamily: 'var(--font-body)', color: '#F0B414', letterSpacing: '0.35em' }}
+          >
+            What We Serve
           </p>
-        </div>
-      </section>
-
-      {/* Sticky Tab Nav */}
-      <div className="sticky top-20 z-30 bg-cream-light border-b border-stone-mist">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex overflow-x-auto gap-0 no-scrollbar">
-            {menuCategories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveTab(cat)}
-                className="flex-shrink-0 px-6 py-4 text-xs font-bold tracking-widest uppercase border-b-2 transition-all duration-200 min-h-[44px] whitespace-nowrap"
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  color: activeTab === cat ? '#F0B414' : '#6B5A45',
-                  borderBottomColor: activeTab === cat ? '#F0B414' : 'transparent',
-                }}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Menu Content */}
-      <section className="py-16 bg-page">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {Object.entries(menus[activeTab]).map(([category, dishes]) => (
-            <div key={category} className="mb-14">
-              {/* Category heading with divider */}
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex-1 h-px" style={{ backgroundColor: '#D4C5A9' }} />
-                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 500, color: '#1A1200', whiteSpace: 'nowrap' }}>
-                  {category}
-                </h2>
-                <div className="flex-1 h-px" style={{ backgroundColor: '#D4C5A9' }} />
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {dishes.map((dish) => (
-                  <DishCard key={dish.id} name={dish.name} description={dish.description} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Download + CTA */}
-      <section className="py-16 bg-section">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.75rem, 4vw, 3rem)', fontWeight: 600, color: '#1A1200', marginBottom: '1rem' }}>
-            Want a custom menu for your event?
-          </h2>
-          <p className="text-sm leading-relaxed mb-8" style={{ fontFamily: 'var(--font-body)', color: '#3D2E1A' }}>
-            Every menu we present is a starting point. Share your event details and Chef Gautam's team will design a menu built around your occasion, guests and preferences.
+          <h1
+            className="text-white leading-none mb-6"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.6rem, 6.5vw, 5rem)',
+              fontWeight: 600,
+              letterSpacing: '-0.01em',
+            }}
+          >
+            Our Curated Menus
+          </h1>
+          <div className="mx-auto mb-6" style={{ width: 60, height: 1, background: '#F0B414' }} />
+          <p
+            className="mx-auto max-w-2xl mb-10"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1.05rem, 2.2vw, 1.45rem)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              color: '#F7D875',
+              lineHeight: 1.5,
+            }}
+          >
+            "Freshly sourced. Lovingly prepared. Every dish a reflection of Chef Gautam's two decades in India's finest kitchens."
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#"
-              className="inline-flex items-center justify-center px-8 py-3 text-xs font-bold tracking-widest uppercase border-2 min-h-[44px] transition-all duration-300"
-              style={{ fontFamily: 'var(--font-body)', borderColor: '#D4C5A9', color: '#3D2E1A' }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 text-xs font-bold tracking-widest uppercase border min-h-[44px] transition-all duration-300"
+              style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.9)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.08)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'
+                e.currentTarget.style.background = 'transparent'
+              }}
             >
-              {/* TODO: link to real downloadable menu PDF */}
+              <Download size={14} strokeWidth={1.5} />
               Download Menu PDF
             </a>
-            <QuoteButton label="Get a Custom Menu" variant="primary" />
+            <QuoteButton label="Get a Custom Menu" variant="primary" className="min-h-[44px]" />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sticky Section Nav ────────────────────────────────────────────── */}
+      <div
+        className="sticky z-30 border-b"
+        style={{
+          top: 80,
+          background: 'rgba(255,253,247,0.96)',
+          borderColor: '#EDE8DF',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex overflow-x-auto gap-0 no-scrollbar">
+            {menuSections.map((section) => {
+              const isActive = activeId === section.id
+              return (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className="flex-shrink-0 px-5 py-4 text-[11px] font-bold tracking-widest uppercase border-b-2 transition-all duration-200 min-h-[44px] whitespace-nowrap inline-flex items-center gap-2"
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    color: isActive ? '#F0B414' : '#6B5A45',
+                    borderBottomColor: isActive ? '#F0B414' : 'transparent',
+                  }}
+                >
+                  <span style={{ fontSize: 14 }}>{section.icon}</span>
+                  {section.label}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Menu Sections ─────────────────────────────────────────────────── */}
+      {menuSections.map((section, idx) => {
+        const isAlt = idx % 2 === 1
+        const imageRight = idx % 2 === 0
+        return (
+          <section
+            key={section.id}
+            id={section.id}
+            className="py-20 sm:py-24"
+            style={{ background: isAlt ? '#FDF8EE' : '#FFFDF7', scrollMarginTop: 140 }}
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Section header — image + intro */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-14">
+                {/* Image */}
+                <div
+                  className={`lg:col-span-5 relative overflow-hidden ${
+                    imageRight ? 'lg:order-2' : 'lg:order-1'
+                  }`}
+                  style={{ height: 420 }}
+                >
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.0) 60%, rgba(0,0,0,0.35) 100%)' }}
+                  />
+                  {/* Gold corner accents */}
+                  <div
+                    className="absolute top-0 left-0 w-14 h-14 border-t-2 border-l-2"
+                    style={{ borderColor: '#F0B414' }}
+                  />
+                  <div
+                    className="absolute bottom-0 right-0 w-14 h-14 border-b-2 border-r-2"
+                    style={{ borderColor: '#F0B414' }}
+                  />
+                  {/* Floating section number */}
+                  <div
+                    className="absolute top-5 right-5 px-3 py-1 text-[10px] font-bold tracking-widest uppercase"
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      background: 'rgba(10,10,10,0.65)',
+                      color: '#F0B414',
+                      backdropFilter: 'blur(4px)',
+                    }}
+                  >
+                    {String(idx + 1).padStart(2, '0')} / {String(menuSections.length).padStart(2, '0')}
+                  </div>
+                </div>
+
+                {/* Intro */}
+                <div className={`lg:col-span-7 ${imageRight ? 'lg:order-1 lg:pr-8' : 'lg:order-2 lg:pl-8'}`}>
+                  <div className="flex items-center gap-3 mb-5">
+                    <span style={{ fontSize: 32 }}>{section.icon}</span>
+                    <p
+                      className="text-xs font-bold tracking-widest uppercase"
+                      style={{ fontFamily: 'var(--font-body)', color: '#C8860A' }}
+                    >
+                      Section {String(idx + 1).padStart(2, '0')}
+                    </p>
+                  </div>
+                  <h2
+                    className="mb-5"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: 'clamp(2rem, 4.5vw, 3.25rem)',
+                      fontWeight: 600,
+                      lineHeight: 1.1,
+                      color: '#1A1200',
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    {section.title}
+                  </h2>
+                  <div className="mb-6" style={{ width: 60, height: 1, background: '#F0B414' }} />
+                  <p
+                    className="leading-relaxed"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontStyle: 'italic',
+                      fontSize: 'clamp(1.05rem, 1.6vw, 1.3rem)',
+                      color: '#3D2E1A',
+                      fontWeight: 400,
+                    }}
+                  >
+                    {section.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Segments grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {section.segments.map((segment, sIdx) => (
+                  <div
+                    key={segment}
+                    className="group relative bg-cream-light border border-stone-mist transition-all duration-300 cursor-default"
+                    style={{
+                      padding: '1.75rem 1.5rem',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#F0B414'
+                      e.currentTarget.style.background = '#FDF8EE'
+                      e.currentTarget.style.transform = 'translateY(-2px)'
+                      e.currentTarget.style.boxShadow = '0 8px 30px rgba(240,180,20,0.10)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#EDE8DF'
+                      e.currentTarget.style.background = '#FFFDF7'
+                      e.currentTarget.style.transform = 'translateY(0)'
+                      e.currentTarget.style.boxShadow = 'none'
+                    }}
+                  >
+                    {/* Gold corner accent (top-left) */}
+                    <div
+                      className="absolute top-0 left-0 w-6 h-6 border-t border-l opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ borderColor: '#F0B414' }}
+                    />
+                    <div
+                      className="absolute bottom-0 right-0 w-6 h-6 border-b border-r opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{ borderColor: '#F0B414' }}
+                    />
+
+                    <p
+                      className="text-[10px] font-bold tracking-widest uppercase mb-3"
+                      style={{ fontFamily: 'var(--font-body)', color: '#C8860A' }}
+                    >
+                      {String(sIdx + 1).padStart(2, '0')}
+                    </p>
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: '1.5rem',
+                        fontWeight: 500,
+                        lineHeight: 1.2,
+                        color: '#1A1200',
+                      }}
+                    >
+                      {segment}
+                    </h3>
+                    <div
+                      className="mt-4"
+                      style={{ width: 32, height: 1, background: '#D4C5A9' }}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })}
+
+      {/* ── CTA ───────────────────────────────────────────────────────────── */}
+      <section
+        className="relative py-24 text-center px-4 overflow-hidden"
+        style={{ background: '#0A0A0A' }}
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: 'url(/images/boufet-4.jpg)' }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,18,0,0.85) 50%, rgba(10,10,10,0.95) 100%)',
+          }}
+        />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <p
+            className="text-xs font-bold uppercase mb-6"
+            style={{ fontFamily: 'var(--font-body)', color: '#F0B414', letterSpacing: '0.3em' }}
+          >
+            Crafted For You
+          </p>
+          <h2
+            className="text-white leading-tight mb-4"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+              fontWeight: 600,
+            }}
+          >
+            Want a Custom Menu for Your Event?
+          </h2>
+          <p
+            className="mb-3"
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              color: '#F7D875',
+            }}
+          >
+            Every menu we present is a starting point.
+          </p>
+          <p
+            className="text-base mb-10 max-w-xl mx-auto"
+            style={{ fontFamily: 'var(--font-body)', color: 'rgba(255,255,255,0.55)' }}
+          >
+            Share your event details and Chef Gautam's team will design a menu built around your occasion, guests and preferences.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 text-xs font-bold tracking-widest uppercase border min-h-[44px] transition-all duration-300"
+              style={{ color: 'white', borderColor: 'rgba(255,255,255,0.4)' }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.9)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.08)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.4)'
+                e.currentTarget.style.background = 'transparent'
+              }}
+            >
+              <Download size={14} strokeWidth={1.5} />
+              Download Menu PDF
+            </a>
+            <QuoteButton label="Get a Free Quote" variant="primary" className="text-sm px-10 py-4 min-h-[52px]" />
           </div>
         </div>
       </section>

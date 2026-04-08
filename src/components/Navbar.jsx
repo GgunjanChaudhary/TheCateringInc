@@ -70,7 +70,7 @@ export default function Navbar() {
             <img
               src="/logo.png"
               alt="The Catering Inc. by Chef Gautam Chaudhry"
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
               style={{
                 maxWidth: 260,
                 filter: 'drop-shadow(0 0 12px rgba(240,180,20,0.5)) brightness(1.15)',

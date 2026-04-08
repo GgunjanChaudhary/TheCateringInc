@@ -5,35 +5,39 @@ import QuoteButton from '../components/shared/QuoteButton'
 import TestimonialCard from '../components/shared/TestimonialCard'
 import { testimonials } from '../data/testimonials'
 import { useState, useEffect } from 'react'
+import heroImages from '../data/heroImages'
 
-/* ─── Carousel slides ──────────────────────────────────────────────────────── */
-const carouselSlides = [
-  {
-    image: '/images/boufet.jpg',
-    subtitle: 'Grand Buffet Experiences',
-    tagline: 'Every detail, curated with care',
-  },
-  {
-    image: '/images/IMG20240219183751.jpg',
-    subtitle: 'Weddings & Celebrations',
-    tagline: 'Your most cherished moments, honoured at the table',
-  },
-  {
-    image: '/images/buffet-3.jpg',
-    subtitle: 'Culinary Excellence',
-    tagline: 'Two decades of mastery on every plate',
-  },
-  {
-    image: '/images/IMG_9497.jpg',
-    subtitle: 'Premium Events Across Delhi NCR',
-    tagline: 'From intimate gatherings to grand feasts',
-  },
-  {
-    image: '/images/boufet-4.jpg',
-    subtitle: 'Crafted for Every Occasion',
-    tagline: 'Corporate, weddings, and everything in between',
-  },
-]
+// ─── Carousel slides (images from /public/images/hero) ───
+const carouselSlides = heroImages.map((img, idx) => {
+  // You can customize subtitle/tagline per image if needed
+  const defaultData = [
+    {
+      subtitle: 'Grand Buffet Experiences',
+      tagline: 'Every detail, curated with care',
+    },
+    {
+      subtitle: 'Weddings & Celebrations',
+      tagline: 'Your most cherished moments, honoured at the table',
+    },
+    {
+      subtitle: 'Culinary Excellence',
+      tagline: 'Two decades of mastery on every plate',
+    },
+    {
+      subtitle: 'Premium Events Across Delhi NCR',
+      tagline: 'From intimate gatherings to grand feasts',
+    },
+    {
+      subtitle: 'Crafted for Every Occasion',
+      tagline: 'Corporate, weddings, and everything in between',
+    },
+  ]
+  const meta = defaultData[idx] || { subtitle: '', tagline: '' }
+  return {
+    image: `/images/hero/${img}`,
+    ...meta,
+  }
+})
 
 /* ─── Service cards with background images ─────────────────────────────────*/
 const serviceCards = [

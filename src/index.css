@@ -122,6 +122,15 @@ body {
   animation: scrollDown 1.5s ease-in-out infinite;
 }
 
+/* Hide scrollbar (used on horizontal tab strips) */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Image hover zoom */
 .img-zoom {
   overflow: hidden;

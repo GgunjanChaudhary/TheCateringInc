@@ -4,7 +4,8 @@
       "Bash(find . -not -path */node_modules/* -type f)",
       "Bash(grep -E \"\\\\.jsx$\")",
       "mcp__Claude_Preview__preview_start",
-      "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp\\)$\")"
+      "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
+      "WebFetch(domain:www.salttcatering.net)"
     ]
   }
 }
