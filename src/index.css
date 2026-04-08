@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Google Fonts — Brand Typography */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* Tailwind v4 — Brand Color & Font Theme */
+@theme {
+  /* Fonts */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Lato', Helvetica, sans-serif;
+  --font-accent: 'Playfair Display', Georgia, serif;
+
+  /* Primary Gold */
+  --color-gold: #F0B414;
+  --color-gold-dark: #C8860A;
+  --color-gold-light: #F7D875;
+  --color-gold-pale: #FDF0C0;
+
+  /* Cream */
+  --color-cream: #FDF8EE;
+  --color-cream-light: #FFFDF7;
+  --color-cream-warm: #F5EDDA;
+
+  /* Copper Accent */
+  --color-copper: #B5621E;
+  --color-copper-light: #D4813A;
+
+  /* Warm Stone Neutrals */
+  --color-stone-warm: #8B7355;
+  --color-stone-sand: #D4C5A9;
+  --color-stone-mist: #EDE8DF;
+
+  /* Text Colors */
+  --color-richblack: #1A1200;
+  --color-walnut: #3D2E1A;
+  --color-taupe: #6B5A45;
+  --color-amber: #C8860A;
+
+  /* Background Colors */
+  --color-page: #FFFDF7;
+  --color-section: #FDF8EE;
+  --color-canvas: #1A1200;
+  --color-night: #0D0900;
+
+  /* WhatsApp */
+  --color-whatsapp: #25D366;
+}
+
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-page);
+  color: var(--color-walnut);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Utility helpers */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-body {
+  font-family: var(--font-body);
+}
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+/* Divider ornament */
+.brand-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.brand-divider::before,
+.brand-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-stone-sand);
+}
+
+/* Scroll-to-top & WhatsApp floating button animations */
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* Fade-in scroll animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Scroll-down arrow animation */
+@keyframes scrollDown {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.5; }
+}
+.animate-scroll-down {
+  animation: scrollDown 1.5s ease-in-out infinite;
+}
+
+/* Image hover zoom */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.5s ease;
+}
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
