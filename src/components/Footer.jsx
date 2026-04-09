@@ -49,7 +49,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div>
             <img
-              src="/logo.png"
+              src="/TCI/logo.png"
               alt="The Catering Inc."
               className="h-14 w-auto object-contain mb-4"
               style={{ minWidth: 180, maxWidth: 260 }}

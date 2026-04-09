@@ -1,11 +1,11 @@
-# SPA routing — send all non-file requests to index.html so React Router can handle them
+# SPA routing for /TCI/ — send non-file requests to /TCI/index.html so React Router handles them
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
+  RewriteBase /TCI/
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  RewriteRule . /TCI/index.html [L]
 </IfModule>
 
 # Gzip compression for faster load times

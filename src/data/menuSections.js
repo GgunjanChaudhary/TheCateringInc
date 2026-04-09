@@ -5,7 +5,7 @@ const menuSections = [
     label: "Pass Around",
     title: "Pass Around Appetizers",
     description: "A curated selection of handcrafted small bites, elegantly served to your guests.",
-    image: "/images/ShikampuriKababs.jpg",
+    image: "/TCI/images/ShikampuriKababs.jpg",
     segments: [
       "Tandoori Specialties",
       "Indian Street Bites",
@@ -21,7 +21,7 @@ const menuSections = [
     label: "Live Counters",
     title: "Live Counters",
     description: "Interactive culinary experiences, freshly prepared by our chefs.",
-    image: "/images/Chat Counter 3.JPG",
+    image: "/TCI/images/Chat Counter 3.JPG",
     segments: [
       "Pizza Station",
       "Pasta & Risotto Bar",
@@ -41,7 +41,7 @@ const menuSections = [
     label: "Chaat",
     title: "Chaat Station",
     description: "An elevated take on India's most loved street food traditions.",
-    image: "/images/PaaniPoori.jpg",
+    image: "/TCI/images/PaaniPoori.jpg",
     segments: [
       "Classic Chaat",
       "Regional Specialties",
@@ -55,7 +55,7 @@ const menuSections = [
     label: "Salads",
     title: "Salad Station",
     description: "Fresh, vibrant, and thoughtfully curated selections.",
-    image: "/images/gty_grilled_vegetables_ll_130628_16x9_992.jpg",
+    image: "/TCI/images/gty_grilled_vegetables_ll_130628_16x9_992.jpg",
     segments: [
       "International Salads",
       "Indian Salads & Raitas",
@@ -69,7 +69,7 @@ const menuSections = [
     label: "Global",
     title: "Global Cuisine",
     description: "A diverse selection of global flavors crafted with finesse.",
-    image: "/images/1472797337_food2.jpg",
+    image: "/TCI/images/1472797337_food2.jpg",
     segments: [
       "Italian Cuisine",
       "Asian & Oriental Cuisine",
@@ -85,7 +85,7 @@ const menuSections = [
     label: "Main Course",
     title: "Main Course",
     description: "Rich, indulgent, and rooted in tradition with a contemporary touch.",
-    image: "/images/buffet-3.jpg",
+    image: "/TCI/images/buffet-3.jpg",
     segments: [
       "Indian Main Course",
       "Regional Indian Concepts",
@@ -100,7 +100,7 @@ const menuSections = [
     label: "Breads",
     title: "Breads",
     description: "A perfect accompaniment to elevate every dish.",
-    image: "/images/1472797521_food6.jpg",
+    image: "/TCI/images/1472797521_food6.jpg",
     segments: [
       "Indian Breads",
       "Specialty Kulchas & Parathas",
@@ -113,7 +113,7 @@ const menuSections = [
     label: "Desserts",
     title: "Dessert Bar",
     description: "A delightful finale to your culinary experience.",
-    image: "/images/DessertBar.jpg",
+    image: "/TCI/images/DessertBar.jpg",
     segments: [
       "Indian Desserts",
       "Western Desserts",
@@ -127,7 +127,7 @@ const menuSections = [
     label: "Beverages",
     title: "Mocktails & Beverages",
     description: "Refreshing blends crafted to complement every celebration.",
-    image: "/images/1472797602_food8.jpg",
+    image: "/TCI/images/1472797602_food8.jpg",
     segments: [
       "Signature Mocktails",
       "Traditional Indian Coolers",

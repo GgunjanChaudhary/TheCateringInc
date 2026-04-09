@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/logo.png"
+              src="/TCI/logo.png"
               alt="The Catering Inc. by Chef Gautam Chaudhry"
               className="h-20 w-auto object-contain"
               style={{

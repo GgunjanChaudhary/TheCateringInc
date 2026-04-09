@@ -33,22 +33,22 @@ const sampleDesserts = [
 const pastEvents = [
   {
     id: 1,
-    src: '/images/IMG_20201209_184627.jpg',
+    src: '/TCI/images/IMG_20201209_184627.jpg',
     caption: 'Grand Reception — 800 Guests, Gurgaon',
   },
   {
     id: 2,
-    src: '/images/IMG_20201209_200651.jpg',
+    src: '/TCI/images/IMG_20201209_200651.jpg',
     caption: 'Destination Wedding — Rajasthan',
   },
   {
     id: 3,
-    src: '/images/IMG_20201209_200904.jpg',
+    src: '/TCI/images/IMG_20201209_200904.jpg',
     caption: 'Intimate Ceremony — 120 Guests, Delhi',
   },
   {
     id: 4,
-    src: '/images/IMG_20201212_185651.jpg',
+    src: '/TCI/images/IMG_20201212_185651.jpg',
     caption: 'Multi-Day Wedding Festivities — Noida',
   },
 ]
