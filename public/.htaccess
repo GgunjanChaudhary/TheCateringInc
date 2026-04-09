@@ -1,7 +1,18 @@
+# Disable directory listing — prevents browsing folders like /images/
+Options -Indexes
+
 # Portable SPA routing — works whether deployed to domain root or a subfolder.
 # Apache uses the directory this .htaccess sits in as the rewrite base.
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Hotlink protection — block other sites from embedding your images
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?thecateringinc\.com [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?ggunjanchaudhary\.github\.io [NC]
+  RewriteRule \.(jpe?g|png|gif|webp|svg)$ - [F,NC,L]
+
+  # SPA fallback
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d

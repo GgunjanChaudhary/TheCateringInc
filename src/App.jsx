@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/shared/WhatsAppButton'
@@ -23,6 +24,15 @@ import FAQ from './pages/FAQ'
 import Contact from './pages/Contact'
 
 export default function App() {
+  // Deter casual image saving — block right-click on images
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      if (e.target.tagName === 'IMG') e.preventDefault()
+    }
+    document.addEventListener('contextmenu', handleContextMenu)
+    return () => document.removeEventListener('contextmenu', handleContextMenu)
+  }, [])
+
   return (
     <div className="flex flex-col min-h-screen" style={{ fontFamily: 'var(--font-body)' }}>
       <Navbar />
