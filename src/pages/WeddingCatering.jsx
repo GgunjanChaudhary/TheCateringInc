@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async'
 import { Check, Star, Phone, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
 
+const BASE = import.meta.env.BASE_URL
+
 const included = [
   'Dedicated wedding event manager assigned to you from booking to service',
   'Live counter setups — Chaat, Kebab, Carving Station, Dessert Counter',
@@ -33,22 +35,22 @@ const sampleDesserts = [
 const pastEvents = [
   {
     id: 1,
-    src: '/TCI/images/IMG_20201209_184627.jpg',
+    src: `${BASE}images/IMG_20201209_184627.jpg`,
     caption: 'Grand Reception — 800 Guests, Gurgaon',
   },
   {
     id: 2,
-    src: '/TCI/images/IMG_20201209_200651.jpg',
+    src: `${BASE}images/IMG_20201209_200651.jpg`,
     caption: 'Destination Wedding — Rajasthan',
   },
   {
     id: 3,
-    src: '/TCI/images/IMG_20201209_200904.jpg',
+    src: `${BASE}images/IMG_20201209_200904.jpg`,
     caption: 'Intimate Ceremony — 120 Guests, Delhi',
   },
   {
     id: 4,
-    src: '/TCI/images/IMG_20201212_185651.jpg',
+    src: `${BASE}images/IMG_20201212_185651.jpg`,
     caption: 'Multi-Day Wedding Festivities — Noida',
   },
 ]

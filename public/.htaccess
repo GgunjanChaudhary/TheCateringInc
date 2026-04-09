@@ -1,11 +1,11 @@
-# SPA routing for /TCI/ — send non-file requests to /TCI/index.html so React Router handles them
+# Portable SPA routing — works whether deployed to domain root or a subfolder.
+# Apache uses the directory this .htaccess sits in as the rewrite base.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /TCI/
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /TCI/index.html [L]
+  RewriteRule . index.html [L]
 </IfModule>
 
 # Gzip compression for faster load times

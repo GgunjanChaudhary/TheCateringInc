@@ -7,6 +7,8 @@ import { testimonials } from '../data/testimonials'
 import { useState, useEffect } from 'react'
 import heroImages from '../data/heroImages'
 
+const BASE = import.meta.env.BASE_URL
+
 // ─── Carousel slides (images from /public/images/hero) ───
 const carouselSlides = heroImages.map((img, idx) => {
   // You can customize subtitle/tagline per image if needed
@@ -45,35 +47,35 @@ const serviceCards = [
     icon: Heart,
     title: 'Weddings',
     description: 'Grand receptions to intimate ceremonies — crafted with the reverence your celebration deserves.',
-    image: '/TCI/images/hindu-indian-wedding-137.jpg',
+    image: `${BASE}images/hindu-indian-wedding-137.jpg`,
     to: '/services/wedding',
   },
   {
     icon: Briefcase,
     title: 'Corporate Events',
     description: 'Office lunches, product launches, annual days — delivered with professional precision.',
-    image: '/TCI/images/1472798003_event2.jpg',
+    image: `${BASE}images/1472798003_event2.jpg`,
     to: '/services/corporate',
   },
   {
     icon: PartyPopper,
     title: 'Social Parties & Events',
     description: 'Milestone birthdays, anniversaries and social gatherings — menus that match the mood.',
-    image: '/TCI/images/buffet-3.jpg',
+    image: `${BASE}images/buffet-3.jpg`,
     to: '/services/birthday-parties',
   },
   {
     icon: HomeIcon,
     title: 'Home Parties',
     description: 'Intimate gatherings, kitty parties and family celebrations — fine dining at your doorstep.',
-    image: '/TCI/images/CheeseDisplay.jpg',
+    image: `${BASE}images/CheeseDisplay.jpg`,
     to: '/services/indian-occasions',
   },
   {
     icon: Plane,
     title: 'Destination Weddings',
     description: 'Weddings at exotic venues — full field kitchen, logistics and team, end to end.',
-    image: '/TCI/images/Dinner-Buffet-In-Hyderabad.jpg',
+    image: `${BASE}images/Dinner-Buffet-In-Hyderabad.jpg`,
     to: '/services/bulk-outdoor',
   },
 ]
@@ -83,22 +85,22 @@ const menuCategories = [
   {
     title: 'Vegetarian Feast',
     description: 'Rustic Indian thalis, paneer specialities, seasonal vegetables and farm-fresh preparations.',
-    image: '/TCI/images/gty_grilled_vegetables_ll_130628_16x9_992.jpg',
+    image: `${BASE}images/gty_grilled_vegetables_ll_130628_16x9_992.jpg`,
   },
   {
     title: 'Non-Vegetarian',
     description: 'Tandoor kebabs, dum biryanis, slow-cooked curries and grilled specialities.',
-    image: '/TCI/images/bbq-1.jpg',
+    image: `${BASE}images/bbq-1.jpg`,
   },
   {
     title: 'Live Counters & Chaat',
     description: 'Paani puri, dahi bhalla, dosa, pasta, sushi, mocktail bars — the theatre of food.',
-    image: '/TCI/images/PaaniPoori.jpg',
+    image: `${BASE}images/PaaniPoori.jpg`,
   },
   {
     title: 'Sweets & Desserts',
     description: 'Jalebi with rabri, gulab jamun, kulfi, phirni and contemporary dessert stations.',
-    image: '/TCI/images/5929BF5FB7926252_Punjabi-Di-Rasoi-ki-Jalebi-Naal-Rabri.jpg',
+    image: `${BASE}images/5929BF5FB7926252_Punjabi-Di-Rasoi-ki-Jalebi-Naal-Rabri.jpg`,
   },
 ]
 
@@ -119,12 +121,12 @@ const whyChooseUs = [
 
 /* ─── Gallery strip images ──────────────────────────────────────────────────*/
 const homepageGallery = [
-  { src: '/TCI/images/IMG20240219183751.jpg', alt: 'Event catering setup' },
-  { src: '/TCI/images/IMG20240219183827.jpg', alt: 'Food spread at event' },
-  { src: '/TCI/images/IMG20240315113303.jpg', alt: 'Catering at event' },
-  { src: '/TCI/images/boufet.jpg',            alt: 'Grand buffet display' },
-  { src: '/TCI/images/buffet-3.jpg',          alt: 'Buffet spread' },
-  { src: '/TCI/images/IMG_9497.jpg',          alt: 'Live counter setup' },
+  { src: `${BASE}images/IMG20240219183751.jpg`, alt: 'Event catering setup' },
+  { src: `${BASE}images/IMG20240219183827.jpg`, alt: 'Food spread at event' },
+  { src: `${BASE}images/IMG20240315113303.jpg`, alt: 'Catering at event' },
+  { src: `${BASE}images/boufet.jpg`,            alt: 'Grand buffet display' },
+  { src: `${BASE}images/buffet-3.jpg`,          alt: 'Buffet spread' },
+  { src: `${BASE}images/IMG_9497.jpg`,          alt: 'Live counter setup' },
 ]
 
 /* ═══════════════════════════════════════════════════════════════════════════ */
@@ -302,7 +304,7 @@ export default function Home() {
             {/* Image side — 2 cols */}
             <div className="lg:col-span-2 relative overflow-hidden" style={{ height: '520px' }}>
               <img
-                src="/TCI/images/CheeseDisplay.jpg"
+                src={`${BASE}images/CheeseDisplay.jpg`}
                 alt="Cheese display by The Catering Inc."
                 className="absolute inset-0 w-full h-full object-cover"
               />
