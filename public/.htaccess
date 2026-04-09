@@ -8,8 +8,9 @@ Options -Indexes
 
   # Hotlink protection — block other sites from embedding your images
   RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?demiurgic\.co\.in [NC]
   RewriteCond %{HTTP_REFERER} !^https?://(www\.)?thecateringinc\.com [NC]
-  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?ggunjanchaudhary\.github\.io [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?chefgautam\.in [NC]
   RewriteRule \.(jpe?g|png|gif|webp|svg)$ - [F,NC,L]
 
   # SPA fallback
