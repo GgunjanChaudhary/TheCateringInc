@@ -36,7 +36,7 @@ const carouselSlides = heroImages.map((img, idx) => {
   ]
   const meta = defaultData[idx] || { subtitle: '', tagline: '' }
   return {
-    image: `/images/hero/${img}`,
+    image: `${BASE}images/hero/${img}`,
     ...meta,
   }
 })
