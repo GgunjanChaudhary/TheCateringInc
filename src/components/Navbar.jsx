@@ -3,11 +3,11 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
 const serviceLinks = [
-  { label: 'Wedding Catering', to: '/services/wedding' },
-  { label: 'Corporate Catering', to: '/services/corporate' },
-  { label: 'Birthday & Parties', to: '/services/birthday-parties' },
-  { label: 'Indian Occasions', to: '/services/indian-occasions' },
-  { label: 'Bulk & Outdoor', to: '/services/bulk-outdoor' },
+  { label: 'Weddings', to: '/services/wedding' },
+  { label: 'Corporate Events', to: '/services/corporate' },
+  { label: 'Social Parties and Events', to: '/services/birthday-parties' },
+  { label: 'Home Parties', to: '/services/indian-occasions' },
+  { label: 'Destination Weddings', to: '/services/bulk-outdoor' },
 ]
 
 const navLinks = [

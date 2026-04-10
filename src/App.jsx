@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/shared/WhatsAppButton'
 import ScrollToTop from './components/shared/ScrollToTop'
+import ScrollToTopOnRouteChange from './components/shared/ScrollToTopOnRouteChange'
 
 import Home from './pages/Home'
 import About from './pages/About'
@@ -36,6 +37,7 @@ export default function App() {
   return (
     <div className="flex flex-col min-h-screen" style={{ fontFamily: 'var(--font-body)' }}>
       <Navbar />
+      <ScrollToTopOnRouteChange />
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
