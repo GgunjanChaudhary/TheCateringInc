@@ -1,11 +1,26 @@
 import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
-import { Download } from 'lucide-react'
+import heroImages from '../data/heroImages'
+import { Download, ChevronLeft, ChevronRight } from 'lucide-react'
 import menuSections from '../data/menuSections'
 import QuoteButton from '../components/shared/QuoteButton'
 
+const BASE = import.meta.env.BASE_URL
+const menuHeroSlides = (heroImages.menus || []).map((img) => ({ image: img }))
+
 export default function Menus() {
   const [activeId, setActiveId] = useState(menuSections[0].id)
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Auto-advance hero carousel
+  useEffect(() => {
+    if (!menuHeroSlides.length) return
+    const timer = setTimeout(
+      () => setCurrentSlide((prev) => (prev + 1) % menuHeroSlides.length),
+      5500
+    )
+    return () => clearTimeout(timer)
+  }, [currentSlide])
 
   // Scroll-spy: highlight the section currently in view
   useEffect(() => {
@@ -44,20 +59,29 @@ export default function Menus() {
         />
       </Helmet>
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden" style={{ background: '#0A0A0A' }}>
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
-          style={{ backgroundImage: 'url(/images/boufet.jpg)' }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'linear-gradient(160deg, rgba(10,10,10,0.92) 0%, rgba(26,18,0,0.78) 50%, rgba(10,10,10,0.94) 100%)',
-          }}
-        />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-28 text-center">
+      {/* ── Hero Carousel ────────────────────────────────────────────────── */}
+      <section
+        className="relative flex items-center justify-center overflow-hidden"
+        style={{ height: 'min(75vh, 620px)', minHeight: '420px' }}
+      >
+        {menuHeroSlides.map((slide, idx) => (
+          <div
+            key={idx}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ opacity: idx === currentSlide ? 1 : 0, pointerEvents: idx === currentSlide ? 'auto' : 'none' }}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(160deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.75) 100%)' }}
+            />
+          </div>
+        ))}
+
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <p
             className="text-xs font-bold uppercase mb-5"
             style={{ fontFamily: 'var(--font-body)', color: '#F0B414', letterSpacing: '0.35em' }}
@@ -65,17 +89,18 @@ export default function Menus() {
             What We Serve
           </p>
           <h1
-            className="text-white leading-none mb-6"
+            className="text-white leading-none mb-5"
             style={{
               fontFamily: 'var(--font-display)',
               fontSize: 'clamp(2.6rem, 6.5vw, 5rem)',
               fontWeight: 600,
               letterSpacing: '-0.01em',
+              textShadow: '0 2px 20px rgba(0,0,0,0.5)',
             }}
           >
             Our Curated Menus
           </h1>
-          <div className="mx-auto mb-6" style={{ width: 60, height: 1, background: '#F0B414' }} />
+          <div className="mx-auto mb-5" style={{ width: 60, height: 1, background: '#F0B414' }} />
           <p
             className="mx-auto max-w-2xl mb-10"
             style={{
@@ -108,6 +133,45 @@ export default function Menus() {
             </a>
             <QuoteButton label="Get a Custom Menu" variant="primary" className="min-h-[44px]" />
           </div>
+        </div>
+
+        {/* Prev / Next */}
+        <button
+          onClick={() => setCurrentSlide((currentSlide - 1 + menuHeroSlides.length) % menuHeroSlides.length)}
+          className="absolute left-5 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center transition-all duration-300"
+          style={{ width: 48, height: 48, border: '1px solid rgba(255,255,255,0.25)', color: 'white' }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(240,180,20,0.8)'; e.currentTarget.style.color = '#F0B414' }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'white' }}
+          aria-label="Previous slide"
+        >
+          <ChevronLeft size={20} strokeWidth={1.5} />
+        </button>
+        <button
+          onClick={() => setCurrentSlide((currentSlide + 1) % menuHeroSlides.length)}
+          className="absolute right-5 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center transition-all duration-300"
+          style={{ width: 48, height: 48, border: '1px solid rgba(255,255,255,0.25)', color: 'white' }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(240,180,20,0.8)'; e.currentTarget.style.color = '#F0B414' }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = 'white' }}
+          aria-label="Next slide"
+        >
+          <ChevronRight size={20} strokeWidth={1.5} />
+        </button>
+
+        {/* Dots */}
+        <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center items-center gap-3">
+          {menuHeroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentSlide(idx)}
+              aria-label={`Go to slide ${idx + 1}`}
+              className="transition-all duration-500"
+              style={{
+                height: 2,
+                width: idx === currentSlide ? 40 : 10,
+                background: idx === currentSlide ? '#F0B414' : 'rgba(255,255,255,0.35)',
+              }}
+            />
+          ))}
         </div>
       </section>
 
@@ -307,7 +371,7 @@ export default function Menus() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: 'url(/images/boufet-4.jpg)' }}
+          style={{ backgroundImage: `url(${BASE}images/boufet-4.jpg)` }}
         />
         <div
           className="absolute inset-0"
