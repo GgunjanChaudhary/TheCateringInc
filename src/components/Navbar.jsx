@@ -15,7 +15,6 @@ const navLinks = [
   { label: 'Menus', to: '/menus' },
   { label: 'Services', to: '/services', hasDropdown: true },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Pricing', to: '/pricing' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },

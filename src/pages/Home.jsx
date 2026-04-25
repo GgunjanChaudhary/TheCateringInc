@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { Heart, Briefcase, PartyPopper, Home as HomeIcon, Plane, ChevronLeft, ChevronRight, Clock, Users, Star, UtensilsCrossed } from 'lucide-react'
+import { Heart, Briefcase, PartyPopper, Home as HomeIcon, Plane, ChevronLeft, ChevronRight, Clock, Users, Star, UtensilsCrossed, Phone } from 'lucide-react'
 import QuoteButton from '../components/shared/QuoteButton'
 import TestimonialCard from '../components/shared/TestimonialCard'
 import { testimonials } from '../data/testimonials'
@@ -9,9 +9,8 @@ import heroImages from '../data/heroImages'
 
 const BASE = import.meta.env.BASE_URL
 
-// ─── Carousel slides (images from /public/images/hero) ───
-const carouselSlides = heroImages.map((img, idx) => {
-  // You can customize subtitle/tagline per image if needed
+// ─── Carousel slides (images from /public/images/hero/home) ───
+const carouselSlides = (heroImages.home || []).map((img, idx) => {
   const defaultData = [
     {
       subtitle: 'Grand Buffet Experiences',
@@ -36,7 +35,7 @@ const carouselSlides = heroImages.map((img, idx) => {
   ]
   const meta = defaultData[idx] || { subtitle: '', tagline: '' }
   return {
-    image: `${BASE}images/hero/${img}`,
+    image: img,
     ...meta,
   }
 })
@@ -230,6 +229,16 @@ export default function Home() {
               Explore Our Menus
             </Link>
             <QuoteButton label="Get a Free Quote" variant="primary" className="min-h-[44px]" />
+            <a
+              href="tel:+919560459999"
+              className="inline-flex items-center justify-center gap-2 px-9 py-3.5 text-xs font-bold tracking-widest uppercase transition-all duration-300 min-h-[44px]"
+              style={{ color: '#F0B414', border: '1px solid rgba(240,180,20,0.5)' }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(240,180,20,0.12)'; e.currentTarget.style.borderColor = '#F0B414' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(240,180,20,0.5)' }}
+            >
+              <Phone size={13} strokeWidth={2} />
+              Call Us Now
+            </a>
           </div>
         </div>
 
