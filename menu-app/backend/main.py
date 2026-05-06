@@ -9,7 +9,7 @@ import json
 import os
 import uuid
 
-from .auth import login_with_password, revoke_token, verify_token
+from auth import login_with_password, revoke_token, verify_token
 
 
 class SubSection(BaseModel):
