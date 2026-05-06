@@ -5,7 +5,8 @@
       "Bash(grep -E \"\\\\.jsx$\")",
       "mcp__Claude_Preview__preview_start",
       "Bash(grep -iE \"\\\\.\\(jpg|jpeg|png|webp\\)$\")",
-      "WebFetch(domain:www.salttcatering.net)"
+      "WebFetch(domain:www.salttcatering.net)",
+      "Bash(npx vite:*)"
     ]
   }
 }

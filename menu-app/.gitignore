@@ -1,0 +1,4 @@
+persistent_data/
+backend/.env
+frontend/dist/
+frontend/node_modules/

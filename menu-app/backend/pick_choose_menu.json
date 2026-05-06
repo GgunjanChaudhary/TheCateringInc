@@ -1,0 +1,5075 @@
+{
+  "source": "data/menu_items/*.json + data/menu_items/welcome_drink.csv",
+  "sections": {
+    "Welcome Drink": {
+      "Default": [
+        {
+          "name": "Nariyal Paani Lemonade with Silver Pearls",
+          "short_description": "A Catering Inc. specialty — refreshing coconut water blended with lemonade and silver pearls",
+          "premium_description": "A Catering Inc. specialty — refreshing coconut water blended with lemonade and silver pearls",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Kokum Sherbet",
+          "short_description": "An elixir from down south prepared with the delicate fruit Kokum",
+          "premium_description": "An elixir from down south prepared with the delicate fruit Kokum",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Rasam Shots",
+          "short_description": "Warm tomato broth tempered with asafetida and mustard",
+          "premium_description": "Warm tomato broth tempered with asafetida and mustard",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Aam Panna",
+          "short_description": "Raw mango cooler spiced with cumin and mint",
+          "premium_description": "Raw mango cooler spiced with cumin and mint",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Jaljeera",
+          "short_description": "Tangy cumin-flavored refreshing drink with mint and lemon",
+          "premium_description": "Tangy cumin-flavored refreshing drink with mint and lemon",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Thandai",
+          "short_description": "Traditional Indian milk drink infused with saffron and dry fruits",
+          "premium_description": "Traditional Indian milk drink infused with saffron and dry fruits",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Rose Sharbat",
+          "short_description": "Chilled rose petal infused sweet drink with basil seeds",
+          "premium_description": "Chilled rose petal infused sweet drink with basil seeds",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Sattu Sharbat",
+          "short_description": "Roasted gram flour cooler with lemon and rock salt",
+          "premium_description": "Roasted gram flour cooler with lemon and rock salt",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Buransh Sherbet",
+          "short_description": "Himalayan rhododendron flower cooler with a tangy-sweet note",
+          "premium_description": "Himalayan rhododendron flower cooler with a tangy-sweet note",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        },
+        {
+          "name": "Bael Sharbat",
+          "short_description": "Wood apple pulp blended with sugar and chilled to perfection",
+          "premium_description": "Wood apple pulp blended with sugar and chilled to perfection",
+          "tags": [
+            "welcome",
+            "drink"
+          ]
+        }
+      ]
+    },
+    "Salad Bar": {
+      "Western": [
+        {
+          "name": "Potato, chicken and celery with mustard aioli",
+          "short_description": "Chicken potato salad",
+          "premium_description": "A creamy salad combining potato, chicken, and celery with mustard aioli dressing.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Seafood, cucumber and dill salad",
+          "short_description": "Seafood salad",
+          "premium_description": "A refreshing salad of seafood, cucumber, and dill with a light dressing.",
+          "tags": [
+            "salad",
+            "seafood"
+          ]
+        },
+        {
+          "name": "Nicosia style potato and bean salad",
+          "short_description": "Potato bean salad",
+          "premium_description": "A Mediterranean-style salad with potatoes and beans dressed in herbs.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chicken and pineapple salad",
+          "short_description": "Chicken pineapple salad",
+          "premium_description": "A sweet and savory mix of chicken and pineapple with a light dressing.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Sausage, bell pepper and baby corn salad",
+          "short_description": "Sausage salad",
+          "premium_description": "A hearty salad with sausage, bell peppers, and baby corn.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Shredded lamb, bell pepper and spring onion salad",
+          "short_description": "Lamb salad",
+          "premium_description": "Tender shredded lamb tossed with bell peppers and spring onions.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Cherry tomato, broccoli and button mushroom with aged balsamic vinegar",
+          "short_description": "Veg balsamic salad",
+          "premium_description": "Fresh vegetables dressed with aged balsamic vinegar for a tangy finish.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Greek farmer style salad",
+          "short_description": "Greek salad",
+          "premium_description": "Classic Greek salad with fresh vegetables, olives, and feta cheese.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Apple, green bean and walnut salad",
+          "short_description": "Apple walnut salad",
+          "premium_description": "A crunchy mix of apples, beans, and walnuts with a light dressing.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Potato, American corn salad with mustard aioli",
+          "short_description": "Corn potato salad",
+          "premium_description": "Potato and corn salad tossed in creamy mustard aioli.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Carrot, apple and sundried tomato salad",
+          "short_description": "Carrot apple salad",
+          "premium_description": "A colorful mix of carrot, apple, and sundried tomato.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Tomato mozzarella salad",
+          "short_description": "Mozzarella salad",
+          "premium_description": "Fresh tomatoes paired with mozzarella and herbs.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Cucumber mint yoghurt",
+          "short_description": "Cucumber yogurt",
+          "premium_description": "Cooling cucumber mixed with mint and yogurt.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Mushroom salad with black olives, capers & semi-dried",
+          "short_description": "Mushroom salad",
+          "premium_description": "Mushroom salad with olives, capers, and herbs.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Apple celery & walnut salad",
+          "short_description": "Apple celery salad",
+          "premium_description": "A refreshing mix of apple, celery, and walnuts.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Cucumber salad with yoghurt dressing",
+          "short_description": "Cucumber salad",
+          "premium_description": "Cucumber tossed in a creamy yogurt dressing.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Apple beans and sundried tomato salad",
+          "short_description": "Apple bean salad",
+          "premium_description": "A mix of apples, beans, and sundried tomatoes.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Three beans salad",
+          "short_description": "Bean salad",
+          "premium_description": "A healthy blend of three types of beans.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Hummus",
+          "short_description": "Chickpea dip",
+          "premium_description": "Smooth chickpea dip flavored with tahini and olive oil.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Fatuous",
+          "short_description": "Middle eastern salad",
+          "premium_description": "A traditional Middle Eastern salad with herbs and crisp textures.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Babaganoush",
+          "short_description": "Eggplant dip",
+          "premium_description": "Smoky eggplant dip blended with sesame and spices.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Labneh",
+          "short_description": "Yogurt cheese",
+          "premium_description": "Strained yogurt served creamy and rich with herbs.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        }
+      ],
+      "Asian": [
+        {
+          "name": "Thai chicken and raw papaya salad",
+          "short_description": "Thai papaya salad",
+          "premium_description": "A Thai-style salad with chicken and raw papaya in tangy dressing.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Thai chicken and glass noodle salad",
+          "short_description": "Noodle salad",
+          "premium_description": "Glass noodles tossed with chicken in Thai dressing.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Som tom salad",
+          "short_description": "Papaya salad",
+          "premium_description": "Classic Thai raw papaya salad with spicy and tangy flavors.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Thai Glass noodles salad with peppers",
+          "short_description": "Glass noodle salad",
+          "premium_description": "Glass noodles tossed with peppers and Thai seasoning.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kimchi salad",
+          "short_description": "Kimchi",
+          "premium_description": "Fermented cabbage salad with Korean spices.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Achar awak",
+          "short_description": "Pickled salad",
+          "premium_description": "Asian-style pickled vegetable preparation.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Asian noodles salad",
+          "short_description": "Noodle salad",
+          "premium_description": "Noodles tossed with vegetables in Asian dressing.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Cucumber and pineapple with thai chili sauce",
+          "short_description": "Fruit salad",
+          "premium_description": "Cucumber and pineapple tossed in Thai chili sauce.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        }
+      ],
+      "Indian": [
+        {
+          "name": "Chicken Tikka chat",
+          "short_description": "Chicken chaat",
+          "premium_description": "Tandoori chicken served in chaat style with tangy toppings.",
+          "tags": [
+            "salad",
+            "non-vegetarian"
+          ]
+        },
+        {
+          "name": "Dhaba salad",
+          "short_description": "Dhaba salad",
+          "premium_description": "Simple Indian salad with onion, cucumber, and tomato.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kachumber salad",
+          "short_description": "Kachumber",
+          "premium_description": "Fresh chopped vegetables seasoned with lemon and spices.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Fresh Fruit chat",
+          "short_description": "Fruit chaat",
+          "premium_description": "Seasonal fruits tossed with chaat masala.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Aloo anar ki chat",
+          "short_description": "Potato chaat",
+          "premium_description": "Potatoes and pomegranate mixed with spices.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Koshambir salad",
+          "short_description": "Koshambir",
+          "premium_description": "Traditional Indian salad with lentils and vegetables.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Tandoori falon ki chaat",
+          "short_description": "Tandoori fruit chaat",
+          "premium_description": "Fruits lightly grilled and served in chaat style.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Sprout salad",
+          "short_description": "Sprouts salad",
+          "premium_description": "Healthy mix of sprouts with seasoning.",
+          "tags": [
+            "salad",
+            "vegetarian",
+            "healthy"
+          ]
+        },
+        {
+          "name": "Channe ke chaat",
+          "short_description": "Chana chaat",
+          "premium_description": "Spiced chickpea chaat with tangy flavors.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Aloo channa chat",
+          "short_description": "Aloo chana chaat",
+          "premium_description": "Potato and chickpea mix with spices.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Papdi chat",
+          "short_description": "Papdi chaat",
+          "premium_description": "Crispy papdi topped with yogurt and chutneys.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Dahi bhalla",
+          "short_description": "Dahi bhalla",
+          "premium_description": "Soft lentil dumplings soaked in yogurt with chutneys.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Rajmah ki chat",
+          "short_description": "Rajma chaat",
+          "premium_description": "Kidney beans mixed with spices and herbs.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Paneer tikka salad",
+          "short_description": "Paneer salad",
+          "premium_description": "Grilled paneer served over fresh salad base.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Moong dal ki chat",
+          "short_description": "Moong dal chaat",
+          "premium_description": "Lentil-based chaat with tangy spices.",
+          "tags": [
+            "salad",
+            "vegetarian"
+          ]
+        }
+      ]
+    },
+    "Veg Soups": {
+      "Indian": [
+        {
+          "name": "Tomato dhaniye ka shorba",
+          "short_description": "Tomato coriander soup",
+          "premium_description": "A light and refreshing Indian broth made with ripe tomatoes, fresh coriander, and subtle spices.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "indian"
+          ]
+        },
+        {
+          "name": "Tamatar gajar aur dhaniya ka shorba",
+          "short_description": "Tomato carrot soup",
+          "premium_description": "A wholesome soup combining tomatoes, carrots, and coriander, delicately spiced for a comforting taste.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "indian"
+          ]
+        },
+        {
+          "name": "Subz badam ka shorba",
+          "short_description": "Vegetable almond soup",
+          "premium_description": "A rich and creamy soup made with mixed vegetables and almonds, offering a smooth texture and nutty flavor.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "indian"
+          ]
+        },
+        {
+          "name": "Khumb aur nimbu ka shorba",
+          "short_description": "Mushroom lemon soup",
+          "premium_description": "A delicate mushroom broth enhanced with a hint of lemon for a refreshing finish.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "indian"
+          ]
+        },
+        {
+          "name": "Rasam",
+          "short_description": "Spiced tamarind soup",
+          "premium_description": "A traditional South Indian soup made with tamarind, spices, and herbs, known for its tangy and aromatic flavor.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "indian"
+          ]
+        }
+      ],
+      "Continental": [
+        {
+          "name": "Cream of mushroom",
+          "short_description": "Mushroom soup",
+          "premium_description": "A rich and velvety soup made with fresh mushrooms and cream, delivering a smooth and earthy flavor.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "creamy"
+          ]
+        },
+        {
+          "name": "Cream of broccoli",
+          "short_description": "Broccoli soup",
+          "premium_description": "A creamy soup prepared with fresh broccoli, blended to a smooth and comforting consistency.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "creamy"
+          ]
+        },
+        {
+          "name": "Green pea thyme soup",
+          "short_description": "Pea soup",
+          "premium_description": "A vibrant soup made with green peas and infused with thyme for a subtle herbal aroma.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Minestrone with basil pesto",
+          "short_description": "Minestrone soup",
+          "premium_description": "A classic Italian vegetable soup enriched with basil pesto and herbs.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Cream of asparagus",
+          "short_description": "Asparagus soup",
+          "premium_description": "A creamy and delicate soup made with fresh asparagus, offering a refined taste.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "creamy"
+          ]
+        },
+        {
+          "name": "Roasted pumpkin volute",
+          "short_description": "Pumpkin soup",
+          "premium_description": "A smooth roasted pumpkin soup with a rich texture and subtle sweetness.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Roasted tomato basil",
+          "short_description": "Tomato basil soup",
+          "premium_description": "Roasted tomatoes blended with fresh basil to create a rich and aromatic soup.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        }
+      ],
+      "Oriental": [
+        {
+          "name": "Hot and sour soup",
+          "short_description": "Spicy sour soup",
+          "premium_description": "A classic Indo-Chinese soup balancing spicy and tangy flavors with vegetables.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Sweet corn soup",
+          "short_description": "Corn soup",
+          "premium_description": "A mildly sweet and comforting soup made with sweet corn and vegetables.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Man chow soup",
+          "short_description": "Manchow soup",
+          "premium_description": "A flavorful soup with vegetables and spices, topped with crispy noodles.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Vegetable clear soup",
+          "short_description": "Clear veg soup",
+          "premium_description": "A light broth with fresh vegetables, offering a clean and delicate flavor.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Tom yum soup",
+          "short_description": "Thai soup",
+          "premium_description": "A Thai-style soup with a tangy and aromatic broth infused with herbs and spices.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Lemon coriander soup",
+          "short_description": "Lemon soup",
+          "premium_description": "A refreshing soup flavored with lemon and coriander, offering a light and zesty taste.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Lung fung soup",
+          "short_description": "Mixed soup",
+          "premium_description": "A traditional Chinese-style soup with a blend of vegetables in a savory broth.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Vegetable noodles soup",
+          "short_description": "Noodle soup",
+          "premium_description": "A comforting soup with vegetables and noodles in a flavorful broth.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Talumine soup",
+          "short_description": "Talumein soup",
+          "premium_description": "A thick and hearty soup with vegetables and noodles in a rich broth.",
+          "tags": [
+            "vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Vegetable rainbow soup",
+          "short_description": "Rainbow soup",
+          "premium_description": "A colorful soup with assorted vegetables, offering a vibrant and nourishing experience.",
+          "tags": [
+            "vegetarian",
+            "soup",
+            "healthy"
+          ]
+        }
+      ]
+    },
+    "Non Veg Soups": {
+      "Indian": [
+        {
+          "name": "Murgh aur sabziyon ka shorba",
+          "short_description": "Chicken vegetable soup",
+          "premium_description": "A nourishing Indian broth made with chicken and vegetables, gently spiced for a comforting and wholesome flavor.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken",
+            "indian"
+          ]
+        }
+      ],
+      "Continental": [
+        {
+          "name": "Brazilian chicken soup",
+          "short_description": "Chicken soup",
+          "premium_description": "A hearty Brazilian-style chicken soup with rich flavors and a comforting texture.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        }
+      ],
+      "Oriental": [
+        {
+          "name": "Chicken tom yum soup",
+          "short_description": "Chicken tom yum",
+          "premium_description": "A Thai-style soup with chicken, infused with lemongrass, lime, and chili for a bold flavor.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Chicken rainbow soup",
+          "short_description": "Chicken vegetable soup",
+          "premium_description": "A colorful mix of vegetables and chicken in a light, flavorful broth.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Chicken noodles soup",
+          "short_description": "Chicken noodle soup",
+          "premium_description": "A comforting soup with chicken and noodles in a savory broth.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Tomato pokchoy egg drop",
+          "short_description": "Egg drop soup",
+          "premium_description": "A light soup with tomato, bok choy, and silky egg ribbons.",
+          "tags": [
+            "non-vegetarian",
+            "soup"
+          ]
+        },
+        {
+          "name": "Lung fang soup Chicken",
+          "short_description": "Chicken lung fung soup",
+          "premium_description": "A classic Chinese-style soup with chicken and vegetables in a thick broth.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Chicken man chow soup",
+          "short_description": "Chicken manchow",
+          "premium_description": "A spicy Indo-Chinese soup with chicken, vegetables, and crispy noodles.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Tom yum soup Chicken",
+          "short_description": "Chicken tom yum",
+          "premium_description": "A tangy and aromatic Thai soup with chicken and herbs.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Lemongrass and coriander flavored chicken soup",
+          "short_description": "Herbal chicken soup",
+          "premium_description": "A fragrant soup infused with lemongrass and coriander, offering a refreshing flavor.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Sweet corn chicken soup",
+          "short_description": "Corn chicken soup",
+          "premium_description": "A mildly sweet and comforting soup made with chicken and sweet corn.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Minced chicken soup with egg drop",
+          "short_description": "Minced chicken soup",
+          "premium_description": "A rich soup with minced chicken and delicate egg ribbons.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Gaeng Jeud Woon sen",
+          "short_description": "Glass noodle soup",
+          "premium_description": "A light Thai soup with glass noodles and chicken in a clear broth.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Chicken Wonton Soup",
+          "short_description": "Wonton soup",
+          "premium_description": "Delicate wontons filled with chicken served in a flavorful broth.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "chicken"
+          ]
+        },
+        {
+          "name": "Tom Yam Prawn Soup",
+          "short_description": "Prawn tom yum",
+          "premium_description": "A tangy and spicy Thai soup made with prawns and aromatic herbs.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "seafood",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Sweet Corn Soup With Crab Meat",
+          "short_description": "Corn crab soup",
+          "premium_description": "A comforting soup combining sweet corn with tender crab meat.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "seafood"
+          ]
+        },
+        {
+          "name": "Fish Soup With Coriander",
+          "short_description": "Fish soup",
+          "premium_description": "A light fish broth enhanced with fresh coriander and mild spices.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "fish"
+          ]
+        },
+        {
+          "name": "Seafood Laksa",
+          "short_description": "Laksa soup",
+          "premium_description": "A rich and aromatic Southeast Asian soup with seafood, coconut, and spices.",
+          "tags": [
+            "non-vegetarian",
+            "soup",
+            "seafood"
+          ]
+        },
+        {
+          "name": "Miso soup",
+          "short_description": "Miso soup",
+          "premium_description": "A traditional Japanese soup made with miso broth and delicate ingredients.",
+          "tags": [
+            "non-vegetarian",
+            "soup"
+          ]
+        }
+      ]
+    },
+    "Veg Starters": {
+      "Indian": [
+        {
+          "name": "Dahi ke kebab",
+          "short_description": "Yogurt kebabs",
+          "premium_description": "Soft and creamy yogurt kebabs infused with mild spices and pan-fried to perfection.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "indian"
+          ]
+        },
+        {
+          "name": "Pudina paneer tikka",
+          "short_description": "Mint paneer tikka",
+          "premium_description": "Paneer cubes marinated in mint and spices, grilled for a smoky flavor.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "grilled"
+          ]
+        },
+        {
+          "name": "Kashmiri mirch ka paneer tikka",
+          "short_description": "Spicy paneer tikka",
+          "premium_description": "Paneer marinated in Kashmiri chili spices and grilled in a tandoor.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Tandoor ke phool",
+          "short_description": "Tandoori vegetables",
+          "premium_description": "Assorted vegetables marinated in spices and roasted in a traditional tandoor.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chowk ki tikki",
+          "short_description": "Crispy tikki",
+          "premium_description": "Street-style crispy potato patties seasoned with Indian spices.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Hara bhara kebab",
+          "short_description": "Spinach kebab",
+          "premium_description": "Nutritious kebabs made with spinach and peas, pan-fried to perfection.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "healthy"
+          ]
+        },
+        {
+          "name": "Tandoori vilayti chat",
+          "short_description": "Tandoori chaat",
+          "premium_description": "Fusion chaat with tandoori flavors and tangy toppings.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Hare matter ki tikki",
+          "short_description": "Pea tikki",
+          "premium_description": "Green pea patties flavored with spices and shallow fried.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Palak matter aur khumbh ke seekh",
+          "short_description": "Spinach mushroom seekh",
+          "premium_description": "Seekh kebabs made with spinach, peas, and mushrooms, grilled to perfection.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Bhutta aur matter ki tikki",
+          "short_description": "Corn pea tikki",
+          "premium_description": "Corn and peas patties with spices, shallow fried until crisp.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Teekha lahsuni khumb",
+          "short_description": "Garlic mushrooms",
+          "premium_description": "Mushrooms tossed in spicy garlic seasoning for a bold flavor.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Bhuttey ke kebab",
+          "short_description": "Corn kebabs",
+          "premium_description": "Sweet corn kebabs blended with spices and pan-fried.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Makai amritsari",
+          "short_description": "Amritsari corn",
+          "premium_description": "Crispy fried corn tossed in Amritsari spices.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "fried"
+          ]
+        },
+        {
+          "name": "Subz ke galauti kebab",
+          "short_description": "Veg galouti kebab",
+          "premium_description": "Soft melt-in-mouth vegetable kebabs inspired by Awadhi cuisine.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Lal mirch ka paneer tikka",
+          "short_description": "Red chili paneer tikka",
+          "premium_description": "Paneer marinated in red chili spices and grilled.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Aloo gulistan",
+          "short_description": "Stuffed potatoes",
+          "premium_description": "Potatoes stuffed with flavorful filling and cooked to perfection.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Subz aur meva ki seekh",
+          "short_description": "Veg nut seekh",
+          "premium_description": "Seekh kebabs made with vegetables and dry fruits, grilled delicately.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        }
+      ],
+      "Oriental": [
+        {
+          "name": "Sichuan Chilly Paneer",
+          "short_description": "Spicy paneer",
+          "premium_description": "Paneer tossed in bold Sichuan chili sauce with garlic and peppers.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Mushroom Hot Garlic",
+          "short_description": "Garlic mushroom",
+          "premium_description": "Mushrooms stir-fried in a hot garlic sauce.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Vegetable Spring Roll",
+          "short_description": "Spring rolls",
+          "premium_description": "Crispy rolls filled with seasoned vegetables.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "fried"
+          ]
+        },
+        {
+          "name": "Golden Fried Young Corn",
+          "short_description": "Fried corn",
+          "premium_description": "Crispy young corn tossed with seasoning.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "fried"
+          ]
+        },
+        {
+          "name": "Salt & Pepper Vegetables",
+          "short_description": "Salt pepper veg",
+          "premium_description": "Vegetables tossed with salt, pepper, and spices.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Salt & Pepper Paneer",
+          "short_description": "Salt pepper paneer",
+          "premium_description": "Paneer cubes sautéed with salt and pepper seasoning.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Vegetable Tempura",
+          "short_description": "Tempura veg",
+          "premium_description": "Lightly battered and fried vegetables in tempura style.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "fried"
+          ]
+        },
+        {
+          "name": "Potato and Corn Cake",
+          "short_description": "Potato corn cake",
+          "premium_description": "Crispy cakes made with potato and corn.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Bean Curd in Spicy Sauce",
+          "short_description": "Spicy tofu",
+          "premium_description": "Tofu cooked in a spicy oriental sauce.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Mongolian cauliflower",
+          "short_description": "Mongolian cauliflower",
+          "premium_description": "Cauliflower tossed in Mongolian-style sauce.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chilly mushroom",
+          "short_description": "Spicy mushroom",
+          "premium_description": "Mushrooms tossed in chili garlic sauce.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Honey chilly vegetable",
+          "short_description": "Honey chili veg",
+          "premium_description": "Vegetables tossed in sweet and spicy honey chili sauce.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Thai crispy vegetable",
+          "short_description": "Crispy veg",
+          "premium_description": "Crispy vegetables tossed in Thai-style sauce.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Honey chilly potato",
+          "short_description": "Honey chili potato",
+          "premium_description": "Crispy potatoes coated in sweet and spicy sauce.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Paneer Manchurian dry",
+          "short_description": "Paneer manchurian",
+          "premium_description": "Paneer tossed in thick Indo-Chinese sauce.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        }
+      ],
+      "Continental": [
+        {
+          "name": "Vegetable cutlets",
+          "short_description": "Veg cutlets",
+          "premium_description": "Crispy vegetable patties served golden fried.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Cheese balls",
+          "short_description": "Cheese balls",
+          "premium_description": "Golden fried cheese balls with gooey center.",
+          "tags": [
+            "vegetarian",
+            "starter",
+            "fried"
+          ]
+        },
+        {
+          "name": "Corn cheese nuggets",
+          "short_description": "Corn nuggets",
+          "premium_description": "Crispy nuggets filled with corn and cheese.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Vegetable croquets",
+          "short_description": "Veg croquettes",
+          "premium_description": "Breaded vegetable croquettes fried to perfection.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Mushroom vol –au- vent",
+          "short_description": "Mushroom pastry",
+          "premium_description": "Flaky pastry filled with mushroom mixture.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Corn vol –au- vent",
+          "short_description": "Corn pastry",
+          "premium_description": "Flaky pastry filled with creamy corn filling.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chili cheese toast",
+          "short_description": "Cheese toast",
+          "premium_description": "Toasted bread topped with chili and melted cheese.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Mini square pizza",
+          "short_description": "Mini pizza",
+          "premium_description": "Small pizzas topped with vegetables and cheese.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Vegetable bruschetta",
+          "short_description": "Bruschetta",
+          "premium_description": "Toasted bread topped with seasoned vegetables.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Arancini (risotto balls) with spicy aioli",
+          "short_description": "Arancini",
+          "premium_description": "Crispy risotto balls served with spicy aioli.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Crumb Fried Mushrooms",
+          "short_description": "Fried mushrooms",
+          "premium_description": "Mushrooms coated and fried to a crispy texture.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Cheese Fondue",
+          "short_description": "Cheese fondue",
+          "premium_description": "Rich melted cheese served as a dip.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Spinach and Cheese Quiche",
+          "short_description": "Quiche",
+          "premium_description": "Savory pie filled with spinach and cheese.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Batter fried Baby corn",
+          "short_description": "Fried baby corn",
+          "premium_description": "Baby corn coated and fried crispy.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Potato and Cottage Cheese Dumplings",
+          "short_description": "Veg dumplings",
+          "premium_description": "Dumplings made with potato and paneer filling.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Asparagus & Corn Quiche",
+          "short_description": "Quiche",
+          "premium_description": "Savory pie with asparagus and corn filling.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Cottage Cheese & Bell Pepper Skewer",
+          "short_description": "Paneer skewer",
+          "premium_description": "Paneer and bell peppers grilled on skewers.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Mushroom And Corn Vol-Au-Vent",
+          "short_description": "Pastry",
+          "premium_description": "Flaky pastry filled with mushroom and corn.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Mini Vegetable Pizzas",
+          "short_description": "Mini pizza",
+          "premium_description": "Small pizzas topped with vegetables.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        },
+        {
+          "name": "Falafel With Garlic Yogurt",
+          "short_description": "Falafel",
+          "premium_description": "Crispy chickpea balls served with garlic yogurt.",
+          "tags": [
+            "vegetarian",
+            "starter"
+          ]
+        }
+      ]
+    },
+    "Non Veg Starters": {
+      "Indian Fish": [
+        {
+          "name": "Fish tikka tandoori",
+          "short_description": "Tandoori fish",
+          "premium_description": "Fresh fish marinated in aromatic spices and grilled in a traditional tandoor for a smoky flavor.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Doodhiya tandoori machli",
+          "short_description": "Creamy tandoori fish",
+          "premium_description": "Fish marinated in a creamy spiced mixture and roasted in a tandoor.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Sarsonwali tandoori machli",
+          "short_description": "Mustard fish",
+          "premium_description": "Fish marinated in mustard-based spices and grilled to perfection.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        }
+      ],
+      "Indian Lamb": [
+        {
+          "name": "Boti aur red wine ka tandoori tikka",
+          "short_description": "Lamb tikka",
+          "premium_description": "Tender lamb cubes marinated with spices and red wine, grilled in a tandoor.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        },
+        {
+          "name": "Vilayati chop",
+          "short_description": "Lamb chops",
+          "premium_description": "Juicy lamb chops marinated and grilled with aromatic spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        },
+        {
+          "name": "Gosht malai seekh kebab",
+          "short_description": "Seekh kebab",
+          "premium_description": "Minced lamb blended with cream and spices, shaped on skewers and grilled.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        },
+        {
+          "name": "Lagan ki boti",
+          "short_description": "Lamb boti",
+          "premium_description": "Succulent lamb pieces cooked with rich spices in traditional style.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        }
+      ],
+      "Indian Chicken": [
+        {
+          "name": "Kashmiri mirch ka murgh tikka",
+          "short_description": "Chicken tikka",
+          "premium_description": "Chicken marinated in Kashmiri chili spices and grilled in a tandoor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Murgh ka barra kebab",
+          "short_description": "Chicken barra",
+          "premium_description": "Juicy chicken pieces marinated with spices and roasted in a tandoor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Murgh malai kebab",
+          "short_description": "Creamy chicken kebab",
+          "premium_description": "Chicken marinated in cream and mild spices, grilled to a soft texture.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Murgh –e- firdaus",
+          "short_description": "Spiced chicken",
+          "premium_description": "Flavorful chicken prepared with rich spices and cooked to perfection.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        }
+      ],
+      "Oriental Fish": [
+        {
+          "name": "Tempura fish",
+          "short_description": "Tempura fish",
+          "premium_description": "Fish coated in light tempura batter and fried until crisp.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Thai fish cake",
+          "short_description": "Fish cake",
+          "premium_description": "Thai-style fish cakes infused with herbs and spices.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Salt and pepper fish",
+          "short_description": "Salt pepper fish",
+          "premium_description": "Fish tossed with salt, pepper, and spices for a crisp finish.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Sichuan fish with bell pepper",
+          "short_description": "Spicy fish",
+          "premium_description": "Fish cooked in Sichuan sauce with bell peppers and chili.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Chilli fish",
+          "short_description": "Chili fish",
+          "premium_description": "Fish tossed in a spicy chili garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter",
+            "spicy"
+          ]
+        }
+      ],
+      "Oriental Seafood": [
+        {
+          "name": "Sichuan prawn",
+          "short_description": "Spicy prawns",
+          "premium_description": "Prawns cooked in bold Sichuan chili sauce.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Prawn chilli garlic",
+          "short_description": "Garlic prawns",
+          "premium_description": "Prawns sautéed with garlic and chili sauce.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "starter"
+          ]
+        },
+        {
+          "name": "Salt and pepper prawn",
+          "short_description": "Salt pepper prawns",
+          "premium_description": "Prawns tossed with salt, pepper, and spices.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "starter"
+          ]
+        },
+        {
+          "name": "Golden fried prawn",
+          "short_description": "Fried prawns",
+          "premium_description": "Crispy fried prawns served golden brown.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "starter",
+            "fried"
+          ]
+        }
+      ],
+      "Oriental Chicken": [
+        {
+          "name": "Chilli chicken dry",
+          "short_description": "Spicy chicken",
+          "premium_description": "Crispy chicken tossed in chili garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Chicken Sichuan",
+          "short_description": "Sichuan chicken",
+          "premium_description": "Chicken cooked in bold Sichuan sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Chicken hot garlic",
+          "short_description": "Garlic chicken",
+          "premium_description": "Chicken stir-fried in hot garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Salt and pepper chicken",
+          "short_description": "Salt pepper chicken",
+          "premium_description": "Chicken tossed with salt and pepper seasoning.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken satay with peanut sauce",
+          "short_description": "Chicken satay",
+          "premium_description": "Grilled chicken skewers served with peanut sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Tempura chicken",
+          "short_description": "Tempura chicken",
+          "premium_description": "Chicken coated in tempura batter and fried crispy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter",
+            "fried"
+          ]
+        },
+        {
+          "name": "Drums of heaven",
+          "short_description": "Chicken lollipops",
+          "premium_description": "Chicken lollipops fried and tossed in spicy sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Sesame chicken",
+          "short_description": "Sesame chicken",
+          "premium_description": "Chicken tossed with sesame seeds and sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken ball with ginger chilli dry",
+          "short_description": "Chicken balls",
+          "premium_description": "Chicken balls tossed with ginger and chili seasoning.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Honey glazed chicken winglets",
+          "short_description": "Honey chicken wings",
+          "premium_description": "Chicken wings glazed with sweet honey sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        }
+      ],
+      "Continental Fish": [
+        {
+          "name": "Fish Fingers w/ tartar sauce",
+          "short_description": "Fish fingers",
+          "premium_description": "Crispy fish fingers served with tartar sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Batter fried fish with chili mayonnaise",
+          "short_description": "Fried fish",
+          "premium_description": "Batter-fried fish served with chili mayo.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Italian Basil Pesto Fish",
+          "short_description": "Pesto fish",
+          "premium_description": "Fish flavored with basil pesto and herbs.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Fried Fish w/ Spicy Mayonnaise",
+          "short_description": "Fried fish",
+          "premium_description": "Crispy fried fish served with spicy mayo.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        },
+        {
+          "name": "Crumb Fried Prawns with Chili mayo",
+          "short_description": "Fried prawns",
+          "premium_description": "Breaded prawns fried and served with chili mayo.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "starter"
+          ]
+        },
+        {
+          "name": "Fish Croquettes",
+          "short_description": "Fish croquettes",
+          "premium_description": "Crispy croquettes filled with seasoned fish.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "starter"
+          ]
+        }
+      ],
+      "Continental Lamb": [
+        {
+          "name": "Mutton Cutlets",
+          "short_description": "Mutton cutlets",
+          "premium_description": "Crispy fried mutton patties seasoned with spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        },
+        {
+          "name": "Mutton mince and onion Puff",
+          "short_description": "Mutton puff",
+          "premium_description": "Flaky pastry filled with minced mutton and onion.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        },
+        {
+          "name": "Meat Ball In BBQ Sauce",
+          "short_description": "Meatballs",
+          "premium_description": "Juicy meatballs served in smoky BBQ sauce.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "starter"
+          ]
+        }
+      ],
+      "Continental Chicken": [
+        {
+          "name": "Chicken and bell peppers skewer",
+          "short_description": "Chicken skewer",
+          "premium_description": "Grilled chicken with bell peppers on skewers.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "BBQ Chicken w/ bone",
+          "short_description": "BBQ chicken",
+          "premium_description": "Chicken cooked in smoky barbecue sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken & Mushroom Vol-au-vent",
+          "short_description": "Chicken pastry",
+          "premium_description": "Flaky pastry filled with chicken and mushroom.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Sun dried tomato Chicken Wings",
+          "short_description": "Chicken wings",
+          "premium_description": "Chicken wings flavored with sun-dried tomatoes.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken cutlets",
+          "short_description": "Chicken cutlets",
+          "premium_description": "Crispy fried chicken patties.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Garlic Chicken Nuggets with Plum Sauce",
+          "short_description": "Chicken nuggets",
+          "premium_description": "Garlic-flavored nuggets served with plum sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken & Rosemary Puffs",
+          "short_description": "Chicken puff",
+          "premium_description": "Pastry filled with chicken and rosemary.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken Winglets",
+          "short_description": "Chicken wings",
+          "premium_description": "Crispy chicken winglets seasoned with spices.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Mini Chicken Pizzas",
+          "short_description": "Mini pizza",
+          "premium_description": "Small pizzas topped with chicken and cheese.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken Asparagus Quiche",
+          "short_description": "Quiche",
+          "premium_description": "Savory pie filled with chicken and asparagus.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Spanish Paprika & Garlic Chicken",
+          "short_description": "Paprika chicken",
+          "premium_description": "Chicken flavored with paprika and garlic.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        },
+        {
+          "name": "Chicken dumpling with BBQ sauce",
+          "short_description": "Chicken dumplings",
+          "premium_description": "Dumplings filled with chicken served with BBQ sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "starter"
+          ]
+        }
+      ]
+    },
+    "Veg Mains": {
+      "Indian": [
+        {
+          "name": "Dhingri palak",
+          "short_description": "Mushroom spinach",
+          "premium_description": "Mushrooms cooked in a rich spinach gravy with aromatic spices.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "indian"
+          ]
+        },
+        {
+          "name": "Khade masala ka paneer",
+          "short_description": "Paneer curry",
+          "premium_description": "Paneer cooked with whole spices in a flavorful gravy.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "indian"
+          ]
+        },
+        {
+          "name": "Aloo Gobi ki sabzi",
+          "short_description": "Aloo gobi",
+          "premium_description": "Classic combination of potatoes and cauliflower cooked with Indian spices.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "indian"
+          ]
+        },
+        {
+          "name": "Malai kofta",
+          "short_description": "Kofta curry",
+          "premium_description": "Soft dumplings made of paneer and vegetables served in a creamy gravy.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "indian"
+          ]
+        },
+        {
+          "name": "Subz bemishal",
+          "short_description": "Mixed vegetables",
+          "premium_description": "A medley of vegetables cooked in a rich and flavorful sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetable nargishi kofta",
+          "short_description": "Veg kofta",
+          "premium_description": "Stuffed vegetable dumplings served in a rich gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Dhingri do pyaza",
+          "short_description": "Mushroom curry",
+          "premium_description": "Mushrooms cooked with double onions in a spiced gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lehsooni palak",
+          "short_description": "Garlic spinach",
+          "premium_description": "Spinach cooked with garlic for a bold and aromatic flavor.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sarson ka saag",
+          "short_description": "Mustard greens",
+          "premium_description": "Traditional Punjabi dish made with mustard leaves and spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Rang birange mirch ka salan",
+          "short_description": "Capsicum curry",
+          "premium_description": "Colorful bell peppers cooked in a spiced gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Mushroom hara pyaaz",
+          "short_description": "Mushroom spring onion",
+          "premium_description": "Mushrooms sautéed with green onions and spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Achari bhindi aur aloo",
+          "short_description": "Bhindi aloo",
+          "premium_description": "Okra and potatoes cooked with pickling spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Aloo hara pyaaz",
+          "short_description": "Potato spring onion",
+          "premium_description": "Potatoes cooked with fresh green onions and spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Hing dhaniya ke aloo",
+          "short_description": "Spiced potatoes",
+          "premium_description": "Potatoes flavored with asafoetida and coriander.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Bemisal aloo",
+          "short_description": "Special potatoes",
+          "premium_description": "A unique preparation of potatoes with aromatic spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetable jalferzi",
+          "short_description": "Veg jalfrezi",
+          "premium_description": "Vegetables stir-fried in tangy and spicy gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Subz meloni",
+          "short_description": "Mixed veg curry",
+          "premium_description": "Seasonal vegetables cooked in a flavorful gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Muglai aloo",
+          "short_description": "Mughlai potatoes",
+          "premium_description": "Potatoes cooked in a rich Mughlai-style gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Makai palak",
+          "short_description": "Corn spinach",
+          "premium_description": "Sweet corn cooked with spinach and spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Baby corn and mushroom ki sabzi",
+          "short_description": "Corn mushroom curry",
+          "premium_description": "Baby corn and mushrooms cooked together in a rich gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Aloo matter paneer",
+          "short_description": "Aloo matar paneer",
+          "premium_description": "Potatoes, peas, and paneer cooked in a tomato-based gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer lababdar",
+          "short_description": "Paneer curry",
+          "premium_description": "Paneer cooked in a rich tomato-based gravy with spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer kali mirch",
+          "short_description": "Pepper paneer",
+          "premium_description": "Paneer cooked with black pepper and spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer dhania adraki",
+          "short_description": "Paneer ginger coriander",
+          "premium_description": "Paneer cooked with coriander and ginger flavors.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Palak paneer",
+          "short_description": "Spinach paneer",
+          "premium_description": "Paneer cubes cooked in smooth spinach gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Matter paneer",
+          "short_description": "Matar paneer",
+          "premium_description": "Paneer and peas cooked in a tomato-based gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer jhal frezi",
+          "short_description": "Paneer jalfrezi",
+          "premium_description": "Paneer stir-fried with vegetables in spicy gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer ki khurchan",
+          "short_description": "Paneer bhurji style",
+          "premium_description": "Shredded paneer cooked with spices and vegetables.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Methi paneer",
+          "short_description": "Fenugreek paneer",
+          "premium_description": "Paneer cooked with fenugreek leaves in a rich gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Achari paneer",
+          "short_description": "Pickled paneer",
+          "premium_description": "Paneer cooked with tangy pickling spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer changezi",
+          "short_description": "Paneer changezi",
+          "premium_description": "Paneer cooked in a rich and spicy Mughlai gravy.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Paneer bhurzi",
+          "short_description": "Paneer scramble",
+          "premium_description": "Crumbled paneer cooked with spices and herbs.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        }
+      ],
+      "Continental": [
+        {
+          "name": "Fussily pasta in tomato sauce & parmesan shaving",
+          "short_description": "Pasta tomato",
+          "premium_description": "Pasta cooked in tomato sauce topped with parmesan shavings.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Grilled exotic vegetables with rosemary & garlic",
+          "short_description": "Grilled vegetables",
+          "premium_description": "Exotic vegetables grilled with rosemary and garlic.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "healthy"
+          ]
+        },
+        {
+          "name": "Pasta in creamy mushroom sauce & parmesan shaving",
+          "short_description": "Creamy pasta",
+          "premium_description": "Pasta in rich mushroom cream sauce with parmesan.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetable lasagna",
+          "short_description": "Veg lasagna",
+          "premium_description": "Layered pasta with vegetables and cheese baked to perfection.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Polenta cake, tomato comfit, black olive & basil",
+          "short_description": "Polenta",
+          "premium_description": "Polenta cake served with tomato confit and basil.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lasagna style polenta with fricassee of mushroom and green pea",
+          "short_description": "Polenta lasagna",
+          "premium_description": "Layered polenta with mushrooms and peas.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Penne arrabiata",
+          "short_description": "Arrabiata pasta",
+          "premium_description": "Penne pasta cooked in spicy tomato sauce.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Spaghetti with mushroom and tomato sauce",
+          "short_description": "Spaghetti",
+          "premium_description": "Spaghetti tossed with mushroom and tomato sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        }
+      ],
+      "Oriental": [
+        {
+          "name": "Stir fried Chinese greens",
+          "short_description": "Chinese greens",
+          "premium_description": "Fresh greens stir-fried with garlic and sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetables in Manchurian sauce",
+          "short_description": "Veg manchurian",
+          "premium_description": "Vegetables cooked in Indo-Chinese Manchurian sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Stir fried eggplant nyonya style",
+          "short_description": "Eggplant stir fry",
+          "premium_description": "Eggplant cooked in Nyonya style spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Potato and spinach in hot garlic sauce",
+          "short_description": "Potato spinach",
+          "premium_description": "Potato and spinach tossed in hot garlic sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Green Thai veg. curry",
+          "short_description": "Thai green curry",
+          "premium_description": "Vegetables cooked in Thai green curry with coconut.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Tofu and vegetable tossed in ginger and tomato sauce",
+          "short_description": "Tofu veg",
+          "premium_description": "Tofu and vegetables cooked in ginger tomato sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetable, tofu and mushroom tossed in black bean sauce",
+          "short_description": "Black bean veg",
+          "premium_description": "Vegetables and tofu tossed in black bean sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Potato vegetable yellow curry",
+          "short_description": "Yellow curry",
+          "premium_description": "Vegetables cooked in Thai yellow curry.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Red Thai veg. curry",
+          "short_description": "Red curry",
+          "premium_description": "Vegetables cooked in Thai red curry.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Tahiti vegetable chili garlic sauce",
+          "short_description": "Chili garlic veg",
+          "premium_description": "Vegetables tossed in chili garlic sauce.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Basil chili cauliflower",
+          "short_description": "Cauliflower chili",
+          "premium_description": "Cauliflower tossed in basil chili sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Tofu pineapple and potato curry",
+          "short_description": "Tofu curry",
+          "premium_description": "Tofu cooked with pineapple and potatoes.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Long bean with black bean sauce",
+          "short_description": "Beans black bean",
+          "premium_description": "Long beans cooked in black bean sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Hunan vegetable with dry red chilly",
+          "short_description": "Hunan veg",
+          "premium_description": "Vegetables cooked in Hunan style with red chilies.",
+          "tags": [
+            "vegetarian",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Hong kong tofu with vegetable",
+          "short_description": "Tofu veg",
+          "premium_description": "Tofu cooked with vegetables in Hong Kong style.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Phad phak rum it",
+          "short_description": "Thai veg",
+          "premium_description": "Thai-style stir-fried vegetables.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sayur lodeh",
+          "short_description": "Vegetable curry",
+          "premium_description": "Indonesian vegetable curry with coconut base.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetable Burmish curry",
+          "short_description": "Burmese curry",
+          "premium_description": "Vegetables cooked in Burmese-style curry.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Vegetable in black pepper sauce",
+          "short_description": "Pepper veg",
+          "premium_description": "Vegetables cooked in black pepper sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Malak vegetable",
+          "short_description": "Veg curry",
+          "premium_description": "Vegetables cooked in aromatic spices.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Pumpkin with vegetable in red curry",
+          "short_description": "Pumpkin curry",
+          "premium_description": "Pumpkin cooked with vegetables in red curry.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Stir Fried Vegetables",
+          "short_description": "Stir fry veg",
+          "premium_description": "Assorted vegetables stir-fried lightly.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Braised Assorted Mushroom",
+          "short_description": "Mushroom dish",
+          "premium_description": "Mushrooms braised in a flavorful sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Assorted Vegetables In Miso Sauce",
+          "short_description": "Miso veg",
+          "premium_description": "Vegetables cooked in Japanese miso sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Twin Mushroom in hot garlic sauce",
+          "short_description": "Mushroom garlic",
+          "premium_description": "Two varieties of mushrooms cooked in hot garlic sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Shitake mushroom with pok choy in soya sauce",
+          "short_description": "Shiitake veg",
+          "premium_description": "Shiitake mushrooms with bok choy in soy sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        },
+        {
+          "name": "Mixed vegetable in chilli honey sauce",
+          "short_description": "Honey chili veg",
+          "premium_description": "Vegetables tossed in sweet and spicy chili honey sauce.",
+          "tags": [
+            "vegetarian",
+            "main course"
+          ]
+        }
+      ]
+    },
+    "Non Veg Mains": {
+      "Chicken - Indian": [
+        {
+          "name": "Bhuna murgh aur palak",
+          "short_description": "Chicken spinach curry",
+          "premium_description": "Chicken cooked with spinach in a rich and spiced bhuna style gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course",
+            "indian"
+          ]
+        },
+        {
+          "name": "Dhania murg",
+          "short_description": "Coriander chicken",
+          "premium_description": "Chicken cooked with fresh coriander for a vibrant and aromatic flavor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Dhoowan murg",
+          "short_description": "Smoked chicken",
+          "premium_description": "Chicken infused with smoky flavors and cooked in a rich gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken korma",
+          "short_description": "Chicken korma",
+          "premium_description": "Chicken simmered in a creamy and mildly spiced Mughlai gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh sweta",
+          "short_description": "White chicken curry",
+          "premium_description": "Chicken cooked in a creamy white gravy with subtle spices.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh kali mirch",
+          "short_description": "Pepper chicken",
+          "premium_description": "Chicken cooked with black pepper and spices for a bold flavor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh tikka butter masala",
+          "short_description": "Tikka masala",
+          "premium_description": "Grilled chicken tikka cooked in a rich butter tomato gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Methi aur palak wala murgh",
+          "short_description": "Chicken greens",
+          "premium_description": "Chicken cooked with fenugreek and spinach for a flavorful dish.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Butter chicken",
+          "short_description": "Butter chicken",
+          "premium_description": "Classic chicken cooked in a rich tomato butter gravy with cream.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh khas korma",
+          "short_description": "Special korma",
+          "premium_description": "Chicken prepared in a rich and royal korma gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh makhani Kesari",
+          "short_description": "Kesari chicken",
+          "premium_description": "Chicken cooked in a saffron-infused makhani gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh achari",
+          "short_description": "Pickled chicken",
+          "premium_description": "Chicken cooked with tangy pickling spices for a bold flavor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Palak murgh",
+          "short_description": "Spinach chicken",
+          "premium_description": "Chicken cooked in a smooth spinach gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Murgh dahiwala",
+          "short_description": "Yogurt chicken",
+          "premium_description": "Chicken cooked in a yogurt-based gravy with spices.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Methi murg",
+          "short_description": "Fenugreek chicken",
+          "premium_description": "Chicken cooked with fenugreek leaves for a unique flavor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Kadhai chicken",
+          "short_description": "Kadhai chicken",
+          "premium_description": "Chicken cooked in a kadhai with spices, onions, and peppers.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        }
+      ],
+      "Chicken - Continental": [
+        {
+          "name": "Grilled chicken breast with red wine réduction & cheese",
+          "short_description": "Grilled chicken",
+          "premium_description": "Chicken breast grilled and served with red wine reduction and cheese.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Dice chicken, asian mushroom, black bean sauce",
+          "short_description": "Chicken mushroom",
+          "premium_description": "Diced chicken cooked with mushrooms in black bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Roast chicken, steamed vegetable & red wine jus",
+          "short_description": "Roast chicken",
+          "premium_description": "Roasted chicken served with vegetables and red wine jus.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Harissa spiced chicken breast, roasted baby potatoes and Natural jus",
+          "short_description": "Harissa chicken",
+          "premium_description": "Chicken breast spiced with harissa served with roasted potatoes.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Cajun spiced chicken breast with tomates pesto cous and red wine jus",
+          "short_description": "Cajun chicken",
+          "premium_description": "Chicken flavored with Cajun spices served with couscous and sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Stuffted chicken breast, fricasse of orecchiette & mushroom",
+          "short_description": "Stuffed chicken",
+          "premium_description": "Stuffed chicken breast served with mushroom and pasta.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        }
+      ],
+      "Chicken - Oriental": [
+        {
+          "name": "Stir fried chicken vegetables in Oyster sauce",
+          "short_description": "Chicken oyster",
+          "premium_description": "Chicken stir-fried with vegetables in oyster sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sichuan chicken",
+          "short_description": "Sichuan chicken",
+          "premium_description": "Chicken cooked in bold Sichuan chili sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Chicken black bean sauce",
+          "short_description": "Black bean chicken",
+          "premium_description": "Chicken cooked in savory black bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken in oyster sauce",
+          "short_description": "Oyster chicken",
+          "premium_description": "Chicken cooked in oyster sauce with vegetables.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chili chicken gravy",
+          "short_description": "Chili chicken",
+          "premium_description": "Chicken cooked in spicy chili gravy.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Malak chicken with slice cucumber",
+          "short_description": "Malak chicken",
+          "premium_description": "Chicken prepared with spices and served with cucumber slices.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Shredded chicken with snow peas",
+          "short_description": "Chicken peas",
+          "premium_description": "Shredded chicken cooked with snow peas.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Slice chicken with bell peper in chilli bean suace",
+          "short_description": "Chicken chili bean",
+          "premium_description": "Chicken slices cooked with bell peppers in chili bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken with cash net and carrot",
+          "short_description": "Chicken veg",
+          "premium_description": "Chicken cooked with vegetables and spices.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken with spinach in chilly oyster sauce",
+          "short_description": "Spinach chicken",
+          "premium_description": "Chicken cooked with spinach in chili oyster sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken malayasian curry with hard root vegetable",
+          "short_description": "Malaysian curry",
+          "premium_description": "Chicken cooked in Malaysian curry with root vegetables.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "A yam nanoya with star anis and cinnamon stick",
+          "short_description": "Spiced chicken",
+          "premium_description": "Chicken cooked with star anise and cinnamon for aromatic flavor.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken penag curry",
+          "short_description": "Penang curry",
+          "premium_description": "Chicken cooked in Thai Penang curry.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sliced Chicken With Hot Garlic Sauce",
+          "short_description": "Garlic chicken",
+          "premium_description": "Chicken cooked in hot garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken Cashew nut Thai Style",
+          "short_description": "Cashew chicken",
+          "premium_description": "Thai-style chicken cooked with cashew nuts.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Diced Chicken In Black Bean Sauce",
+          "short_description": "Black bean chicken",
+          "premium_description": "Diced chicken cooked in black bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Diced Chicken In Hot Bean Sauce",
+          "short_description": "Bean sauce chicken",
+          "premium_description": "Chicken cooked in hot bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Basil And Bamboo Shoot Chicken",
+          "short_description": "Basil chicken",
+          "premium_description": "Chicken cooked with basil and bamboo shoots.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Diced Chicken In Hot Garlic Sauce",
+          "short_description": "Garlic chicken",
+          "premium_description": "Chicken cooked in spicy garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sweet & Sour Chicken",
+          "short_description": "Sweet sour chicken",
+          "premium_description": "Chicken cooked in sweet and sour sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Chicken Chilly Oyster",
+          "short_description": "Oyster chili chicken",
+          "premium_description": "Chicken cooked in chili oyster sauce.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        },
+        {
+          "name": "Shredded Chicken With red and green peppers",
+          "short_description": "Chicken peppers",
+          "premium_description": "Shredded chicken cooked with bell peppers.",
+          "tags": [
+            "non-vegetarian",
+            "chicken",
+            "main course"
+          ]
+        }
+      ],
+      "Lamb - Indian": [
+        {
+          "name": "Laal maas",
+          "short_description": "Spicy lamb curry",
+          "premium_description": "A traditional Rajasthani lamb curry cooked with red chilies and robust spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course",
+            "indian",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Raara gosht",
+          "short_description": "Minced lamb curry",
+          "premium_description": "A rich preparation of lamb cooked with minced meat and aromatic spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Mutton dahiwala",
+          "short_description": "Yogurt lamb curry",
+          "premium_description": "Tender lamb cooked in a creamy yogurt-based gravy with balanced spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb chop Masala",
+          "short_description": "Lamb chops curry",
+          "premium_description": "Juicy lamb chops cooked in a rich and spiced masala gravy.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Mutton roganjosh",
+          "short_description": "Rogan josh",
+          "premium_description": "Classic Kashmiri lamb curry slow-cooked with aromatic spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "gosht dhaniwal korma",
+          "short_description": "Coriander lamb korma",
+          "premium_description": "Lamb cooked in a coriander-infused korma gravy with rich flavors.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Nahari gosht",
+          "short_description": "Nihari",
+          "premium_description": "Slow-cooked lamb stew with deep flavors and aromatic spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Kunna gosht",
+          "short_description": "Kunna lamb",
+          "premium_description": "Traditional slow-cooked lamb dish prepared in a sealed pot for rich taste.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Kadai gosht",
+          "short_description": "Kadai lamb",
+          "premium_description": "Lamb cooked with onions, tomatoes, and spices in a kadhai.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Dabba gosht",
+          "short_description": "Slow cooked lamb",
+          "premium_description": "Lamb cooked slowly in a sealed container to enhance flavors.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Namkeen gosht",
+          "short_description": "Salted lamb curry",
+          "premium_description": "A rustic lamb preparation seasoned simply to highlight natural flavors.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        }
+      ],
+      "Lamb - Oriental": [
+        {
+          "name": "Stir fried Lamb with star anise in soya sauce",
+          "short_description": "Stir fried lamb",
+          "premium_description": "Lamb stir-fried with star anise and soy sauce for a rich aromatic flavor.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb tomato chilly with bell Pepper",
+          "short_description": "Chili lamb",
+          "premium_description": "Lamb cooked with tomatoes, chilies, and bell peppers.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Lamb black peper and vegetable",
+          "short_description": "Pepper lamb",
+          "premium_description": "Lamb tossed with vegetables in a black pepper sauce.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb masallam curry with potato",
+          "short_description": "Lamb curry",
+          "premium_description": "Lamb cooked with potatoes in a rich masallam-style curry.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Slice Lamb in hot garlic sauce",
+          "short_description": "Garlic lamb",
+          "premium_description": "Sliced lamb cooked in spicy hot garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Shredded lamb in black bean sauce",
+          "short_description": "Black bean lamb",
+          "premium_description": "Shredded lamb cooked in savory black bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb green curry",
+          "short_description": "Green curry lamb",
+          "premium_description": "Lamb cooked in aromatic Thai green curry.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb thai red curry",
+          "short_description": "Red curry lamb",
+          "premium_description": "Lamb simmered in rich Thai red curry with coconut flavors.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb penag curry",
+          "short_description": "Penang lamb",
+          "premium_description": "Lamb cooked in Thai Penang curry with balanced spices.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb in hong Kong style with ginger slice",
+          "short_description": "Ginger lamb",
+          "premium_description": "Lamb cooked Hong Kong style with ginger slices for a fresh aroma.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sliced Lamb In Chilly Oyster",
+          "short_description": "Oyster lamb",
+          "premium_description": "Lamb cooked in chili oyster sauce for a rich flavor.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Lamb Ginger Spring Onion",
+          "short_description": "Ginger lamb",
+          "premium_description": "Lamb sautéed with ginger and spring onions.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Lamb Pepper Sauce",
+          "short_description": "Pepper lamb",
+          "premium_description": "Lamb cooked in a bold pepper sauce with deep flavors.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sautéed Sliced Lamb In Beijing Style",
+          "short_description": "Beijing lamb",
+          "premium_description": "Sliced lamb sautéed in classic Beijing-style sauce.",
+          "tags": [
+            "non-vegetarian",
+            "lamb",
+            "main course"
+          ]
+        }
+      ],
+      "Seafood - Indian": [
+        {
+          "name": "Punjabi fish curry",
+          "short_description": "Fish curry",
+          "premium_description": "Fresh fish simmered in a robust Punjabi-style gravy with aromatic spices.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "fish",
+            "main course",
+            "indian"
+          ]
+        },
+        {
+          "name": "Fish tikka",
+          "short_description": "Grilled fish",
+          "premium_description": "Fish marinated in spices and grilled for a smoky, flavorful finish.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Macchli tariwali",
+          "short_description": "Fish curry",
+          "premium_description": "Fish cooked in a light, spiced gravy with traditional Indian flavors.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Coconut fish curry",
+          "short_description": "Coconut fish",
+          "premium_description": "Fish cooked in a rich coconut-based gravy infused with coastal spices.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Goan fish curry",
+          "short_description": "Goan fish curry",
+          "premium_description": "Tangy and spicy Goan-style fish curry with coconut and tamarind notes.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Fish Amritsari",
+          "short_description": "Amritsari fish",
+          "premium_description": "Crispy fried fish prepared with classic Amritsari spices.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course",
+            "fried"
+          ]
+        }
+      ],
+      "Seafood - Continental": [
+        {
+          "name": "Grilled fish with grilled vegetable & black olive",
+          "short_description": "Grilled fish",
+          "premium_description": "Fish fillet grilled and served with vegetables and black olives.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Dice miso fish fillet with potato & leeks grain with ponzu sauce",
+          "short_description": "Miso fish",
+          "premium_description": "Fish fillet flavored with miso, served with grains, potato, and ponzu sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Batter fish, tartare sauce with assorted salad",
+          "short_description": "Batter fish",
+          "premium_description": "Crispy batter-fried fish served with tartare sauce and fresh salad.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Pan fried fish, caramelized onion sauce",
+          "short_description": "Pan fried fish",
+          "premium_description": "Fish pan-fried and served with rich caramelized onion sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Slice fish with hot garlic sauce",
+          "short_description": "Garlic fish",
+          "premium_description": "Fish slices cooked in a bold hot garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Steamed fish, dried chili, ginger, black bean vinegar",
+          "short_description": "Steamed fish",
+          "premium_description": "Delicately steamed fish with chili, ginger, and black bean vinegar sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Baked, tomato cous- cous and caper butter sauce",
+          "short_description": "Baked fish",
+          "premium_description": "Baked fish served with tomato couscous and caper butter sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        }
+      ],
+      "Seafood - Oriental": [
+        {
+          "name": "Fish with hot garlic sauce",
+          "short_description": "Garlic fish",
+          "premium_description": "Fish cooked in a spicy hot garlic sauce with bold flavors.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Steamed fish, dried chili, ginger, black bean sauce",
+          "short_description": "Steamed fish",
+          "premium_description": "Steamed fish infused with chili, ginger, and black bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Steamed fish with butter chill garlic sauce",
+          "short_description": "Butter garlic fish",
+          "premium_description": "Steamed fish topped with butter chili garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Fish thai red curry",
+          "short_description": "Thai red curry fish",
+          "premium_description": "Fish cooked in rich Thai red curry with coconut and spices.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Fish thai green curry",
+          "short_description": "Thai green curry fish",
+          "premium_description": "Fish simmered in aromatic Thai green curry with herbs.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Grilled Fish with yellow curry",
+          "short_description": "Yellow curry fish",
+          "premium_description": "Grilled fish served with flavorful yellow curry sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Fish in chili basil sauce",
+          "short_description": "Basil fish",
+          "premium_description": "Fish cooked in chili basil sauce for a fragrant finish.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Fish in Sichuan sauce",
+          "short_description": "Sichuan fish",
+          "premium_description": "Fish cooked in bold Sichuan sauce with chili and spices.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Fish ginger coriander sauce",
+          "short_description": "Ginger fish",
+          "premium_description": "Fish cooked in a fresh ginger and coriander sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Honey Sesame Prawn",
+          "short_description": "Honey prawn",
+          "premium_description": "Crispy prawns glazed with honey and sesame seeds.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "prawn",
+            "main course"
+          ]
+        },
+        {
+          "name": "Prawn Ginger Spring Onion",
+          "short_description": "Ginger prawn",
+          "premium_description": "Prawns sautéed with ginger and spring onions for a fresh flavor.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "prawn",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sautéed Prawn In Hot & Garlic Sauce",
+          "short_description": "Garlic prawn",
+          "premium_description": "Prawns sautéed in spicy hot garlic sauce.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "prawn",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Sliced Fish In Manchurian Sauce",
+          "short_description": "Manchurian fish",
+          "premium_description": "Fish cooked in Indo-Chinese Manchurian sauce.",
+          "tags": [
+            "non-vegetarian",
+            "fish",
+            "main course"
+          ]
+        },
+        {
+          "name": "Prawn Sichuan",
+          "short_description": "Sichuan prawn",
+          "premium_description": "Prawns cooked in bold Sichuan chili sauce.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "prawn",
+            "main course",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Sautéed Prawn In Black Bean Sauce",
+          "short_description": "Black bean prawn",
+          "premium_description": "Prawns cooked in savory black bean sauce.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "prawn",
+            "main course"
+          ]
+        },
+        {
+          "name": "Sautée Prawn In Hot Bean Sauce",
+          "short_description": "Bean sauce prawn",
+          "premium_description": "Prawns sautéed in spicy bean sauce with bold flavors.",
+          "tags": [
+            "non-vegetarian",
+            "seafood",
+            "prawn",
+            "main course",
+            "spicy"
+          ]
+        }
+      ]
+    },
+    "Choice of Dal": {
+      "Indian": [
+        {
+          "name": "Dal amritsari",
+          "short_description": "Amritsari dal",
+          "premium_description": "A rich Punjabi-style dal cooked with aromatic spices and a robust flavor profile.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Channa dal",
+          "short_description": "Chana dal",
+          "premium_description": "Split chickpeas cooked with spices for a hearty and comforting dish.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Dal makhani",
+          "short_description": "Makhani dal",
+          "premium_description": "Black lentils slow-cooked with butter and cream for a rich and indulgent taste.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Dal yellow tarkewali",
+          "short_description": "Yellow dal",
+          "premium_description": "Yellow lentils tempered with spices for a simple yet flavorful preparation.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Dal panchratan",
+          "short_description": "Mixed dal",
+          "premium_description": "A blend of five lentils cooked together with aromatic spices.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Pindi cholle",
+          "short_description": "Chole",
+          "premium_description": "Classic Punjabi chickpeas cooked with bold spices and a rustic flavor.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Rajma Masala",
+          "short_description": "Rajma curry",
+          "premium_description": "Kidney beans cooked in a rich tomato-based gravy with spices.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Dal sultani",
+          "short_description": "Sultani dal",
+          "premium_description": "A royal preparation of lentils enriched with cream and spices.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Dal maharani",
+          "short_description": "Maharani dal",
+          "premium_description": "A luxurious lentil preparation with rich flavors and creamy texture.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Kadi pakoda",
+          "short_description": "Kadhi pakoda",
+          "premium_description": "Yogurt-based curry with gram flour dumplings, flavored with spices.",
+          "tags": [
+            "dal",
+            "vegetarian",
+            "indian"
+          ]
+        }
+      ]
+    },
+    "Choice of Indian Breads": {
+      "Indian": [
+        {
+          "name": "Tandoori roti",
+          "short_description": "Tandoori roti",
+          "premium_description": "Whole wheat flatbread baked in a traditional tandoor, offering a smoky flavor and crisp texture.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Plain naan",
+          "short_description": "Plain naan",
+          "premium_description": "Soft and fluffy leavened bread baked in a tandoor, perfect with curries.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Garlic naan",
+          "short_description": "Garlic naan",
+          "premium_description": "Naan infused with garlic and herbs, baked to a soft and aromatic finish.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Butter naan",
+          "short_description": "Butter naan",
+          "premium_description": "Soft naan brushed with butter for a rich and indulgent taste.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Missi roti",
+          "short_description": "Missi roti",
+          "premium_description": "Traditional flatbread made with gram flour and spices, offering a rustic flavor.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Chili naan",
+          "short_description": "Chili naan",
+          "premium_description": "Spicy naan flavored with green chilies for a bold taste.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Laccha paratha",
+          "short_description": "Layered paratha",
+          "premium_description": "Flaky layered flatbread cooked on a griddle with a crisp texture.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Methi paratha",
+          "short_description": "Fenugreek paratha",
+          "premium_description": "Flatbread flavored with fresh fenugreek leaves, offering a unique aroma.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Pudina paratha",
+          "short_description": "Mint paratha",
+          "premium_description": "Paratha infused with fresh mint, delivering a refreshing flavor.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Cheese kulcha",
+          "short_description": "Cheese kulcha",
+          "premium_description": "Soft kulcha stuffed with melted cheese and baked in a tandoor.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Paneer kulcha",
+          "short_description": "Paneer kulcha",
+          "premium_description": "Kulcha stuffed with spiced paneer filling and baked to perfection.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "indian"
+          ]
+        }
+      ]
+    },
+    "Continental Breads": {
+      "Continental": [
+        {
+          "name": "Soft roll",
+          "short_description": "Soft bread roll",
+          "premium_description": "Light and fluffy bread rolls baked to a soft texture, perfect as an accompaniment.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Hard roll",
+          "short_description": "Crusty roll",
+          "premium_description": "Crisp crusted rolls with a firm exterior and soft interior.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Focaccia",
+          "short_description": "Herb bread",
+          "premium_description": "Italian flatbread infused with olive oil and herbs, offering a soft and aromatic texture.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Rye bread",
+          "short_description": "Rye bread",
+          "premium_description": "Dense and flavorful bread made with rye flour, offering a distinct taste.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Masala bread",
+          "short_description": "Spiced bread",
+          "premium_description": "Bread infused with Indian spices, offering a unique fusion flavor.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Multi grain bread",
+          "short_description": "Multigrain bread",
+          "premium_description": "Nutritious bread made with a blend of grains and seeds.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "healthy"
+          ]
+        },
+        {
+          "name": "French loaf",
+          "short_description": "French bread",
+          "premium_description": "Classic French loaf with a crisp crust and soft interior.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Pesto and onion roll",
+          "short_description": "Pesto roll",
+          "premium_description": "Soft rolls flavored with pesto and caramelized onions.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Garlic and cheese bread",
+          "short_description": "Garlic bread",
+          "premium_description": "Toasted bread topped with garlic butter and melted cheese.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Bagels",
+          "short_description": "Bagels",
+          "premium_description": "Dense and chewy bread rings traditionally baked and boiled.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Pita bread",
+          "short_description": "Pita",
+          "premium_description": "Soft Middle Eastern flatbread with a pocket, perfect for stuffing.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Grissini",
+          "short_description": "Breadsticks",
+          "premium_description": "Thin and crispy Italian breadsticks, lightly seasoned.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Lavache",
+          "short_description": "Lavash bread",
+          "premium_description": "Thin, soft flatbread traditionally baked in Middle Eastern cuisine.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Olive bread",
+          "short_description": "Olive bread",
+          "premium_description": "Bread infused with olives, offering a savory and rich flavor.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chiabatta",
+          "short_description": "Ciabatta bread",
+          "premium_description": "Italian white bread with a crisp crust and airy interior.",
+          "tags": [
+            "bread",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Sun flower seed bread",
+          "short_description": "Seed bread",
+          "premium_description": "Nutty bread enriched with sunflower seeds for added texture and flavor.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "healthy"
+          ]
+        },
+        {
+          "name": "Whole wheat rolls",
+          "short_description": "Whole wheat rolls",
+          "premium_description": "Soft rolls made with whole wheat flour, offering a wholesome taste.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "healthy"
+          ]
+        },
+        {
+          "name": "High fiber bread",
+          "short_description": "Fiber bread",
+          "premium_description": "Bread rich in fiber, designed for a nutritious and healthy option.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "healthy"
+          ]
+        },
+        {
+          "name": "Oat bread",
+          "short_description": "Oat bread",
+          "premium_description": "Soft bread made with oats, offering a mild and wholesome flavor.",
+          "tags": [
+            "bread",
+            "vegetarian",
+            "healthy"
+          ]
+        }
+      ]
+    },
+    "Choice of Rice": {
+      "Indian": [
+        {
+          "name": "Subz ki tahire",
+          "short_description": "Vegetable rice",
+          "premium_description": "Fragrant basmati rice cooked with seasonal vegetables and mild spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Jeera pulao",
+          "short_description": "Cumin rice",
+          "premium_description": "Aromatic basmati rice tempered with roasted cumin seeds.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Vegetable biryani",
+          "short_description": "Veg biryani",
+          "premium_description": "Layered basmati rice cooked with vegetables, herbs, and spices for a rich flavor.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Kashmiri pulao",
+          "short_description": "Sweet pulao",
+          "premium_description": "Rice cooked with dry fruits, nuts, and mild spices for a sweet and aromatic taste.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Kesari pulao",
+          "short_description": "Saffron rice",
+          "premium_description": "Rice infused with saffron, offering a rich aroma and vibrant color.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Motia pulao",
+          "short_description": "Pearl pulao",
+          "premium_description": "A delicately flavored pulao with a rich presentation and subtle spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Subz pulao",
+          "short_description": "Vegetable pulao",
+          "premium_description": "A simple yet flavorful pulao with mixed vegetables and spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Tomato rice",
+          "short_description": "Tomato rice",
+          "premium_description": "Rice cooked with tangy tomatoes and aromatic spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Khumb ka pulao",
+          "short_description": "Mushroom rice",
+          "premium_description": "Basmati rice cooked with mushrooms and subtle spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Pyaz aur jeere ka pulao",
+          "short_description": "Onion cumin rice",
+          "premium_description": "Rice cooked with caramelized onions and cumin for a rich flavor.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Basmati rice with cumin and onion",
+          "short_description": "Cumin onion rice",
+          "premium_description": "Fragrant basmati rice with cumin seeds and sautéed onions.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Aloo aur methi ka pulao",
+          "short_description": "Potato fenugreek rice",
+          "premium_description": "Rice cooked with potatoes and fenugreek leaves for a unique flavor.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Coconut rice",
+          "short_description": "Coconut rice",
+          "premium_description": "Rice cooked with coconut, offering a subtle sweetness and aroma.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Lemon rice",
+          "short_description": "Lemon rice",
+          "premium_description": "Tangy rice flavored with lemon juice and mild spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "indian"
+          ]
+        }
+      ]
+    },
+    "Choice of Noodles & Rice": {
+      "Oriental": [
+        {
+          "name": "Singapore noodles",
+          "short_description": "Singapore noodles",
+          "premium_description": "Thin noodles stir-fried with vegetables and spices in a Singapore-style preparation.",
+          "tags": [
+            "noodles",
+            "vegetarian",
+            "oriental"
+          ]
+        },
+        {
+          "name": "Vegetable Hakka noodles",
+          "short_description": "Hakka noodles",
+          "premium_description": "Classic Hakka noodles stir-fried with vegetables and sauces.",
+          "tags": [
+            "noodles",
+            "vegetarian",
+            "oriental"
+          ]
+        },
+        {
+          "name": "Pad Thai noodle",
+          "short_description": "Pad Thai",
+          "premium_description": "Thai-style noodles tossed with vegetables and a tangy-sweet sauce.",
+          "tags": [
+            "noodles",
+            "vegetarian",
+            "oriental"
+          ]
+        },
+        {
+          "name": "Vegetables Sichuan fried rice",
+          "short_description": "Sichuan fried rice",
+          "premium_description": "Fried rice cooked with vegetables and bold Sichuan spices.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "oriental",
+            "spicy"
+          ]
+        },
+        {
+          "name": "Veg. Fried rice",
+          "short_description": "Veg fried rice",
+          "premium_description": "Classic fried rice prepared with vegetables and light seasoning.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "oriental"
+          ]
+        },
+        {
+          "name": "Young chow fried rice",
+          "short_description": "Young chow rice",
+          "premium_description": "Traditional Chinese-style fried rice with vegetables and seasoning.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "oriental"
+          ]
+        },
+        {
+          "name": "Thai fried rice",
+          "short_description": "Thai rice",
+          "premium_description": "Fried rice prepared in Thai style with herbs and flavors.",
+          "tags": [
+            "rice",
+            "vegetarian",
+            "oriental"
+          ]
+        }
+      ]
+    },
+    "Choice of Raita / Yoghurt": {
+      "Indian": [
+        {
+          "name": "Cucumber raita",
+          "short_description": "Cucumber yogurt",
+          "premium_description": "A cooling yogurt preparation blended with fresh cucumber and mild spices for a refreshing accompaniment.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Mixed fruit raita",
+          "short_description": "Fruit yogurt",
+          "premium_description": "A delightful mix of seasonal fruits folded into creamy yogurt, offering a sweet and refreshing taste.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Boondi raita",
+          "short_description": "Boondi yogurt",
+          "premium_description": "Crispy gram flour pearls soaked in seasoned yogurt, delivering a balance of texture and flavor.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Mix raita",
+          "short_description": "Mixed raita",
+          "premium_description": "A combination of vegetables and spices blended into yogurt for a wholesome accompaniment.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Mint pineapple raita",
+          "short_description": "Pineapple raita",
+          "premium_description": "A refreshing yogurt mix with pineapple and mint, offering a sweet and cooling contrast.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Pudina raita",
+          "short_description": "Mint yogurt",
+          "premium_description": "Yogurt infused with fresh mint leaves for a refreshing and aromatic flavor.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Jeera raita",
+          "short_description": "Cumin yogurt",
+          "premium_description": "Yogurt flavored with roasted cumin, offering a subtle earthy taste.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Onion & chili raita",
+          "short_description": "Onion raita",
+          "premium_description": "A tangy yogurt preparation with onion and green chili for a slightly spicy kick.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        },
+        {
+          "name": "Tomato raita",
+          "short_description": "Tomato yogurt",
+          "premium_description": "Fresh tomatoes blended with yogurt and spices for a light and tangy accompaniment.",
+          "tags": [
+            "yoghurt",
+            "vegetarian",
+            "indian",
+            "side"
+          ]
+        }
+      ]
+    },
+    "Choice of Dessert": {
+      "Indian": [
+        {
+          "name": "Gulab jamun",
+          "short_description": "Sweet dumplings",
+          "premium_description": "Soft milk dumplings soaked in fragrant sugar syrup.",
+          "tags": [
+            "dessert",
+            "vegetarian",
+            "indian"
+          ]
+        },
+        {
+          "name": "Kala jamun",
+          "short_description": "Dark gulab jamun",
+          "premium_description": "Deep-fried milk dumplings with a rich caramelized flavor soaked in syrup.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Lady Kenny",
+          "short_description": "Bengali sweet",
+          "premium_description": "A classic Bengali sweet similar to gulab jamun with a soft texture.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Malai cham cham",
+          "short_description": "Cham cham",
+          "premium_description": "Soft cottage cheese sweets soaked in syrup and coated with cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Gajjar ka halwa (seasonal)",
+          "short_description": "Carrot halwa",
+          "premium_description": "Traditional dessert made with slow-cooked carrots, milk, and dry fruits.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Moong dal halwa",
+          "short_description": "Dal halwa",
+          "premium_description": "Rich dessert made from lentils cooked with ghee and sugar.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Lauki halwa",
+          "short_description": "Bottle gourd halwa",
+          "premium_description": "Sweet preparation made with bottle gourd and milk.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Rajbhog",
+          "short_description": "Rajbhog sweet",
+          "premium_description": "Large stuffed rasgulla flavored with saffron and dry fruits.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Rasgulla",
+          "short_description": "Rasgulla",
+          "premium_description": "Soft cottage cheese balls soaked in light sugar syrup.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Sandesh",
+          "short_description": "Sandesh",
+          "premium_description": "Delicate Bengali sweet made from fresh paneer.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kalakand",
+          "short_description": "Kalakand",
+          "premium_description": "Grainy milk-based sweet with rich texture and flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Double ka meetha",
+          "short_description": "Bread pudding",
+          "premium_description": "Hyderabadi dessert made with fried bread, milk, and sugar.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Saviyan ki kheer",
+          "short_description": "Vermicelli kheer",
+          "premium_description": "Sweet vermicelli pudding cooked with milk and nuts.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kesari bhat",
+          "short_description": "Kesari",
+          "premium_description": "Semolina dessert flavored with saffron and sugar.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Gur ke rasgulla",
+          "short_description": "Jaggery rasgulla",
+          "premium_description": "Rasgullas soaked in jaggery syrup for a rich flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Orange rasgulla",
+          "short_description": "Orange rasgulla",
+          "premium_description": "Rasgullas flavored with orange essence.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Strawberry rasgulla",
+          "short_description": "Strawberry rasgulla",
+          "premium_description": "Rasgullas infused with strawberry flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate burfi",
+          "short_description": "Chocolate burfi",
+          "premium_description": "Milk-based fudge infused with chocolate.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kaju khoya roll",
+          "short_description": "Kaju roll",
+          "premium_description": "Cashew and khoya sweet rolled into a rich delicacy.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Malai sandwich",
+          "short_description": "Malai sweet",
+          "premium_description": "Layered paneer sweet filled with cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chenna murki",
+          "short_description": "Chenna sweet",
+          "premium_description": "Paneer cubes coated with sugar syrup.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Milk cake",
+          "short_description": "Milk cake",
+          "premium_description": "Dense milk-based sweet with caramelized texture.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Lal peda",
+          "short_description": "Peda",
+          "premium_description": "Traditional milk sweet with a rich flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Jockeshahii",
+          "short_description": "Traditional sweet",
+          "premium_description": "A regional sweet delicacy with rich ingredients.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Malai chap",
+          "short_description": "Malai chap",
+          "premium_description": "Soft cottage cheese dessert enriched with cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Rice kheer",
+          "short_description": "Rice pudding",
+          "premium_description": "Classic rice pudding cooked with milk and sugar.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kesari phirnee",
+          "short_description": "Phirni",
+          "premium_description": "Ground rice dessert flavored with saffron.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chena payesh",
+          "short_description": "Payesh",
+          "premium_description": "Milk-based dessert with paneer and sugar.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Hot malpua with rabri",
+          "short_description": "Malpua",
+          "premium_description": "Fried pancakes served with thickened sweet milk.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Kesari Rasmalai",
+          "short_description": "Rasmalai",
+          "premium_description": "Soft paneer discs soaked in saffron-flavored milk.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Shahi tukra",
+          "short_description": "Shahi tukda",
+          "premium_description": "Fried bread dessert soaked in sugar syrup and milk.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Jalebi with rabri",
+          "short_description": "Jalebi",
+          "premium_description": "Crispy jalebis served with thickened sweet milk.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Strawberry sandesh",
+          "short_description": "Strawberry sandesh",
+          "premium_description": "Paneer sweet infused with strawberry flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Khoya burfi",
+          "short_description": "Khoya burfi",
+          "premium_description": "Rich milk fudge made with khoya.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Mango chenna payesh",
+          "short_description": "Mango payesh",
+          "premium_description": "Paneer dessert flavored with mango.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Mango chenna roll",
+          "short_description": "Mango roll",
+          "premium_description": "Paneer rolls infused with mango flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Pakija",
+          "short_description": "Traditional sweet",
+          "premium_description": "A rich and traditional Indian dessert preparation.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Malpua with rabdi",
+          "short_description": "Malpua",
+          "premium_description": "Soft fried pancakes served with creamy rabdi.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Fruit rabdi",
+          "short_description": "Fruit rabdi",
+          "premium_description": "Thickened milk dessert with fresh fruits.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Shree khand",
+          "short_description": "Shrikhand",
+          "premium_description": "Sweetened strained yogurt flavored with saffron and cardamom.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        }
+      ],
+      "Continental": [
+        {
+          "name": "Lemon and mascarpone slice",
+          "short_description": "Lemon dessert",
+          "premium_description": "A creamy mascarpone dessert with refreshing lemon flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate and hazelnut pastry",
+          "short_description": "Chocolate pastry",
+          "premium_description": "Rich pastry layered with chocolate and hazelnut cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Crunch chocolate orange pastry",
+          "short_description": "Chocolate pastry",
+          "premium_description": "Chocolate pastry with a hint of orange and crunchy texture.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Pistachio pastry",
+          "short_description": "Pistachio pastry",
+          "premium_description": "Delicate pastry flavored with pistachios.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Blueberry panna cotta",
+          "short_description": "Panna cotta",
+          "premium_description": "Silky Italian dessert topped with blueberry compote.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Pine apple jalousie",
+          "short_description": "Pineapple pastry",
+          "premium_description": "Flaky pastry filled with pineapple compote.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate and kahlua mousse",
+          "short_description": "Chocolate mousse",
+          "premium_description": "Smooth chocolate mousse infused with Kahlua.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Warm chocolate & walnut brownie",
+          "short_description": "Brownie",
+          "premium_description": "Warm chocolate brownie with crunchy walnuts.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Darjeeling tea custards",
+          "short_description": "Tea custard",
+          "premium_description": "Custard infused with delicate Darjeeling tea flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Crème caramel",
+          "short_description": "Caramel custard",
+          "premium_description": "Classic custard dessert topped with caramel.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Buttermilk pannacotta",
+          "short_description": "Pannacotta",
+          "premium_description": "Creamy pannacotta with a light buttermilk flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate soufflé",
+          "short_description": "Souffle",
+          "premium_description": "Light and airy chocolate soufflé served warm.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Tiramisu",
+          "short_description": "Tiramisu",
+          "premium_description": "Italian dessert layered with coffee-soaked sponge and mascarpone cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Baked yoghurt",
+          "short_description": "Baked yogurt",
+          "premium_description": "Sweet baked yogurt dessert with a creamy texture.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Black forest cake",
+          "short_description": "Black forest",
+          "premium_description": "Chocolate cake layered with cream and cherries.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Minted apple mousse",
+          "short_description": "Apple mousse",
+          "premium_description": "Light mousse flavored with apple and mint.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Double chocolate mousse, toffee dipped brownie",
+          "short_description": "Chocolate dessert",
+          "premium_description": "Rich double chocolate mousse paired with toffee brownie.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Basil & pear crème brulee",
+          "short_description": "Creme brulee",
+          "premium_description": "Classic crème brûlée infused with basil and pear.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Mango pastry",
+          "short_description": "Mango pastry",
+          "premium_description": "Light pastry layered with mango cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Duo of chocolate mousse",
+          "short_description": "Chocolate mousse",
+          "premium_description": "Two-layered chocolate mousse dessert.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate tart",
+          "short_description": "Chocolate tart",
+          "premium_description": "Rich chocolate filling in a crisp tart shell.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Blue berry cheese cake",
+          "short_description": "Blueberry cheesecake",
+          "premium_description": "Creamy cheesecake topped with blueberry compote.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Strawberry cheese cake",
+          "short_description": "Strawberry cheesecake",
+          "premium_description": "Cheesecake topped with fresh strawberry flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Passion fruit cheese cake",
+          "short_description": "Passion cheesecake",
+          "premium_description": "Cheesecake with tangy passion fruit topping.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Dark cherry cheese cake",
+          "short_description": "Cherry cheesecake",
+          "premium_description": "Rich cheesecake topped with dark cherries.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate roulade",
+          "short_description": "Chocolate roll",
+          "premium_description": "Soft chocolate sponge rolled with cream filling.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Swiss roll",
+          "short_description": "Swiss roll",
+          "premium_description": "Classic rolled sponge cake filled with cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Orange desire",
+          "short_description": "Orange dessert",
+          "premium_description": "A citrus-flavored dessert with refreshing orange notes.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate mud cake",
+          "short_description": "Mud cake",
+          "premium_description": "Dense and rich chocolate cake with intense flavor.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Warm chocolate pudding",
+          "short_description": "Chocolate pudding",
+          "premium_description": "Warm pudding with rich chocolate center.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate and nut pudding",
+          "short_description": "Nut pudding",
+          "premium_description": "Chocolate pudding enriched with crunchy nuts.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Coffee and mascarpone cake",
+          "short_description": "Coffee cake",
+          "premium_description": "Cake layered with coffee and mascarpone cream.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Berry and crumble cake",
+          "short_description": "Berry cake",
+          "premium_description": "Cake topped with berries and crumble.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Apple crumble",
+          "short_description": "Apple crumble",
+          "premium_description": "Baked apple dessert topped with crispy crumble.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Truffle and mascarpone cake",
+          "short_description": "Truffle cake",
+          "premium_description": "Rich cake layered with truffle and mascarpone.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Pineapple gautex",
+          "short_description": "Pineapple cake",
+          "premium_description": "Light pineapple flavored cake.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Fresh fruit gautex",
+          "short_description": "Fruit cake",
+          "premium_description": "Cake topped with fresh seasonal fruits.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Chocolate cake",
+          "short_description": "Chocolate cake",
+          "premium_description": "Classic chocolate sponge cake with rich frosting.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Truffle roll",
+          "short_description": "Truffle roll",
+          "premium_description": "Soft roll filled with chocolate truffle.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Red velvet cake",
+          "short_description": "Red velvet",
+          "premium_description": "Classic red velvet cake with cream cheese frosting.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Fresh fruit tart",
+          "short_description": "Fruit tart",
+          "premium_description": "Crisp tart base topped with custard and fresh fruits.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "White chocolate and cherry",
+          "short_description": "White chocolate dessert",
+          "premium_description": "Dessert combining white chocolate with cherry flavors.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        },
+        {
+          "name": "Lemon Gateaux",
+          "short_description": "Lemon cake",
+          "premium_description": "Soft cake infused with lemon flavor and cream layers.",
+          "tags": [
+            "dessert",
+            "vegetarian"
+          ]
+        }
+      ]
+    }
+  }
+}

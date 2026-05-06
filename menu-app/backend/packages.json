@@ -1,0 +1,1628 @@
+{
+  "packages": [
+    {
+      "id": "3b58105b-2203-4370-b0c0-3d44233fdc4e",
+      "packageName": "Corporate Veg",
+      "packageTier": "Corporate",
+      "basePrice": 1200,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Corporate Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 4
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 2
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 0
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": false,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": false,
+          "counters": null
+        }
+      ]
+    },
+    {
+      "id": "6acf7565-077c-4f67-a92e-27dbbbf6ff8a",
+      "packageName": "Corporate Non-Veg",
+      "packageTier": "Corporate",
+      "basePrice": 1300,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Corporate Non-Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 2
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 0
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": true,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": false,
+          "counters": null
+        }
+      ]
+    },
+    {
+      "id": "33047676-4432-4868-8dcf-a8b5ac8abc91",
+      "packageName": "Silver Veg",
+      "packageTier": "Silver",
+      "basePrice": 1600,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Silver Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 6
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 4
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 4
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 0
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": false,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": false,
+          "counters": null
+        }
+      ]
+    },
+    {
+      "id": "0be25c77-61a7-4b2a-b636-9266af2f0aa6",
+      "packageName": "Silver Non-Veg",
+      "packageTier": "Silver",
+      "basePrice": 1750,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Silver Non-Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 4
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 0
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": true,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": false,
+          "counters": null
+        }
+      ]
+    },
+    {
+      "id": "7f6e99bb-c5ab-42f3-8b35-ed247d42d04c",
+      "packageName": "Gold Veg",
+      "packageTier": "Gold",
+      "basePrice": 2200,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Gold Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 8
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 5
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 4
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 4
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 4
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 6
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 1
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": false,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": true,
+          "counters": 4
+        }
+      ]
+    },
+    {
+      "id": "b0947484-a5b2-4876-a15d-b56142e8f4e9",
+      "packageName": "Gold Non-Veg",
+      "packageTier": "Gold",
+      "basePrice": 2400,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Gold Non-Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 5
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 5
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 4
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 4
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 6
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 1
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": false,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": true,
+          "counters": 4
+        }
+      ]
+    },
+    {
+      "id": "1eb6ba6d-25fe-4834-97c4-eabf87241ccb",
+      "packageName": "Platinum Veg",
+      "packageTier": "Platinum",
+      "basePrice": 3000,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Platinum Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 12
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 7
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 6
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 7
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 8
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 10
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 2
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": false,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": true,
+          "counters": 4
+        }
+      ]
+    },
+    {
+      "id": "8b3827fd-989e-4e70-b9f4-ddefc2604973",
+      "packageName": "Platinum Non-Veg",
+      "packageTier": "Platinum",
+      "basePrice": 3300,
+      "minGuests": 100,
+      "maxGuests": 500,
+      "packageDescription": "Predefined package from banquet grid (Platinum Non-Veg).",
+      "notes": "Preloaded from banquet grid screenshot. You can edit quantities and add-ons.",
+      "status": "Active",
+      "sections": [
+        {
+          "sectionName": "Bar Area",
+          "subSections": [
+            {
+              "categoryName": "Welcome Drink",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Aerated Beverages",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Live Mocktail Bar",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Stationery Amenities",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Cheese Board",
+              "allowedQuantity": 0
+            }
+          ]
+        },
+        {
+          "sectionName": "Pre-Dining",
+          "subSections": [
+            {
+              "categoryName": "Time of Service",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 0
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 7
+            },
+            {
+              "categoryName": "Salads",
+              "allowedQuantity": 7
+            },
+            {
+              "categoryName": "Soups",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Western Bread",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Chaats (Live Stations)",
+              "allowedQuantity": 6
+            },
+            {
+              "categoryName": "Sushi Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Dim Sum Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mexican Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Galouti Station - Live",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Mashtini/Nimbu Quessadillas Station Live",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Indian Cuisine",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Main Course Live Stations",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Paneer",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 5
+            },
+            {
+              "categoryName": "Dal",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 3
+            },
+            {
+              "categoryName": "Achaar/ Papad/ Chutney",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Yoghurt/ Curd rice",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Indian Breads",
+              "allowedQuantity": 6
+            }
+          ]
+        },
+        {
+          "sectionName": "Oriental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 2
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Continental",
+          "subSections": [
+            {
+              "categoryName": "Non Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Veg",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Starch",
+              "allowedQuantity": 1
+            },
+            {
+              "categoryName": "Live Station",
+              "allowedQuantity": 1
+            }
+          ]
+        },
+        {
+          "sectionName": "Desserts",
+          "subSections": [
+            {
+              "categoryName": "Desserts",
+              "allowedQuantity": 10
+            },
+            {
+              "categoryName": "Desserts Live",
+              "allowedQuantity": 2
+            }
+          ]
+        }
+      ],
+      "addOns": [
+        {
+          "name": "Mutton",
+          "price": 100,
+          "unit": "per plate",
+          "enabled": false,
+          "counters": null
+        },
+        {
+          "name": "Chaats Counter",
+          "price": 6000,
+          "unit": "per item per 100 pax",
+          "enabled": true,
+          "counters": 4
+        }
+      ]
+    }
+  ]
+}
