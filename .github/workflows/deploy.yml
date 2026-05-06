@@ -35,3 +35,26 @@ jobs:
           protocol: ftps
           port: 21
           security: loose
+
+      - name: Install menu-app frontend dependencies
+        working-directory: menu-app/frontend
+        run: npm install
+
+      - name: Build menu-app frontend
+        working-directory: menu-app/frontend
+        env:
+          VITE_API_BASE_URL: ${{ secrets.MENU_API_BASE_URL }}
+        run: npm run build
+
+      - name: Deploy menu-app frontend to HostGator via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./menu-app/frontend/dist/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}menucraft/
+          state-name: .ftp-deploy-sync-state-menucraft.json
+          protocol: ftps
+          port: 21
+          security: loose

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: tci-menu-api
+    runtime: python
+    rootDir: menu-app/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: PERSISTENT_DATA_DIR
+        value: /var/data
+    disk:
+      name: menu-data
+      mountPath: /var/data
+      sizeGB: 1

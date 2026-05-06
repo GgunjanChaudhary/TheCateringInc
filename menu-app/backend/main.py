@@ -6,6 +6,7 @@ from pydantic import BaseModel
 from typing import Any, Dict, List, Literal, Optional
 from pathlib import Path
 import json
+import os
 import uuid
 
 from .auth import login_with_password, revoke_token, verify_token
@@ -84,7 +85,9 @@ class LoginRequest(BaseModel):
 app = FastAPI(title="TCI Menu Generator API", version="0.1.0")
 
 BACKEND_DIR = Path(__file__).resolve().parent
-PERSISTENT_DATA_DIR = BACKEND_DIR.parent / "persistent_data"
+PERSISTENT_DATA_DIR = Path(
+    os.getenv("PERSISTENT_DATA_DIR", str(BACKEND_DIR.parent / "persistent_data"))
+)
 PACKAGES_PATH = PERSISTENT_DATA_DIR / "packages.json"
 SECTIONS_MASTER_PATH = BACKEND_DIR / "sections_master.json"
 MASTER_REGISTRY_PATH = PERSISTENT_DATA_DIR / "master_registry.json"
@@ -99,6 +102,8 @@ app.add_middleware(
         "http://localhost:5176",
         "http://localhost:5177",
         "http://localhost:5200",
+        "https://www.demiurgic.co.in",
+        "https://demiurgic.co.in",
     ],
     allow_credentials=True,
     allow_methods=["*"],
