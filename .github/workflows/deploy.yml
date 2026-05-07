@@ -38,7 +38,7 @@ jobs:
 
       - name: Install menu-app frontend dependencies
         working-directory: menu-app/frontend
-        run: npm install
+        run: npm ci
 
       - name: Build menu-app frontend
         working-directory: menu-app/frontend
@@ -58,3 +58,4 @@ jobs:
           protocol: ftps
           port: 21
           security: loose
+          dangerous-clean-slate: false
