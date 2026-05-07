@@ -26,6 +26,9 @@ function Layout() {
             <Link to="/master-data" className="text-sm text-gray-700 hover:text-gray-900">
               Master Data
             </Link>
+            <Link to="/sales-generator" className="text-sm text-gray-700 hover:text-gray-900">
+              Menu Generator
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <ServerStatus />
