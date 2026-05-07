@@ -7,15 +7,21 @@ const TEMPLATE_OPTIONS = [
   { id: 'festive_floral', title: 'Festive Floral', subtitle: 'Vibrant celebratory style' },
 ]
 
-async function getJson(url) {
-  const response = await fetch(url)
+function apiUrl(path) {
+  const base = import.meta.env.VITE_API_BASE_URL
+  const prefix = base ? `${base.replace(/\/+$/, '')}/api` : '/api'
+  return `${prefix}/${path.replace(/^\/+/, '')}`
+}
+
+async function getJson(path) {
+  const response = await fetch(apiUrl(path))
   const data = await response.json().catch(() => ({}))
   if (!response.ok) throw new Error(data.detail || 'Request failed')
   return data
 }
 
-async function postJson(url, body) {
-  const response = await fetch(url, {
+async function postJson(path, body) {
+  const response = await fetch(apiUrl(path), {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
@@ -78,8 +84,8 @@ function SalesMenuGenerator() {
         setIsPlansLoading(true)
         setPlansLoadFailed(false)
         const [plans, items] = await Promise.all([
-          getJson('/api/public/generator/packages'),
-          getJson('/api/public/generator/master-data'),
+          getJson('public/generator/packages'),
+          getJson('public/generator/master-data'),
         ])
         setAvailablePlans(plans.packages || [])
         setMasterItems(items.items || [])
@@ -225,7 +231,7 @@ function SalesMenuGenerator() {
         create_own_menu: !selectedPlanId,
         event: buildEventPayload(),
       }
-      const data = await postJson('/api/public/generator/intake', payload)
+      const data = await postJson('public/generator/intake', payload)
       setIntakeResult(data)
       setMenuDrafts(data.functionMenus || [])
       const cursor = {}
@@ -386,7 +392,7 @@ function SalesMenuGenerator() {
     setError('')
     setIsLoading(true)
     try {
-      const data = await postJson('/api/public/generator/preview-html', {
+      const data = await postJson('public/generator/preview-html', {
         event: buildEventPayload(),
         function_menus: menuDrafts,
         template_name: templateId,
@@ -440,7 +446,7 @@ function SalesMenuGenerator() {
     }))
     try {
       setIsLoading(true)
-      await postJson('/api/public/generator/packages', {
+      await postJson('public/generator/packages', {
         submittedBy: submittedBy.trim(),
         package: {
           packageName: `${eventName || occasion} Custom Plan`,
