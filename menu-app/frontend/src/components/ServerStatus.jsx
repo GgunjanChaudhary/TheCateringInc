@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { apiFetch } from '../api/client.js'
 
 const STATUS_STYLES = {
   checking: 'bg-gray-400',
@@ -19,8 +20,7 @@ function ServerStatus() {
     let isMounted = true
     const checkHealth = async () => {
       try {
-        const baseUrl = import.meta.env.BASE_URL || '/'
-        const response = await fetch(`${baseUrl}api/health`)
+        const response = await apiFetch('health')
         if (!isMounted) return
         setStatus(response.ok ? 'online' : 'offline')
       } catch {

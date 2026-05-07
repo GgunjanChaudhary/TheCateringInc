@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { apiFetch } from '../api/client.js'
 
 const TOKEN_KEY = 'mc_token'
 
@@ -25,10 +26,8 @@ export const useAuthStore = create((set) => ({
     set({ token: null })
   },
   login: async (password) => {
-    const baseUrl = import.meta.env.BASE_URL || '/'
-    const response = await fetch(`${baseUrl}api/login`, {
+    const response = await apiFetch('login', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password }),
     })
     if (!response.ok) {
@@ -46,11 +45,7 @@ export const useAuthStore = create((set) => ({
   logout: async () => {
     const token = useAuthStore.getState().token
     if (token) {
-      const baseUrl = import.meta.env.BASE_URL || '/'
-      await fetch(`${baseUrl}api/logout`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      await apiFetch('logout', { method: 'POST' })
     }
     localStorage.removeItem(TOKEN_KEY)
     set({ token: null })
