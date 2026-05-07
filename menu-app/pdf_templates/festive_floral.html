@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ event_title }} — {{ company_name }}</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4; margin: 18mm 16mm 22mm 16mm; background: #FFF8F0;
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); font-family: 'Poppins'; font-size: 9pt; color: #b66b56; }
+  @bottom-left { content: "{{ company_name }} • {{ company_phone }} • {{ company_email }}"; font-family: 'Poppins'; font-size: 8pt; color: #b66b56; }
+  @bottom-right { content: "Confidential — For {{ client_name }} Only"; font-family: 'Poppins'; font-size: 8pt; color: #b66b56; font-style: italic; }
+}
+body { font-family: 'Poppins', sans-serif; color: #4a2818; background: #FFF8F0; }
+.header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 2px solid #E8704A; }
+.header img { height: 60px; }
+.brand-name { font-size: 22pt; font-weight: 800; color: #C0392B; }
+.brand-tag { font-size: 9pt; color: #b66b56; font-style: italic; }
+.event-block { text-align: center; padding: 18px 0; }
+.client-name { font-size: 30pt; font-weight: 800; color: #C0392B; margin: 0; }
+.event-title { font-size: 15pt; color: #E8704A; margin: 4px 0 14px; font-weight: 600; }
+.flower { font-size: 18pt; color: #E8704A; margin: 8px 0; }
+.event-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 16px;
+  background: white; padding: 14px; border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(192,57,43,0.08);
+  max-width: 92%; margin: 0 auto;
+}
+.event-grid .label { font-size: 8pt; color: #b66b56; text-transform: uppercase; letter-spacing: 1px; }
+.event-grid .value { font-weight: 700; font-size: 11pt; color: #4a2818; }
+.diet-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 10pt; font-weight: 700; color: white; }
+.diet-Veg { background: #2e7d32; }
+.diet-Non-Veg { background: #C0392B; }
+.diet-Jain { background: #1565c0; }
+.course {
+  background: white; margin: 16px 0; padding: 16px 18px; border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(192,57,43,0.08); border-left: 5px solid #E8704A;
+}
+.course-title {
+  font-size: 16pt; font-weight: 800; color: #C0392B;
+  margin: 0 0 12px; display: flex; align-items: center;
+}
+.course-title::before { content: "❀"; color: #E8704A; margin-right: 8px; font-size: 18pt; }
+.dish { padding: 6px 0; }
+.dish-name { font-size: 11pt; font-weight: 600; color: #4a2818; }
+.dish-desc { font-size: 9pt; color: #8a5a40; margin-top: 2px; }
+.dish-icon { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.icon-Veg { background: #2e7d32; }
+.icon-Non-Veg { background: #C0392B; }
+.icon-Jain { background: #1565c0; }
+.day-block { margin: 24px 0; padding: 14px; background: white; border-radius: 14px; border: 2px dashed #E8704A; }
+.day-label { font-size: 14pt; font-weight: 800; color: #C0392B; text-align: center; margin-bottom: 10px; }
+.prepared { margin-top: 22px; text-align: center; font-size: 9pt; color: #b66b56; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="header">
+  {% if logo_base64 %}<img src="data:image/png;base64,{{ logo_base64 }}" alt="logo">{% else %}<div class="brand-name">TCI</div>{% endif %}
+  <div style="text-align:right">
+    <div class="brand-name">{{ company_name }}</div>
+    <div class="brand-tag">{{ company_tagline }}</div>
+  </div>
+</div>
+
+<div class="event-block">
+  <h1 class="client-name">{{ client_name }}</h1>
+  <p class="event-title">{{ event_title }}</p>
+  <div class="flower">❀ ❀ ❀</div>
+  <span class="diet-badge diet-{{ dietary }}">{{ dietary }}</span>
+  <div class="event-grid" style="margin-top:14px">
+    <div><div class="label">Occasion</div><div class="value">{{ occasion }}</div></div>
+    <div><div class="label">Date</div><div class="value">{{ event_date }}</div></div>
+    <div><div class="label">Venue</div><div class="value">{{ venue }}</div></div>
+    <div><div class="label">Guests</div><div class="value">{{ guests }}</div></div>
+    <div><div class="label">Meal</div><div class="value">{{ meal_type }}</div></div>
+    <div><div class="label">Service</div><div class="value">{{ service_style }}</div></div>
+  </div>
+</div>
+
+{% macro render_courses(courses) %}
+  {% for course_name, dishes in courses.items() %}
+    {% if dishes %}
+    <div class="course">
+      <h3 class="course-title">{{ course_name }}</h3>
+      {% for dish in dishes %}
+      <div class="dish">
+        <span class="dish-icon icon-{{ dish.dietary }}"></span>
+        <span class="dish-name">{{ dish.name }}</span>
+        {% if dish.description %}<div class="dish-desc">{{ dish.description }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% if is_multi_day and series %}
+  {% for day in series %}
+    <div class="day-block">
+      <div class="day-label">{{ day.label }} — {{ day.occasion }} ({{ day.meal_type }})</div>
+      {{ render_courses(day.courses) }}
+    </div>
+  {% endfor %}
+{% else %}
+  {{ render_courses(courses) }}
+{% endif %}
+
+<div class="prepared">Prepared by <strong>{{ prepared_by }}</strong> on {{ generated_date }}</div>
+</body>
+</html>

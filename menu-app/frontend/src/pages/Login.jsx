@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/useAuthStore.js'
 
 function Login() {
@@ -46,6 +46,15 @@ function Login() {
           {isLoading ? 'Signing in...' : 'Login'}
         </button>
       </form>
+      <div className="mt-6 border-t border-gray-200 pt-4">
+        <p className="text-sm text-gray-600 mb-2">Sales team access</p>
+        <Link
+          to="/sales-generator"
+          className="inline-flex rounded-md border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700 hover:bg-blue-100"
+        >
+          Open Menu Generator
+        </Link>
+      </div>
     </div>
   )
 }

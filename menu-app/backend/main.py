@@ -2,14 +2,18 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Any, Dict, List, Literal, Optional
 from pathlib import Path
 import json
 import os
 import uuid
+from copy import deepcopy
+import sys
 
 from auth import login_with_password, revoke_token, verify_token
+from models import ClientEventIntake
+from routers.generate import router as generate_router
 
 
 class SubSection(BaseModel):
@@ -82,6 +86,69 @@ class LoginRequest(BaseModel):
     password: str
 
 
+class SalesSubmitPackageRequest(BaseModel):
+    submittedBy: str = Field(min_length=1, max_length=120)
+    package: CreateMenuPackageRequest
+
+
+class SuggestRequest(BaseModel):
+    diet: Literal["veg", "nonveg", "jain"] = "veg"
+    occasion: str = ""
+    meal: Literal["breakfast", "lunch", "hi-tea", "dinner"] = "dinner"
+    num_guests: int = Field(default=0, ge=0)
+    top_n: int = Field(default=3, ge=1, le=10)
+
+
+class EventMeta(BaseModel):
+    client_name: str = ""
+    event_title: str = ""
+    occasion: str = ""
+    event_date: Optional[str] = None
+    venue: str = ""
+    num_guests: int = Field(default=0, ge=0)
+    diet: Literal["veg", "nonveg", "jain"] = "veg"
+    meal: Literal["breakfast", "lunch", "hi-tea", "dinner"] = "dinner"
+    is_series: bool = False
+    series_notes: str = ""
+    special_notes: str = ""
+
+
+class DishSelection(BaseModel):
+    section: str
+    category: str
+    dish_name: str
+    description: str = ""
+
+
+class SectionSelection(BaseModel):
+    section: str
+    category: str
+    max_items: int = Field(default=1, ge=1, le=30)
+    selected_dishes: List[DishSelection] = []
+
+
+class GenerateMenuRequest(BaseModel):
+    event: EventMeta
+    mode: Literal["from_package", "custom"] = "from_package"
+    package_id: Optional[str] = None
+    selections: List[SectionSelection] = []
+    addons: List[str] = []
+
+
+class IntakeRequest(BaseModel):
+    event: ClientEventIntake
+    selected_package_id: Optional[str] = None
+    create_own_menu: bool = False
+
+
+class PreviewRequest(BaseModel):
+    event: ClientEventIntake
+    function_menus: List[Dict[str, Any]] = []
+    template_name: str = "elegant_gold"
+    prepared_by: str = "Sales Team"
+    service_style: Optional[str] = None
+
+
 app = FastAPI(title="TCI Menu Generator API", version="0.1.0")
 
 BACKEND_DIR = Path(__file__).resolve().parent
@@ -92,7 +159,14 @@ PACKAGES_PATH = PERSISTENT_DATA_DIR / "packages.json"
 SECTIONS_MASTER_PATH = BACKEND_DIR / "sections_master.json"
 MASTER_REGISTRY_PATH = PERSISTENT_DATA_DIR / "master_registry.json"
 BUNDLED_SEED_PATH = BACKEND_DIR / "pick_choose_menu.json"
+BUNDLED_PACKAGES_PATH = BACKEND_DIR / "packages.json"
 FRONTEND_DIST = BACKEND_DIR.parent / "frontend" / "dist"
+SAMPLE_MENUS_PATH = Path(
+    os.getenv("SAMPLE_MENUS_PATH", str(BACKEND_DIR / "sample_menus.json"))
+)
+if str(BACKEND_DIR.parent) not in sys.path:
+    sys.path.append(str(BACKEND_DIR.parent))
+from utils.pdf_generator import generate as generate_html_pdf  # noqa: E402
 
 app.add_middleware(
     CORSMiddleware,
@@ -148,6 +222,18 @@ def _read_packages_data():
     if not isinstance(packages_data.get("packages"), list):
         packages_data["packages"] = []
 
+    # Auto-seed from bundled packages.json when persistent store is empty
+    if len(packages_data["packages"]) == 0 and BUNDLED_PACKAGES_PATH.exists():
+        try:
+            with BUNDLED_PACKAGES_PATH.open("r", encoding="utf-8") as bundled_file:
+                bundled = json.load(bundled_file)
+            if isinstance(bundled.get("packages"), list) and bundled["packages"]:
+                packages_data["packages"] = bundled["packages"]
+                with PACKAGES_PATH.open("w", encoding="utf-8") as out_file:
+                    json.dump(packages_data, out_file, indent=2)
+        except (json.JSONDecodeError, OSError):
+            pass
+
     return packages_data
 
 
@@ -174,6 +260,246 @@ def _read_registry_data():
         raise HTTPException(status_code=500, detail="Invalid registry JSON") from exc
 
 
+def _flatten_registry_items(registry_data: Dict[str, Any]):
+    sections = registry_data.get("sections", {})
+    if not isinstance(sections, dict):
+        raise HTTPException(status_code=500, detail="Invalid registry sections structure")
+
+    items = []
+    for category_name, group_map in sections.items():
+        if not isinstance(group_map, dict):
+            continue
+        for group_name, item_list in group_map.items():
+            if not isinstance(item_list, list):
+                continue
+            for item in item_list:
+                if not isinstance(item, dict):
+                    continue
+                items.append(
+                    {
+                        "categoryName": category_name,
+                        "groupName": group_name,
+                        "itemName": item.get("name", ""),
+                        "shortDescription": item.get("short_description", ""),
+                        "premiumDescription": item.get("premium_description", ""),
+                    }
+                )
+    return items
+
+
+def _public_package_view(package: Dict[str, Any]):
+    return {
+        "id": package.get("id", ""),
+        "packageName": package.get("packageName", ""),
+        "packageTier": package.get("packageTier", ""),
+        "basePrice": package.get("basePrice", 0),
+        "minGuests": package.get("minGuests", 0),
+        "maxGuests": package.get("maxGuests", 0),
+        "packageDescription": package.get("packageDescription", ""),
+        "status": package.get("status", ""),
+        "sections": package.get("sections", []),
+        "addOns": package.get("addOns", []),
+        "submittedBy": package.get("submittedBy"),
+        "source": package.get("source"),
+    }
+
+
+def _load_sample_menus():
+    if not SAMPLE_MENUS_PATH.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                "Sample menus file not found. Set SAMPLE_MENUS_PATH or add sample_menus.json "
+                "to backend."
+            ),
+        )
+
+    try:
+        with SAMPLE_MENUS_PATH.open("r", encoding="utf-8") as sample_file:
+            sample_data = json.load(sample_file)
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=500, detail="Invalid sample menus JSON") from exc
+
+    menus = sample_data.get("menus", [])
+    if not isinstance(menus, list):
+        return []
+    return menus
+
+
+def _score_sample_menu(menu: Dict[str, Any], requirements: Dict[str, Any]):
+    tags = menu.get("tags", {})
+    score = 0.0
+    reasons = []
+
+    req_diet = requirements.get("diet")
+    menu_diet = tags.get("diet")
+    jain_ok = tags.get("jain_friendly", False)
+    if req_diet == "jain":
+        if jain_ok:
+            score += 50
+            reasons.append("Jain-friendly")
+        elif menu_diet == "veg":
+            score += 10
+            reasons.append("Vegetarian (Jain adaptable)")
+        else:
+            score -= 100
+            reasons.append("Not Jain-compatible")
+    elif req_diet == "veg":
+        if menu_diet == "veg":
+            score += 40
+            reasons.append("Vegetarian")
+        else:
+            score -= 80
+            reasons.append("Contains non-veg")
+    elif req_diet == "nonveg":
+        if menu_diet == "nonveg":
+            score += 40
+            reasons.append("Non-vegetarian")
+        else:
+            score += 5
+            reasons.append("Vegetarian (could add non-veg)")
+
+    req_occ = (requirements.get("occasion") or "").strip().lower()
+    if req_occ:
+        menu_occs = [str(o).lower() for o in tags.get("occasion", [])]
+        if any(req_occ == occ for occ in menu_occs):
+            score += 30
+            reasons.append(f"Matches '{req_occ}'")
+        elif any(req_occ in occ or occ in req_occ for occ in menu_occs):
+            score += 18
+            reasons.append(f"Similar to '{req_occ}'")
+
+    req_meal = (requirements.get("meal") or "").lower()
+    menu_meals = [str(m).lower() for m in tags.get("meal", [])]
+    if req_meal and req_meal in menu_meals:
+        score += 15
+        reasons.append(f"Suited to {req_meal}")
+
+    req_guests = requirements.get("num_guests")
+    if isinstance(req_guests, int) and req_guests > 0:
+        gmin = int(tags.get("guest_min", 0))
+        gmax = int(tags.get("guest_max", 10**6))
+        if gmin <= req_guests <= gmax:
+            score += 20
+            reasons.append(f"Sized for {req_guests} guests")
+
+    return score, reasons
+
+
+def _suggest_menus(requirements: Dict[str, Any], top_n: int):
+    menus = _load_sample_menus()
+    scored = []
+    for menu in menus:
+        if isinstance(menu, dict):
+            score, reasons = _score_sample_menu(menu, requirements)
+            scored.append((menu, score, reasons))
+    scored.sort(key=lambda item: item[1], reverse=True)
+    return [
+        {"menu": menu, "score": score, "reasons": reasons}
+        for menu, score, reasons in scored[:top_n]
+    ]
+
+
+def _normalize_token(value: str):
+    return "".join(ch.lower() for ch in value if ch.isalnum())
+
+
+def _flatten_registry_candidates(registry_data: Dict[str, Any], category_name: str):
+    sections = registry_data.get("sections", {})
+    if not isinstance(sections, dict):
+        return []
+
+    want = _normalize_token(category_name)
+    matched_keys = []
+    for key in sections.keys():
+        key_token = _normalize_token(str(key))
+        if key_token == want or want in key_token or key_token in want:
+            matched_keys.append(key)
+
+    if not matched_keys:
+        return []
+
+    seen = set()
+    candidates = []
+    for key in matched_keys:
+        groups = sections.get(key, {})
+        if not isinstance(groups, dict):
+            continue
+        for _, item_list in groups.items():
+            if not isinstance(item_list, list):
+                continue
+            for item in item_list:
+                if not isinstance(item, dict):
+                    continue
+                name = str(item.get("name", "")).strip()
+                if not name:
+                    continue
+                item_key = name.lower()
+                if item_key in seen:
+                    continue
+                seen.add(item_key)
+                candidates.append(item)
+    return candidates
+
+
+def _filter_candidates_for_diet(candidates: List[Dict[str, Any]], diet: str):
+    if diet not in {"veg", "jain"}:
+        return candidates
+
+    blocked_tokens = {"non veg", "non-veg", "chicken", "mutton", "fish", "seafood", "meat"}
+    filtered = []
+    for item in candidates:
+        text = f"{item.get('name','')} {' '.join(item.get('tags', []))}".lower()
+        if any(token in text for token in blocked_tokens):
+            continue
+        filtered.append(item)
+    return filtered
+
+
+def _build_prefill_from_package(
+    package: Dict[str, Any], registry_data: Dict[str, Any], diet: str
+):
+    prefilled_sections = []
+    for section in package.get("sections", []):
+        section_name = section.get("sectionName", "")
+        categories = []
+        for sub_section in section.get("subSections", []):
+            category = sub_section.get("categoryName", "")
+            qty = int(sub_section.get("allowedQuantity", 0) or 0)
+            if qty <= 0:
+                continue
+            candidates = _flatten_registry_candidates(registry_data, category)
+            candidates = _filter_candidates_for_diet(candidates, diet)
+            picked = []
+            for item in candidates[:qty]:
+                picked.append(
+                    {
+                        "dishName": item.get("name", ""),
+                        "shortDescription": item.get("short_description", ""),
+                        "premiumDescription": item.get("premium_description", ""),
+                    }
+                )
+            categories.append(
+                {
+                    "categoryName": category,
+                    "allowedQuantity": qty,
+                    "dishes": picked,
+                }
+            )
+        if categories:
+            prefilled_sections.append({"sectionName": section_name, "categories": categories})
+    return prefilled_sections
+
+
+def _build_custom_builder_sections(master_data: Dict[str, Any]):
+    section_defs = master_data.get("sections", [])
+    return [
+        {"sectionName": sec.get("sectionName", ""), "subSections": sec.get("subSections", [])}
+        for sec in section_defs
+        if isinstance(sec, dict)
+    ]
+
+
 @app.post("/api/login")
 def login(payload: LoginRequest):
     token = login_with_password(payload.password)
@@ -195,6 +521,15 @@ def get_master_registry_categories(_token: str = Depends(verify_token)):
     if not isinstance(sections, dict):
         raise HTTPException(status_code=500, detail="Invalid registry sections structure")
 
+    return {"categories": list(sections.keys())}
+
+
+@app.get("/api/public/generator/categories")
+def get_public_generator_categories():
+    _, registry_data = _read_registry_data()
+    sections = registry_data.get("sections", {})
+    if not isinstance(sections, dict):
+        raise HTTPException(status_code=500, detail="Invalid registry sections structure")
     return {"categories": list(sections.keys())}
 
 
@@ -564,10 +899,48 @@ def get_sections_master(_token: str = Depends(verify_token)):
     }
 
 
+@app.get("/api/public/generator/sections-master")
+def get_public_generator_sections_master():
+    master_data = _read_sections_master_data()
+    return {
+        "sections": master_data.get("sections", []),
+        "addOnsMaster": master_data.get("addOnsMaster", []),
+        "tierRules": master_data.get("tierRules", {}),
+    }
+
+
 @app.get("/api/packages", response_model=List[MenuPackage])
 def get_menu_packages(_token: str = Depends(verify_token)):
     packages_data = _read_packages_data()
     return packages_data.get("packages", [])
+
+
+@app.get("/api/public/generator/packages")
+def get_public_generator_packages():
+    packages_data = _read_packages_data()
+    packages = packages_data.get("packages", [])
+    active_packages = [
+        _public_package_view(package)
+        for package in packages
+        if isinstance(package, dict) and package.get("status") == "Active"
+    ]
+    return {"packages": active_packages}
+
+
+@app.get("/api/public/generator/packages/{package_id}")
+def get_public_generator_package(package_id: str):
+    packages_data = _read_packages_data()
+    package = next(
+        (
+            pkg
+            for pkg in packages_data.get("packages", [])
+            if isinstance(pkg, dict) and pkg.get("id") == package_id
+        ),
+        None,
+    )
+    if package is None:
+        raise HTTPException(status_code=404, detail="Package not found")
+    return _public_package_view(package)
 
 
 @app.post("/api/packages", response_model=MenuPackage)
@@ -581,6 +954,29 @@ def create_menu_package(
     _write_packages_data(existing_data)
 
     return new_package
+
+
+@app.post("/api/public/generator/packages")
+def submit_sales_package(payload: SalesSubmitPackageRequest):
+    submitted_name = payload.submittedBy.strip()
+    if not submitted_name:
+        raise HTTPException(status_code=400, detail="submittedBy is required")
+
+    new_package = _create_menu_package_from_payload(payload.package, str(uuid.uuid4()))
+    package_payload = new_package.model_dump()
+    package_payload["status"] = "Active"
+    package_payload["submittedBy"] = submitted_name
+    package_payload["source"] = "sales"
+
+    existing_data = _read_packages_data()
+    existing_data["packages"].append(package_payload)
+    _write_packages_data(existing_data)
+
+    return {
+        "id": package_payload["id"],
+        "status": package_payload["status"],
+        "submittedBy": package_payload["submittedBy"],
+    }
 
 
 @app.put("/api/packages/{package_id}", response_model=MenuPackage)
@@ -635,31 +1031,177 @@ def delete_menu_package(package_id: str, _token: str = Depends(verify_token)):
 @app.get("/api/master-data")
 def get_master_data(_token: str = Depends(verify_token)):
     _, registry_data = _read_registry_data()
-    sections = registry_data.get("sections", {})
-    if not isinstance(sections, dict):
-        raise HTTPException(status_code=500, detail="Invalid registry sections structure")
+    return {"items": _flatten_registry_items(registry_data)}
 
-    items = []
-    for category_name, group_map in sections.items():
-        if not isinstance(group_map, dict):
-            continue
-        for group_name, item_list in group_map.items():
-            if not isinstance(item_list, list):
-                continue
-            for item in item_list:
-                if not isinstance(item, dict):
-                    continue
-                items.append(
-                    {
-                        "categoryName": category_name,
-                        "groupName": group_name,
-                        "itemName": item.get("name", ""),
-                        "shortDescription": item.get("short_description", ""),
-                        "premiumDescription": item.get("premium_description", ""),
-                    }
+
+@app.get("/api/public/generator/master-data")
+def get_public_generator_master_data():
+    _, registry_data = _read_registry_data()
+    return {"items": _flatten_registry_items(registry_data)}
+
+
+@app.post("/api/public/generator/suggestions")
+def suggest_generator_menus(payload: SuggestRequest):
+    requirements = {
+        "diet": payload.diet,
+        "occasion": payload.occasion,
+        "meal": payload.meal,
+        "num_guests": payload.num_guests,
+    }
+    return {"suggestions": _suggest_menus(requirements, payload.top_n)}
+
+
+@app.post("/api/public/generator/generate")
+def generate_public_menu(payload: GenerateMenuRequest):
+    packages_data = _read_packages_data()
+    package = None
+    if payload.mode == "from_package":
+        if not payload.package_id:
+            raise HTTPException(
+                status_code=400, detail="package_id is required for from_package mode"
+            )
+        package = next(
+            (
+                pkg
+                for pkg in packages_data.get("packages", [])
+                if isinstance(pkg, dict) and pkg.get("id") == payload.package_id
+            ),
+            None,
+        )
+        if package is None:
+            raise HTTPException(status_code=404, detail="Package not found")
+
+    validated_sections = []
+    for section in payload.selections:
+        if len(section.selected_dishes) > section.max_items:
+            raise HTTPException(
+                status_code=400,
+                detail=(
+                    f"Too many dishes for {section.section}/{section.category}: "
+                    f"max {section.max_items}"
+                ),
+            )
+        validated_sections.append(section.model_dump())
+
+    cleaned_addons = [item.strip() for item in payload.addons if item and item.strip()]
+    return {
+        "event": payload.event.model_dump(),
+        "mode": payload.mode,
+        "sourcePackage": _public_package_view(package) if package else None,
+        "sections": validated_sections,
+        "addons": cleaned_addons,
+        "descriptionScope": "this_menu_only",
+    }
+
+
+@app.post("/api/public/generator/intake")
+def intake_generator_event(payload: IntakeRequest):
+    packages_data = _read_packages_data()
+    active_packages = [
+        package
+        for package in packages_data.get("packages", [])
+        if isinstance(package, dict) and package.get("status") == "Active"
+    ]
+    selected_package = None
+    if payload.selected_package_id:
+        selected_package = next(
+            (pkg for pkg in active_packages if pkg.get("id") == payload.selected_package_id), None
+        )
+        if selected_package is None:
+            raise HTTPException(status_code=404, detail="Selected package not found")
+
+    _, registry_data = _read_registry_data()
+    sections_master = _read_sections_master_data()
+    function_menus = []
+    for day in payload.event.day_plans:
+        for function in day.functions:
+            if selected_package:
+                sections_payload = _build_prefill_from_package(
+                    selected_package, registry_data, payload.event.metadata.get("diet", "veg")
                 )
+            else:
+                sections_payload = []
+            function_menus.append(
+                {
+                    "dayNumber": day.day_number,
+                    "eventDate": str(day.event_date),
+                    "functionName": function.function_name,
+                    "timeSlotCode": function.time_slot_code,
+                    "sections": deepcopy(sections_payload),
+                }
+            )
 
-    return {"items": items}
+    return {
+        "event": payload.event.model_dump(mode="json"),
+        "availablePlans": [_public_package_view(pkg) for pkg in active_packages],
+        "selectedPlan": _public_package_view(selected_package) if selected_package else None,
+        "menuMode": "plan_prefilled" if selected_package else "custom_builder",
+        "functionMenus": function_menus,
+        "customBuilderSections": _build_custom_builder_sections(sections_master),
+    }
+
+
+@app.post("/api/public/generator/preview-html")
+def preview_generator_html(payload: PreviewRequest):
+    def to_course_map(function_menu: Dict[str, Any]):
+        course_map: Dict[str, List[Dict[str, Any]]] = {}
+        for section in function_menu.get("sections", []):
+            section_name = section.get("sectionName", "Section")
+            for category in section.get("categories", []):
+                category_name = category.get("categoryName", "Category")
+                course_key = f"{section_name} - {category_name}"
+                dishes = []
+                for dish in category.get("dishes", []):
+                    dishes.append(
+                        {
+                            "name": dish.get("dishName", ""),
+                            "description": dish.get("shortDescription", ""),
+                            "dietary": payload.event.metadata.get("diet", "Veg").title(),
+                        }
+                    )
+                course_map[course_key] = dishes
+        return course_map
+
+    series = []
+    for menu in payload.function_menus:
+        series.append(
+            {
+                "label": f"Day {menu.get('dayNumber', 1)}",
+                "occasion": payload.event.occasion,
+                "meal_type": menu.get("functionName", ""),
+                "courses": to_course_map(menu),
+            }
+        )
+
+    first_courses = to_course_map(payload.function_menus[0]) if payload.function_menus else {}
+    event_title = (
+        getattr(payload.event, "event_name", None)
+        or payload.event.occasion
+    )
+    service_style = (
+        payload.service_style
+        or payload.event.metadata.get("service_style")
+        or "Buffet"
+    )
+    html, _ = generate_html_pdf(
+        payload.template_name,
+        {
+            "client_name": payload.event.client_name,
+            "event_title": event_title,
+            "occasion": payload.event.occasion,
+            "event_date": f"{payload.event.start_date} to {payload.event.end_date}",
+            "venue": payload.event.venue or "",
+            "guests": str(payload.event.min_guests),
+            "meal_type": payload.function_menus[0].get("functionName", "") if payload.function_menus else "",
+            "service_style": service_style,
+            "dietary": payload.event.metadata.get("diet", "Veg").title(),
+            "prepared_by": payload.prepared_by,
+            "is_multi_day": payload.event.is_multi_day,
+            "series": series,
+            "courses": first_courses,
+        },
+    )
+    return {"html": html}
 
 
 @app.patch("/api/master-data")
@@ -707,6 +1249,7 @@ def patch_master_data(
 
 
 _ensure_persistent_data()
+app.include_router(generate_router)
 if FRONTEND_DIST.exists():
     app.mount(
         "/menucraft",

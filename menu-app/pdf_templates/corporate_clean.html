@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ event_title }} — {{ company_name }}</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4; margin: 18mm 16mm 22mm 16mm;
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); font-family: 'Inter'; font-size: 9pt; color: #6c7a89; }
+  @bottom-left { content: "{{ company_name }} • {{ company_phone }} • {{ company_email }}"; font-family: 'Inter'; font-size: 8pt; color: #6c7a89; }
+  @bottom-right { content: "Confidential — For {{ client_name }} Only"; font-family: 'Inter'; font-size: 8pt; color: #6c7a89; }
+}
+body { font-family: 'Inter', sans-serif; color: #2c3e50; background: #ffffff; }
+.header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #1A3A5C; padding-bottom: 12px; }
+.header img { height: 56px; }
+.brand-name { font-size: 20pt; font-weight: 800; color: #1A3A5C; }
+.brand-tag { font-size: 9pt; color: #6c7a89; letter-spacing: 0.5px; }
+.event-block { padding: 18px 0; }
+.client-name { font-size: 28pt; font-weight: 800; color: #1A3A5C; margin: 0; }
+.event-title { font-size: 14pt; color: #5a6c7d; margin: 4px 0 14px; font-weight: 400; }
+.event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 24px; padding: 12px 0; border-top: 1px solid #E0E5EB; border-bottom: 1px solid #E0E5EB; }
+.event-grid .label { font-size: 8pt; color: #6c7a89; text-transform: uppercase; letter-spacing: 1.2px; }
+.event-grid .value { font-weight: 700; font-size: 11pt; color: #1A3A5C; }
+.diet-badge { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 9pt; font-weight: 700; color: white; margin-bottom: 8px; }
+.diet-Veg { background: #2e7d32; }
+.diet-Non-Veg { background: #c62828; }
+.diet-Jain { background: #1565c0; }
+.course { display: flex; margin: 18px 0; }
+.course-bar { width: 6px; background: #1A3A5C; border-radius: 3px; flex-shrink: 0; }
+.course-body { padding-left: 16px; flex: 1; }
+.course-title { font-size: 14pt; font-weight: 800; color: #1A3A5C; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 10px; }
+.dish { padding: 6px 0; border-bottom: 1px dashed #E0E5EB; }
+.dish:last-child { border-bottom: none; }
+.dish-name { font-size: 11pt; font-weight: 600; color: #2c3e50; }
+.dish-desc { font-size: 9pt; color: #6c7a89; margin-top: 2px; }
+.dish-icon { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.icon-Veg { background: #2e7d32; }
+.icon-Non-Veg { background: #c62828; }
+.icon-Jain { background: #1565c0; }
+.day-block { margin: 24px 0; padding: 14px; background: #F4F7FB; border-left: 5px solid #1A3A5C; }
+.day-label { font-size: 13pt; font-weight: 800; color: #1A3A5C; margin-bottom: 8px; }
+.prepared { margin-top: 24px; font-size: 9pt; color: #6c7a89; text-align: center; }
+</style>
+</head>
+<body>
+<div class="header">
+  {% if logo_base64 %}<img src="data:image/png;base64,{{ logo_base64 }}" alt="logo">{% else %}<div class="brand-name">TCI</div>{% endif %}
+  <div style="text-align:right">
+    <div class="brand-name">{{ company_name }}</div>
+    <div class="brand-tag">{{ company_tagline }}</div>
+  </div>
+</div>
+
+<div class="event-block">
+  <span class="diet-badge diet-{{ dietary }}">{{ dietary }}</span>
+  <h1 class="client-name">{{ client_name }}</h1>
+  <p class="event-title">{{ event_title }}</p>
+  <div class="event-grid">
+    <div><div class="label">Occasion</div><div class="value">{{ occasion }}</div></div>
+    <div><div class="label">Event Date</div><div class="value">{{ event_date }}</div></div>
+    <div><div class="label">Venue</div><div class="value">{{ venue }}</div></div>
+    <div><div class="label">Guests</div><div class="value">{{ guests }}</div></div>
+    <div><div class="label">Meal Type</div><div class="value">{{ meal_type }}</div></div>
+    <div><div class="label">Service Style</div><div class="value">{{ service_style }}</div></div>
+  </div>
+</div>
+
+{% macro render_courses(courses) %}
+  {% for course_name, dishes in courses.items() %}
+    {% if dishes %}
+    <div class="course">
+      <div class="course-bar"></div>
+      <div class="course-body">
+        <h3 class="course-title">{{ course_name }}</h3>
+        {% for dish in dishes %}
+        <div class="dish">
+          <span class="dish-icon icon-{{ dish.dietary }}"></span>
+          <span class="dish-name">{{ dish.name }}</span>
+          {% if dish.description %}<div class="dish-desc">{{ dish.description }}</div>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% if is_multi_day and series %}
+  {% for day in series %}
+    <div class="day-block">
+      <div class="day-label">{{ day.label }} — {{ day.occasion }} ({{ day.meal_type }})</div>
+      {{ render_courses(day.courses) }}
+    </div>
+  {% endfor %}
+{% else %}
+  {{ render_courses(courses) }}
+{% endif %}
+
+<div class="prepared">Prepared by <strong>{{ prepared_by }}</strong> on {{ generated_date }}</div>
+</body>
+</html>
