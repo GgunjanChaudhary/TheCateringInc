@@ -1,10 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
 
 const STEPS = ['Event Details', 'Build Menu', 'Choose Template', 'Generate PDF']
+
+// Maps UI category names (lowercase) to registry section names (lowercase) when substring match fails
+const CATEGORY_REGISTRY_MAP = {
+  'salads': ['salad bar'],
+  'desserts': ['choice of dessert'],
+  'desserts live': ['choice of dessert'],
+  'starch': ['choice of rice', 'choice of noodles & rice'],
+  'yoghurt/ curd rice': ['choice of raita / yoghurt'],
+}
 const TEMPLATE_OPTIONS = [
+  { id: 'TheCateringIncMenu', title: 'The Catering Inc.', subtitle: 'Elegant dark premium look' },
   { id: 'corporate_clean', title: 'Corporate Clean', subtitle: 'Sharp and modern' },
-  { id: 'elegant_gold', title: 'Elegant Gold', subtitle: 'Premium banquet look' },
-  { id: 'festive_floral', title: 'Festive Floral', subtitle: 'Vibrant celebratory style' },
 ]
 
 function apiUrl(path) {
@@ -63,6 +71,7 @@ function SalesMenuGenerator() {
   const [plansLoadFailed, setPlansLoadFailed] = useState(false)
   const [selectedPlanId, setSelectedPlanId] = useState('')
   const [masterItems, setMasterItems] = useState([])
+  const [masterBundles, setMasterBundles] = useState({})
 
   // Menu building
   const [intakeResult, setIntakeResult] = useState(null)
@@ -73,7 +82,7 @@ function SalesMenuGenerator() {
   const [justAddedSectionKey, setJustAddedSectionKey] = useState(null)
 
   // Output
-  const [selectedTemplate, setSelectedTemplate] = useState('elegant_gold')
+  const [selectedTemplate, setSelectedTemplate] = useState('TheCateringIncMenu')
   const [previewHtml, setPreviewHtml] = useState('')
   const [submittedBy, setSubmittedBy] = useState('')
   const [showSavePlan, setShowSavePlan] = useState(false)
@@ -92,6 +101,7 @@ function SalesMenuGenerator() {
         ])
         setAvailablePlans(plans.packages || [])
         setMasterItems(items.items || [])
+        setMasterBundles(items.bundles || {})
         setIsPlansLoading(false)
         return
       } catch (err) {
@@ -367,6 +377,39 @@ function SalesMenuGenerator() {
                       premiumDescription: source?.premiumDescription || '',
                     },
                   ],
+                }
+              }),
+            }
+          }),
+        }
+      })
+    )
+  }
+
+  const fillBundle = (sectionIndex, categoryIndex, bundle) => {
+    const bundleItems = bundle.items.map((bi) => {
+      const source = masterItems.find((m) => m.itemName === bi.name)
+      return {
+        dishName: bi.name,
+        shortDescription: source?.shortDescription || bi.shortDescription || '',
+        premiumDescription: source?.premiumDescription || '',
+      }
+    })
+    setMenuDrafts((prev) =>
+      prev.map((item, idx) => {
+        if (idx !== activeFunctionIndex) return item
+        return {
+          ...item,
+          sections: (item.sections || []).map((section, sIdx) => {
+            if (sIdx !== sectionIndex) return section
+            return {
+              ...section,
+              categories: (section.categories || []).map((category, cIdx) => {
+                if (cIdx !== categoryIndex) return category
+                return {
+                  ...category,
+                  allowedQuantity: Math.max(Number(category.allowedQuantity || 0), bundleItems.length),
+                  dishes: bundleItems,
                 }
               }),
             }
@@ -845,12 +888,16 @@ function SalesMenuGenerator() {
                           const filled = (category.dishes || []).length
                           const total = Number(category.allowedQuantity || 0)
                           const isFull = total > 0 && filled >= total
+                          const categoryLower = (category.categoryName || '').toLowerCase()
+                          const aliases = CATEGORY_REGISTRY_MAP[categoryLower] || []
                           const opts = masterItems
-                            .filter((item) =>
-                              (item.categoryName || '').toLowerCase().includes((category.categoryName || '').toLowerCase()) ||
-                              (category.categoryName || '').toLowerCase().includes((item.categoryName || '').toLowerCase())
-                            )
+                            .filter((item) => {
+                              const itemCat = (item.categoryName || '').toLowerCase()
+                              if (itemCat.includes(categoryLower) || categoryLower.includes(itemCat)) return true
+                              return aliases.some((alias) => itemCat.includes(alias) || alias.includes(itemCat))
+                            })
                             .slice(0, 120)
+                          const bundle = masterBundles[category.categoryName]
                           return (
                             <div key={`${category.categoryName}-${categoryIndex}`} className="mt-2 rounded border border-[#f0e7da] p-2">
                               <div className="flex flex-wrap items-center gap-2">
@@ -866,20 +913,32 @@ function SalesMenuGenerator() {
                                   className="w-14 rounded-md border border-[#e7dbca] px-2 py-1 text-xs"
                                   title="Quantity"
                                 />
-                                <select
-                                  defaultValue=""
-                                  disabled={isFull}
-                                  onChange={(e) => {
-                                    addDish(sectionIndex, categoryIndex, e.target.value)
-                                    e.target.value = ''
-                                  }}
-                                  className={`rounded-md border border-[#e7dbca] px-2 py-1 text-xs ${isFull ? 'cursor-not-allowed opacity-40' : ''}`}
-                                >
-                                  <option value="">{isFull ? 'Filled ✓' : 'Add dish…'}</option>
-                                  {!isFull && opts.map((item) => (
-                                    <option key={`${item.groupName}-${item.itemName}`} value={item.itemName}>{item.itemName}</option>
-                                  ))}
-                                </select>
+                                {bundle && (
+                                  <button
+                                    type="button"
+                                    onClick={() => fillBundle(sectionIndex, categoryIndex, bundle)}
+                                    className="rounded-md border border-amber-400 px-2 py-1 text-xs text-amber-700 hover:bg-amber-50"
+                                    title={`Auto-fill: ${bundle.items.map((i) => i.name).join(', ')}`}
+                                  >
+                                    Fill Combo
+                                  </button>
+                                )}
+                                {!bundle && (
+                                  <select
+                                    defaultValue=""
+                                    disabled={isFull}
+                                    onChange={(e) => {
+                                      addDish(sectionIndex, categoryIndex, e.target.value)
+                                      e.target.value = ''
+                                    }}
+                                    className={`rounded-md border border-[#e7dbca] px-2 py-1 text-xs ${isFull ? 'cursor-not-allowed opacity-40' : ''}`}
+                                  >
+                                    <option value="">{isFull ? 'Filled ✓' : 'Add dish…'}</option>
+                                    {!isFull && opts.map((item) => (
+                                      <option key={`${item.groupName}-${item.itemName}`} value={item.itemName}>{item.itemName}</option>
+                                    ))}
+                                  </select>
+                                )}
                               </div>
                               <div className="mt-2 flex flex-wrap gap-2">
                                 {(category.dishes || []).map((dish, dishIndex) => (
@@ -912,66 +971,106 @@ function SalesMenuGenerator() {
               </>
             ) : null}
 
-            {/* ── STEP 3: Choose Template ── */}
+            {/* ── STEP 3: Choose Template ── (full-screen overlay) */}
             {step === 3 ? (
-              <>
-                <h2 className="text-5xl font-serif text-[#7A1F2B]">Choose Template</h2>
-                <p className="mt-1 text-[#8d7867]">Pick the final output style.</p>
-                <div className="mt-4 grid gap-3 md:grid-cols-3">
-                  {TEMPLATE_OPTIONS.map((template) => (
-                    <button
-                      key={template.id}
-                      type="button"
-                      onClick={async () => {
-                        setSelectedTemplate(template.id)
-                        await generatePreview(template.id)
-                      }}
-                      className={`rounded-lg border p-3 text-left ${selectedTemplate === template.id ? 'border-[#7A1F2B] bg-[#fff6ee]' : 'border-[#eadfce] bg-white'}`}
-                    >
-                      <p className="font-serif text-xl text-[#7A1F2B]">{template.title}</p>
-                      <p className="mt-1 text-xs text-[#8d7867]">{template.subtitle}</p>
+              <div className="fixed inset-0 z-30 flex flex-col bg-[#f0ece4]">
+                {/* Top bar */}
+                <div className="flex shrink-0 items-center gap-4 border-b border-[#eadfce] bg-white px-6 py-3 shadow-sm">
+                  <span className="font-serif text-lg text-[#7A1F2B]">Choose Template</span>
+                  <span className="hidden text-sm text-[#8d7867] sm:block">Pick the output style — preview updates instantly.</span>
+                  <div className="ml-auto flex items-center gap-3">
+                    {isLoading && <span className="text-xs text-[#8d7867]">Generating…</span>}
+                    {error && <span className="max-w-xs truncate text-xs text-red-600">{error}</span>}
+                    <button type="button" onClick={() => setStep(2)} className="rounded-md border border-[#e7dbca] px-4 py-2 text-sm text-[#8d7867] hover:bg-[#fdfaf6]">← Back</button>
+                    <button type="button" onClick={gotoStep4} disabled={isLoading} className="rounded-md bg-[#7A1F2B] px-6 py-2 text-sm font-medium text-white disabled:opacity-50">
+                      {isLoading ? 'Loading…' : 'Next →'}
                     </button>
-                  ))}
-                </div>
-                {previewHtml && (
-                  <div className="mt-4">
-                    <p className="mb-1 text-xs text-[#8d7867]">Preview</p>
-                    <iframe title="template-preview" srcDoc={previewHtml} className="h-80 w-full rounded-md border border-[#eadfce]" />
                   </div>
-                )}
-                <div className="mt-6 flex justify-between">
-                  <button type="button" onClick={() => setStep(2)} className="rounded-md border border-[#e7dbca] px-4 py-2 text-sm text-[#8d7867]">Back</button>
-                  <button type="button" onClick={gotoStep4} disabled={isLoading} className="rounded-md bg-[#7A1F2B] px-6 py-2 text-sm font-medium text-white">
-                    {isLoading ? 'Loading…' : 'Next →'}
-                  </button>
                 </div>
-              </>
+                {/* Body */}
+                <div className="flex flex-1 overflow-hidden">
+                  {/* Sidebar */}
+                  <div className="flex w-56 shrink-0 flex-col gap-2 overflow-y-auto border-r border-[#eadfce] bg-white p-4">
+                    <p className="mb-1 text-xs font-medium uppercase tracking-wider text-[#8d7867]">Style</p>
+                    {TEMPLATE_OPTIONS.map((template) => (
+                      <button
+                        key={template.id}
+                        type="button"
+                        onClick={async () => {
+                          setSelectedTemplate(template.id)
+                          await generatePreview(template.id)
+                        }}
+                        className={`rounded-lg border p-3 text-left transition-colors ${selectedTemplate === template.id ? 'border-[#7A1F2B] bg-[#fff6ee]' : 'border-[#eadfce] bg-white hover:bg-[#fdfaf6]'}`}
+                      >
+                        <p className="font-serif text-base text-[#7A1F2B]">{template.title}</p>
+                        <p className="mt-0.5 text-xs text-[#8d7867]">{template.subtitle}</p>
+                      </button>
+                    ))}
+                  </div>
+                  {/* Preview pane */}
+                  <div className="flex-1 overflow-auto bg-[#e8e0d5] p-6">
+                    {isLoading ? (
+                      <div className="flex h-full items-center justify-center text-[#8d7867]">Generating preview…</div>
+                    ) : previewHtml ? (
+                      <iframe
+                        title="template-preview"
+                        srcDoc={previewHtml}
+                        className="h-full w-full rounded-md border-0 shadow-xl"
+                        style={{ minHeight: 'calc(100vh - 57px)' }}
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center text-[#8d7867]">Select a template to see a preview.</div>
+                    )}
+                  </div>
+                </div>
+              </div>
             ) : null}
 
-            {/* ── STEP 4: Generate PDF ── */}
+            {/* ── STEP 4: Generate PDF ── (full-screen overlay) */}
             {step === 4 ? (
-              <>
-                <h2 className="text-5xl font-serif text-[#7A1F2B]">Generate PDF</h2>
-                <p className="mt-1 text-[#8d7867]">Preview and export your final menu.</p>
-                {previewHtml ? (
-                  <iframe title="menu-preview" srcDoc={previewHtml} className="mt-4 h-[560px] w-full rounded-md border border-[#eadfce]" />
-                ) : (
-                  <p className="mt-4 text-sm text-[#8d7867]">No preview yet. Go back and choose a template.</p>
-                )}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <button type="button" onClick={downloadHtml} className="rounded-md bg-[#7A1F2B] px-4 py-2 text-sm font-medium text-white">Download HTML</button>
-                  {!selectedPlanId ? (
-                    <button type="button" onClick={() => setShowSavePlan(true)} className="rounded-md border border-[#7A1F2B] px-4 py-2 text-sm font-medium text-[#7A1F2B]">
-                      Save Plan to Databank
+              <div className="fixed inset-0 z-30 flex flex-col bg-[#f0ece4]">
+                {/* Top bar */}
+                <div className="flex shrink-0 items-center gap-4 border-b border-[#eadfce] bg-white px-6 py-3 shadow-sm">
+                  <span className="font-serif text-lg text-[#7A1F2B]">Generate PDF</span>
+                  <span className="hidden text-sm text-[#8d7867] sm:block">Preview and export your final menu.</span>
+                  <div className="ml-auto flex items-center gap-3">
+                    <button type="button" onClick={() => setStep(3)} className="rounded-md border border-[#e7dbca] px-4 py-2 text-sm text-[#8d7867] hover:bg-[#fdfaf6]">← Back</button>
+                    <span className="rounded-md bg-[#E8D58A] px-4 py-2 text-sm font-medium text-[#7A1F2B]">Done</span>
+                  </div>
+                </div>
+                {/* Body */}
+                <div className="flex flex-1 overflow-hidden">
+                  {/* Sidebar */}
+                  <div className="flex w-56 shrink-0 flex-col gap-3 overflow-y-auto border-r border-[#eadfce] bg-white p-4">
+                    <p className="text-xs font-medium uppercase tracking-wider text-[#8d7867]">Export</p>
+                    <button type="button" onClick={downloadHtml} className="rounded-md bg-[#7A1F2B] px-4 py-2 text-sm font-medium text-white hover:bg-[#9B2836]">
+                      Download HTML
                     </button>
-                  ) : null}
-                  <button type="button" onClick={startOver} className="rounded-md border border-[#e7dbca] px-4 py-2 text-sm text-[#8d7867]">Start Over</button>
+                    {!selectedPlanId && (
+                      <button type="button" onClick={() => setShowSavePlan(true)} className="rounded-md border border-[#7A1F2B] px-4 py-2 text-sm font-medium text-[#7A1F2B] hover:bg-[#fff6ee]">
+                        Save Plan to Databank
+                      </button>
+                    )}
+                    <button type="button" onClick={startOver} className="rounded-md border border-[#e7dbca] px-4 py-2 text-sm text-[#8d7867] hover:bg-[#fdfaf6]">
+                      Start Over
+                    </button>
+                    {error && <p className="text-xs text-red-600">{error}</p>}
+                  </div>
+                  {/* Preview pane */}
+                  <div className="flex-1 overflow-auto bg-[#e8e0d5] p-6">
+                    {previewHtml ? (
+                      <iframe
+                        title="menu-preview"
+                        srcDoc={previewHtml}
+                        className="h-full w-full rounded-md border-0 shadow-xl"
+                        style={{ minHeight: 'calc(100vh - 57px)' }}
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center text-[#8d7867]">No preview yet. Go back and choose a template.</div>
+                    )}
+                  </div>
                 </div>
-                <div className="mt-6 flex justify-between">
-                  <button type="button" onClick={() => setStep(3)} className="rounded-md border border-[#e7dbca] px-4 py-2 text-sm text-[#8d7867]">Back</button>
-                  <span className="rounded-md bg-[#E8D58A] px-4 py-2 text-sm text-[#7A1F2B]">Done</span>
-                </div>
-              </>
+              </div>
             ) : null}
 
             {error ? (

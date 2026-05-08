@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePackageStore } from '../store/usePackageStore.js'
 import { apiFetch } from '../api/client.js'
 
@@ -27,6 +27,7 @@ function AdminDashboard() {
   const isLoading = usePackageStore((state) => state.isLoading)
   const setError = usePackageStore((state) => state.setError)
   const storeError = usePackageStore((state) => state.error)
+  const formRef = useRef(null)
   const [isSaving, setIsSaving] = useState(false)
   const [isSeeding, setIsSeeding] = useState(false)
   const [isDeletingId, setIsDeletingId] = useState(null)
@@ -239,6 +240,8 @@ function AdminDashboard() {
       const master = addOnsMaster.find((m) => m.name === addOn.name)
       return { name: addOn.name, price: addOn.price, unit: addOn.unit, enabled: addOn.enabled, counters: addOn.counters, appliesTo: master?.appliesTo ?? [], minCounters: master?.minCounters ?? null }
     }))
+    // Scroll form into view so the user sees the populated fields immediately
+    setTimeout(() => formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 0)
   }
 
   const handleSeedPredefinedPackages = async () => {
@@ -256,10 +259,17 @@ function AdminDashboard() {
   }
 
   const handleDeletePackage = async (packageId) => {
+    const pkgName = packages.find((p) => p.id === packageId)?.packageName || 'this package'
+    const confirmed = window.confirm(
+      `Delete "${pkgName}"?\n\nThis removes the package plan only. All dishes in the Master Registry are unaffected.`
+    )
+    if (!confirmed) return
     setError(null)
     setIsDeletingId(packageId)
     try {
       await deletePackage(packageId)
+      // If this package was open in the edit form, clear it to avoid stale state
+      if (editingPackageId === packageId) resetForm()
     } finally {
       setIsDeletingId(null)
     }
@@ -281,7 +291,7 @@ function AdminDashboard() {
               {isSeeding ? 'Loading...' : 'Load Predefined Packages'}
             </button>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Package Name</label>

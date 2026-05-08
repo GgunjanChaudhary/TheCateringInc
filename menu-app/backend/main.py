@@ -82,6 +82,32 @@ class MasterDataUpdateRequest(BaseModel):
     premiumDescription: str
 
 
+class RegistrySectionCreate(BaseModel):
+    name: str
+    groupName: str = "Default"
+
+
+class RegistrySectionRename(BaseModel):
+    newName: str
+
+
+class RegistryItemAdd(BaseModel):
+    groupName: str = "Default"
+    name: str
+    shortDescription: str = ""
+    premiumDescription: str = ""
+    tags: List[str] = []
+
+
+class RegistryItemDelete(BaseModel):
+    groupName: str
+    itemName: str
+
+
+class RegistryAddonImport(BaseModel):
+    categories: List[str]
+
+
 class LoginRequest(BaseModel):
     password: str
 
@@ -144,7 +170,7 @@ class IntakeRequest(BaseModel):
 class PreviewRequest(BaseModel):
     event: ClientEventIntake
     function_menus: List[Dict[str, Any]] = []
-    template_name: str = "elegant_gold"
+    template_name: str = "corporate_clean"
     prepared_by: str = "Sales Team"
     service_style: Optional[str] = None
 
@@ -1031,13 +1057,19 @@ def delete_menu_package(package_id: str, _token: str = Depends(verify_token)):
 @app.get("/api/master-data")
 def get_master_data(_token: str = Depends(verify_token)):
     _, registry_data = _read_registry_data()
-    return {"items": _flatten_registry_items(registry_data)}
+    return {
+        "items": _flatten_registry_items(registry_data),
+        "bundles": registry_data.get("bundles", {}),
+    }
 
 
 @app.get("/api/public/generator/master-data")
 def get_public_generator_master_data():
     _, registry_data = _read_registry_data()
-    return {"items": _flatten_registry_items(registry_data)}
+    return {
+        "items": _flatten_registry_items(registry_data),
+        "bundles": registry_data.get("bundles", {}),
+    }
 
 
 @app.post("/api/public/generator/suggestions")
@@ -1155,7 +1187,7 @@ def preview_generator_html(payload: PreviewRequest):
                     dishes.append(
                         {
                             "name": dish.get("dishName", ""),
-                            "description": dish.get("shortDescription", ""),
+                            "description": dish.get("premiumDescription", "") or dish.get("shortDescription", ""),
                             "dietary": payload.event.metadata.get("diet", "Veg").title(),
                         }
                     )
@@ -1174,10 +1206,7 @@ def preview_generator_html(payload: PreviewRequest):
         )
 
     first_courses = to_course_map(payload.function_menus[0]) if payload.function_menus else {}
-    event_title = (
-        getattr(payload.event, "event_name", None)
-        or payload.event.occasion
-    )
+    event_title = payload.event.event_name or ""
     service_style = (
         payload.service_style
         or payload.event.metadata.get("service_style")
@@ -1246,6 +1275,164 @@ def patch_master_data(
             "premiumDescription": updated_item.get("premium_description", ""),
         },
     }
+
+
+@app.get("/api/registry/sections")
+def get_registry_sections(_token: str = Depends(verify_token)):
+    _, registry_data = _read_registry_data()
+    sections = registry_data.get("sections", {})
+    result = []
+    for name, groups in sections.items():
+        if not isinstance(groups, dict):
+            continue
+        item_count = sum(len(v) for v in groups.values() if isinstance(v, list))
+        result.append({"name": name, "itemCount": item_count, "groups": list(groups.keys())})
+    return {"sections": result}
+
+
+@app.post("/api/registry/sections", status_code=201)
+def create_registry_section(
+    payload: RegistrySectionCreate, _token: str = Depends(verify_token)
+):
+    registry_path, registry_data = _read_registry_data()
+    sections = registry_data.setdefault("sections", {})
+    if payload.name in sections:
+        raise HTTPException(status_code=409, detail="Section already exists")
+    sections[payload.name] = {payload.groupName: []}
+    with registry_path.open("w", encoding="utf-8") as f:
+        json.dump(registry_data, f, indent=2)
+    return {"status": "created", "name": payload.name}
+
+
+@app.delete("/api/registry/sections/{section_name}")
+def delete_registry_section(section_name: str, _token: str = Depends(verify_token)):
+    registry_path, registry_data = _read_registry_data()
+    sections = registry_data.get("sections", {})
+    if section_name not in sections:
+        raise HTTPException(status_code=404, detail="Section not found")
+    del sections[section_name]
+    with registry_path.open("w", encoding="utf-8") as f:
+        json.dump(registry_data, f, indent=2)
+    return {"status": "deleted", "name": section_name}
+
+
+@app.post("/api/registry/sections/{section_name}/rename")
+def rename_registry_section(
+    section_name: str, payload: RegistrySectionRename, _token: str = Depends(verify_token)
+):
+    registry_path, registry_data = _read_registry_data()
+    sections = registry_data.get("sections", {})
+    if section_name not in sections:
+        raise HTTPException(status_code=404, detail="Section not found")
+    if payload.newName in sections:
+        raise HTTPException(status_code=409, detail="Target name already exists")
+    # Preserve insertion order by rebuilding dict
+    new_sections = {}
+    for k, v in sections.items():
+        new_sections[payload.newName if k == section_name else k] = v
+    registry_data["sections"] = new_sections
+    with registry_path.open("w", encoding="utf-8") as f:
+        json.dump(registry_data, f, indent=2)
+    return {"status": "renamed", "oldName": section_name, "newName": payload.newName}
+
+
+@app.post("/api/registry/sections/{section_name}/items", status_code=201)
+def add_registry_item(
+    section_name: str, payload: RegistryItemAdd, _token: str = Depends(verify_token)
+):
+    registry_path, registry_data = _read_registry_data()
+    sections = registry_data.get("sections", {})
+    if section_name not in sections:
+        raise HTTPException(status_code=404, detail="Section not found")
+    group = sections[section_name].setdefault(payload.groupName, [])
+    if any(isinstance(i, dict) and i.get("name") == payload.name for i in group):
+        raise HTTPException(status_code=409, detail="Item already exists in this group")
+    group.append({
+        "name": payload.name,
+        "short_description": payload.shortDescription,
+        "premium_description": payload.premiumDescription,
+        "tags": payload.tags,
+    })
+    with registry_path.open("w", encoding="utf-8") as f:
+        json.dump(registry_data, f, indent=2)
+    return {"status": "created", "sectionName": section_name, "itemName": payload.name}
+
+
+@app.delete("/api/registry/sections/{section_name}/items")
+def delete_registry_item(
+    section_name: str, payload: RegistryItemDelete, _token: str = Depends(verify_token)
+):
+    registry_path, registry_data = _read_registry_data()
+    sections = registry_data.get("sections", {})
+    if section_name not in sections:
+        raise HTTPException(status_code=404, detail="Section not found")
+    group = sections[section_name].get(payload.groupName)
+    if not isinstance(group, list):
+        raise HTTPException(status_code=404, detail="Group not found")
+    original_len = len(group)
+    sections[section_name][payload.groupName] = [
+        i for i in group if not (isinstance(i, dict) and i.get("name") == payload.itemName)
+    ]
+    if len(sections[section_name][payload.groupName]) == original_len:
+        raise HTTPException(status_code=404, detail="Item not found")
+    with registry_path.open("w", encoding="utf-8") as f:
+        json.dump(registry_data, f, indent=2)
+    return {"status": "deleted", "sectionName": section_name, "itemName": payload.itemName}
+
+
+ADDONS_PATH = BACKEND_DIR / "Add_ons.json"
+
+
+@app.get("/api/registry/addons")
+def get_registry_addons(_token: str = Depends(verify_token)):
+    if not ADDONS_PATH.exists():
+        raise HTTPException(status_code=404, detail="Add_ons.json not found")
+    try:
+        with ADDONS_PATH.open("r", encoding="utf-8") as f:
+            data = json.load(f)
+    except json.JSONDecodeError as exc:
+        raise HTTPException(status_code=500, detail="Invalid Add_ons.json") from exc
+    return {"addOns": data}
+
+
+@app.post("/api/registry/import-addons")
+def import_registry_addons(
+    payload: RegistryAddonImport, _token: str = Depends(verify_token)
+):
+    if not ADDONS_PATH.exists():
+        raise HTTPException(status_code=404, detail="Add_ons.json not found")
+    with ADDONS_PATH.open("r", encoding="utf-8") as f:
+        addons_data = json.load(f)
+
+    registry_path, registry_data = _read_registry_data()
+    sections = registry_data.setdefault("sections", {})
+
+    imported = []
+    skipped = []
+    for category in payload.categories:
+        items = addons_data.get("Add-Ons", {}).get(category)
+        if items is None:
+            skipped.append(category)
+            continue
+        group = sections.setdefault(category, {}).setdefault("Default", [])
+        existing_names = {i.get("name") for i in group if isinstance(i, dict)}
+        added = 0
+        for item in items:
+            if not isinstance(item, dict) or item.get("name") in existing_names:
+                continue
+            group.append({
+                "name": item.get("name", ""),
+                "short_description": item.get("short_description", ""),
+                "premium_description": item.get("premium_description", ""),
+                "tags": item.get("tags", []),
+            })
+            existing_names.add(item.get("name"))
+            added += 1
+        imported.append({"category": category, "added": added})
+
+    with registry_path.open("w", encoding="utf-8") as f:
+        json.dump(registry_data, f, indent=2)
+    return {"imported": imported, "skipped": skipped}
 
 
 _ensure_persistent_data()

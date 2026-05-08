@@ -1,0 +1,108 @@
+"Add-Ons": {
+  "Tuscan Pizza (Live Wood Fired)": [
+    {
+      "name": "Sun Kissed Tomatoes, Artichokes, Basil Leaves",
+      "short_description": "Tomato & Artichoke Pizza",
+      "premium_description": "Rustic thin crust pizza with sun-dried tomato pesto and cherry tomato[cite: 349, 350, 550, 551].",
+      "tags": ["pizza", "vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Farmhouse Special",
+      "short_description": "Farmhouse Pizza",
+      "premium_description": "Thin crust pizza topped with granular mustard, spinach, olives, capsicum, corn, and Spanish onion[cite: 351, 352, 552, 553].",
+      "tags": ["pizza", "vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Pepperoni",
+      "short_description": "Pepperoni Pizza",
+      "premium_description": "Italian pepperoni & 4 cheese pizza served on a rustic smoked thin crust[cite: 546, 547].",
+      "tags": ["pizza", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Polo Affumicato Olive Pomodoro",
+      "short_description": "Chicken & Olive Pizza",
+      "premium_description": "Chicken, pickled olives, and sun-dried tomatoes on thin crust[cite: 548, 549].",
+      "tags": ["pizza", "non-vegetarian", "live", "add-on"]
+    }
+  ],
+  "Sushi Station (Live)": [
+    {
+      "name": "Shake Nigri Zushi",
+      "short_description": "Salmon Nigiri",
+      "premium_description": "Salmon fillet served on a bed of flavored rice dumpling[cite: 558, 559].",
+      "tags": ["sushi", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Tekka Maki Zushi",
+      "short_description": "Tuna Maki",
+      "premium_description": "Fresh Tuna rolled with wasabi in a rice and seaweed sheet[cite: 560, 561].",
+      "tags": ["sushi", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Kapa Maki",
+      "short_description": "Cucumber Maki",
+      "premium_description": "Cucumber batons rolled with wasabi in a rice and seaweed sheet[cite: 452, 453, 562, 563].",
+      "tags": ["sushi", "vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Vegan California Roll",
+      "short_description": "California Roll",
+      "premium_description": "Avocado, pickled carrot & spring onion[cite: 454, 455, 564, 565].",
+      "tags": ["sushi", "vegetarian", "vegan", "live", "add-on"]
+    }
+  ],
+  "Dim Sum Station (Live)": [
+    {
+      "name": "Crab & Lemon Grass",
+      "short_description": "Crab Dumpling",
+      "premium_description": "Lemon grass scented sweet crab meat filled in thin skin and steamed[cite: 572, 573].",
+      "tags": ["dim sum", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Chicken Gyoza",
+      "short_description": "Chicken Gyoza",
+      "premium_description": "Pan-seared chicken dumplings filled with meat & vegetables[cite: 574, 575].",
+      "tags": ["dim sum", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Thai Veggies",
+      "short_description": "Thai Veggie Dumpling",
+      "premium_description": "Thai veggies & herbs Dumpling, steamed and served with dipping sauces[cite: 462].",
+      "tags": ["dim sum", "vegetarian", "live", "add-on"]
+    }
+  ],
+  "Live BBQ": [
+    {
+      "name": "Pepper Rubbed Tiger Prawns",
+      "short_description": "Tiger Prawns",
+      "premium_description": "Tiger prawns grilled over low flame charcoal[cite: 632].",
+      "tags": ["bbq", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Mustard Marinated Fish Fillet",
+      "short_description": "Fish Fillet",
+      "premium_description": "Fish fillet with chimichurri[cite: 633].",
+      "tags": ["bbq", "non-vegetarian", "live", "add-on"]
+    },
+    {
+      "name": "Charmoula Marinated Cottage Cheese Morsels",
+      "short_description": "Cottage Cheese BBQ",
+      "premium_description": "Cottage cheese morsels grilled over charcoal[cite: 506, 638].",
+      "tags": ["bbq", "vegetarian", "live", "add-on"]
+    }
+  ],
+  "Specialty Concepts": [
+    {
+      "name": "TCI Special Mashtini",
+      "short_description": "Edible Martini",
+      "premium_description": "Parmesan scented creamy mash with choice of toppings like Kadai Paneer, Kung Pao Mushroom, or Chicken Hot Garlic[cite: 365, 367, 590, 592, 593].",
+      "tags": ["specialty", "fusion", "live", "add-on"]
+    },
+    {
+      "name": "Cheese Parlor & Raclette Station",
+      "short_description": "Cheese & Raclette",
+      "premium_description": "Assorted cheeses like Aged Cheddar and Gorgonzola, with melted Raclette served over grilled vegetables [cite: 611-619].",
+      "tags": ["cheese", "vegetarian", "live", "add-on"]
+    }
+  ]
+}

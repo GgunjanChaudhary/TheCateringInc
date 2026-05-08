@@ -5,10 +5,17 @@
       "subSections": [
         "Welcome Drink",
         "Aerated Beverages",
-        "Live Mocktail Bar",
+        "Live Bar",
         "Stationery Amenities",
         "Cheese Board"
-      ]
+      ],
+      "subSegmentMap": {
+        "Live Bar": [
+          "Mocktail",
+          "Cocktail",
+          "Premium Bar"
+        ]
+      }
     },
     {
       "sectionName": "Pre-Dining",

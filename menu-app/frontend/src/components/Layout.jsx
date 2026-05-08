@@ -26,6 +26,9 @@ function Layout() {
             <Link to="/master-data" className="text-sm text-gray-700 hover:text-gray-900">
               Master Data
             </Link>
+            <Link to="/registry-manager" className="text-sm text-gray-700 hover:text-gray-900">
+              Registry
+            </Link>
             <Link to="/sales-generator" className="text-sm text-gray-700 hover:text-gray-900">
               Menu Generator
             </Link>
