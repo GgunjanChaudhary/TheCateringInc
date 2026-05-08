@@ -78,26 +78,36 @@ function SalesMenuGenerator() {
   const [submittedBy, setSubmittedBy] = useState('')
   const [showSavePlan, setShowSavePlan] = useState(false)
 
-  useEffect(() => {
-    const boot = async () => {
+  const loadInitialData = async () => {
+    const MAX_RETRIES = 3
+    const RETRY_DELAY = 6000
+    setIsPlansLoading(true)
+    setPlansLoadFailed(false)
+    setError('')
+    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
       try {
-        setIsPlansLoading(true)
-        setPlansLoadFailed(false)
         const [plans, items] = await Promise.all([
           getJson('public/generator/packages'),
           getJson('public/generator/master-data'),
         ])
         setAvailablePlans(plans.packages || [])
         setMasterItems(items.items || [])
-      } catch (err) {
-        setError(err.message || 'Unable to load initial data')
-        setPlansLoadFailed(true)
-      } finally {
         setIsPlansLoading(false)
+        return
+      } catch (err) {
+        if (attempt < MAX_RETRIES - 1) {
+          setError(`Server is starting up, retrying… (${attempt + 1}/${MAX_RETRIES - 1})`)
+          await new Promise((r) => setTimeout(r, RETRY_DELAY))
+        } else {
+          setError(err.message || 'Unable to load initial data')
+          setPlansLoadFailed(true)
+          setIsPlansLoading(false)
+        }
       }
     }
-    boot()
-  }, [])
+  }
+
+  useEffect(() => { loadInitialData() }, [])
 
   const dishCount = useMemo(() => {
     return menuDrafts.reduce((total, fn) => {
@@ -221,7 +231,7 @@ function SalesMenuGenerator() {
       return
     }
     if (plansLoadFailed) {
-      setError('Packages failed to load. Please refresh and try again.')
+      setError('Packages failed to load. Use the Retry button below.')
       return
     }
     setIsLoading(true)
@@ -964,7 +974,20 @@ function SalesMenuGenerator() {
               </>
             ) : null}
 
-            {error ? <p className="mt-4 text-sm text-red-600">{error}</p> : null}
+            {error ? (
+              <div className="mt-4 flex items-center gap-3">
+                <p className="text-sm text-red-600">{error}</p>
+                {plansLoadFailed && (
+                  <button
+                    type="button"
+                    onClick={loadInitialData}
+                    className="rounded-md bg-[#7A1F2B] px-3 py-1 text-xs text-white hover:bg-[#9B2836]"
+                  >
+                    Retry
+                  </button>
+                )}
+              </div>
+            ) : null}
           </div>
           <div>{summaryCard}</div>
         </div>
